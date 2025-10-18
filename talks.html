@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Talks • Andrew Lott</title>
+  <meta name="description" content="Talks and presentations by Andrew Lott" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="icon" href="images/profile-photo.png" />
+  <link rel="stylesheet" href="styles/site.css" />
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+  <div id="site-nav"></div>
+
+  <main class="max-w-screen-lg mx-auto px-4 pb-24">
+    <h1 class="text-3xl font-bold mt-6">Talks & Presentations</h1>
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold mb-3">2025</h2>
+      <ul class="space-y-3 list-disc list-inside text-lg">
+        <li>
+          <span class="font-medium">Sárközy’s Theorem in Function Fields</span> —
+          <span class="text-gray-600 dark:text-gray-400">AMS Fall Southeastern Sectional Meeting (Tulane University)</span>
+        </li>
+        <li>
+          <span class="font-medium">Sárközy’s Theorem in Function Fields</span> —
+          <span class="text-gray-600 dark:text-gray-400">UGA Number Theory Seminar</span>
+        </li>
+        <li>
+          <span class="font-medium">Polynomial Progressions in the Primes</span> —
+          <span class="text-gray-600 dark:text-gray-400">INTEGERS 2025 Conference</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold mb-3">2023</h2>
+      <ul class="space-y-3 list-disc list-inside text-lg">
+        <li>
+          <span class="font-medium">Schur’s Theorem in Integer Lattices</span> —
+          <span class="text-gray-600 dark:text-gray-400">AMS Southeastern Sectional Meeting (2023)</span>
+        </li>
+        <li>
+          <span class="font-medium">Schur’s Theorem in Integer Lattices</span> —
+          <span class="text-gray-600 dark:text-gray-400">INTEGERS 2023 Conference</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+    © <span id="year"></span> Andrew Lott
+  </footer>
+
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
