@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mentorship • Andrew Lott</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="styles/site.css" />
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+  <div id="site-nav"></div>
+
+  <main class="max-w-screen-lg mx-auto px-4 pb-24">
+    <h1 class="text-3xl font-bold mt-6">Mentorship & Outreach</h1>
+
+    <section class="mt-8 space-y-6 text-lg">
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Directed Reading Projects</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li><strong>Spring 2025</strong> — Directed José Gervacio López through a study of <em>Roth’s Theorem in additive combinatorics</em>.</li>
+          <li><strong>Fall 2025</strong> — Directed Priya Jani in an undergraduate reading project on <em>analytic prime number theory</em>.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Undergraduate Research & Teaching</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li><strong>Summer 2023 & Summer 2024</strong> — Teaching assistant for the <em>Kinnard Undergraduate Research Program</em> at Millsaps College.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Outreach & Competitions</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li><strong>Fall 2025</strong> — Wrote problems and volunteered for the <em>UGA High School Math Competition</em>.</li>
+          <li><strong>Spring 2025</strong> — Gave an invited talk for the <em>UGA Math Circle</em> on Ramsey theory.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+    © <span id="year"></span> Andrew Lott
+  </footer>
+
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
