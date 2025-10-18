@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teaching • Andrew Lott</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="styles/site.css" />
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+  <div id="site-nav"></div>
+
+  <main class="max-w-screen-lg mx-auto px-4 pb-24">
+    <h1 class="text-3xl font-bold mt-6">Teaching</h1>
+
+    <section class="mt-8 space-y-6 text-lg">
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Instructor of Record</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li><strong>Precalculus (MATH 1113)</strong> — Fall 2024, Fall 2025</li>
+          <li><strong>Calculus I (MATH 2250)</strong> — Spring 2025</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Grader / Teaching Support</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li><strong>Introduction to Real Analysis (MATH 3200)</strong> — Fall 2023</li>
+          <li><strong>Graph Theory (MATH 4850/6850)</strong> — Spring 2024</li>
+          <li><strong>Honors Multivariable Calculus (MATH 2500H)</strong> — Fall 2024</li>
+          <li><strong>Measure Theory (MATH 8100)</strong> — Fall 2025</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+    © <span id="year"></span> Andrew Lott
+  </footer>
+
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
