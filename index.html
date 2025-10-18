@@ -9,45 +9,74 @@
   <script>tailwind.config={darkMode:'class'};</script>
   <link rel="stylesheet" href="styles/site.css" />
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+<body class="bg-gradient-to-b from-white to-slate-50 text-gray-900 dark:from-gray-900 dark:to-gray-950 dark:text-gray-100 antialiased">
   <div id="site-nav"></div>
 
   <main class="max-w-screen-lg mx-auto px-4 pb-24">
-    <section class="pt-6 md:pt-10 text-center">
-      <div class="mx-auto mb-8">
-        <div class="h-36 w-36 md:h-44 md:w-44 rounded-xl bg-cover bg-center shadow-xl mx-auto"
-             style="background-image:url('images/profile-photo.png');"></div>
+    <section class="pt-10 md:pt-16 text-center">
+      <div class="mx-auto mb-8 md:mb-10">
+        <div
+          class="h-36 w-36 md:h-44 md:w-44 rounded-2xl bg-cover bg-center shadow-2xl ring-1 ring-black/10 dark:ring-white/10 mx-auto"
+          style="background-image:url('images/profile-photo.png');">
+        </div>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold">Andrew Lott</h1>
-      <p class="mt-2 text-gray-700 dark:text-gray-300">PhD student, University of Georgia (Boyd 434J)</p>
+
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Andrew Lott</h1>
+      <p class="mt-3 text-base md:text-lg text-gray-700 dark:text-gray-300">PhD student, University of Georgia (Boyd 434J)</p>
       <p class="mt-1">
-        <a class="underline text-blue-600 dark:text-blue-400" href="mailto:andrew.lott@uga.edu">andrew.lott@uga.edu</a>
+        <a class="underline decoration-2 underline-offset-4 text-blue-600 dark:text-blue-400 hover:opacity-90"
+           href="mailto:andrew.lott@uga.edu">andrew.lott@uga.edu</a>
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-3 justify-center">
-        <a href="preprints.html" class="px-4 py-2 rounded-xl ring-1 ring-gray-300 dark:ring-gray-700">Preprints</a>
-        <a href="undergradpublications.html" class="px-4 py-2 rounded-xl ring-1 ring-gray-300 dark:ring-gray-700">Undergraduate Publications</a>
-        <a href="cv.html" class="px-4 py-2 rounded-xl ring-1 ring-gray-300 dark:ring-gray-700">CV</a>
-        <a href="about.html" class="px-4 py-2 rounded-xl ring-1 ring-gray-300 dark:ring-gray-700">About</a>
-        <a href="mentorship.html" class="px-4 py-2 rounded-xl ring-1 ring-gray-300 dark:ring-gray-700">Mentorship and Outreach</a>
-        <a href="teaching.html" class="px-4 py-2 rounded-xl ring-1 ring-gray-300 dark:ring-gray-700">Teaching</a>
-        <a href="talks.html" class="px-4 py-2 rounded-xl ring-1 ring-gray-300 dark:ring-gray-700">Talks</a>
+      <div class="mt-8 md:mt-10 flex flex-wrap gap-3 md:gap-4 justify-center">
+        <a href="preprints.html"
+           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          Preprints
+        </a>
+        <a href="undergradpublications.html"
+           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          Undergraduate Publications
+        </a>
+        <a href="cv.html"
+           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          CV
+        </a>
+        <a href="about.html"
+           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          About
+        </a>
+        <a href="mentorship.html"
+           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          Mentorship and Outreach
+        </a>
+        <a href="teaching.html"
+           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          Teaching
+        </a>
+        <a href="talks.html"
+           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          Talks
+        </a>
       </div>
     </section>
 
-    <section class="mt-12 prose dark:prose-invert max-w-none">
-      <p>
-        My research sits at the intersection of number theory, harmonic analysis, and combinatorics—especially
-        density Ramsey problems concerning prime numbers. My advisors are
-        <a href="https://math.uga.edu/directory/people/akos-magyar" target="_blank" rel="noopener">Ákos Magyar</a>
-        and
-        <a href="https://www.math.uga.edu/directory/people/giorgis-petridis" target="_blank" rel="noopener">Giorgis Petridis</a>.
-        In Spring 2026, I will be at the Alfréd Rényi Institute of Mathematics in Budapest to continue my research in additive combinatorics.
-      </p>
+    <section class="mt-12 md:mt-14">
+      <div class="mx-auto max-w-3xl rounded-2xl bg-white/60 dark:bg-white/5 backdrop-blur-sm ring-1 ring-gray-200/70 dark:ring-white/10 p-6 md:p-8">
+        <div class="prose prose-slate dark:prose-invert max-w-none">
+          <p class="m-0">
+            My research sits at the intersection of number theory, harmonic analysis, and combinatorics—especially
+            density Ramsey problems concerning prime numbers. My advisors are
+            <a href="https://math.uga.edu/directory/people/akos-magyar" target="_blank" rel="noopener">Ákos Magyar</a>
+            and
+            <a href="https://www.math.uga.edu/directory/people/giorgis-petridis" target="_blank" rel="noopener">Giorgis Petridis</a>.
+            In Spring 2026, I will be at the Alfréd Rényi Institute of Mathematics in Budapest to continue my research in additive combinatorics.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-10 text-sm text-gray-500 dark:text-gray-400">
     © <span id="year"></span> Andrew Lott
   </footer>
 
