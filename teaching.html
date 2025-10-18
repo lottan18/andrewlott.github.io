@@ -5,34 +5,115 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Teaching • Andrew Lott</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class'};</script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
   <link rel="stylesheet" href="styles/site.css" />
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
   <div id="site-nav"></div>
 
-  <main class="max-w-screen-lg mx-auto px-4 pb-24">
-    <h1 class="text-3xl font-bold mt-6">Teaching</h1>
+  <main class="max-w-screen-lg mx-auto px-4 pb-28">
+    <!-- Page header -->
+    <header class="mt-8 md:mt-12 mb-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Teaching</h1>
+      <p class="mt-3 text-base md:text-lg text-gray-600 dark:text-gray-400">
+        Selected courses I’ve taught and supported at the University of Georgia.
+      </p>
+    </header>
 
-    <section class="mt-8 space-y-6 text-lg">
-      <div>
-        <h2 class="text-2xl font-semibold mb-2">Instructor of Record</h2>
-        <ul class="list-disc list-inside space-y-2">
-          <li><strong>Precalculus (MATH 1113)</strong> — Fall 2024, Fall 2025</li>
-          <li><strong>Calculus I (MATH 2250)</strong> — Spring 2025</li>
-        </ul>
+    <!-- Instructor of Record -->
+    <section aria-labelledby="instructor" class="mt-10">
+      <div class="flex items-center gap-3">
+        <!-- Book open icon -->
+        <svg class="w-6 h-6 shrink-0 text-gray-700 dark:text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.75c-2.5-1.5-5.5-1.5-8 0v10.5c2.5-1.5 5.5-1.5 8 0m0-10.5c2.5-1.5 5.5-1.5 8 0v10.5c-2.5-1.5-5.5-1.5-8 0m0-10.5v10.5"/>
+        </svg>
+        <h2 id="instructor" class="text-2xl md:text-3xl font-semibold">Instructor of Record</h2>
       </div>
 
-      <div>
-        <h2 class="text-2xl font-semibold mb-2">Grader / Teaching Support</h2>
-        <ul class="list-disc list-inside space-y-2">
-          <li><strong>Introduction to Real Analysis (MATH 3200)</strong> — Fall 2023</li>
-          <li><strong>Graph Theory (MATH 4850/6850)</strong> — Spring 2024</li>
-          <li><strong>Honors Multivariable Calculus (MATH 2500H)</strong> — Fall 2024</li>
-          <li><strong>Measure Theory (MATH 8100)</strong> — Fall 2025</li>
-        </ul>
+      <div class="mt-6 grid gap-4 sm:gap-6 sm:grid-cols-2">
+        <!-- Card -->
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-lg font-semibold">Precalculus <span class="text-gray-500">(MATH 1113)</span></h3>
+            <span class="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">Instructor</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300">Fall 2024</span>
+            <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300">Fall 2025</span>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-lg font-semibold">Calculus I <span class="text-gray-500">(MATH 2250)</span></h3>
+            <span class="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">Instructor</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300">Spring 2025</span>
+          </div>
+        </article>
       </div>
     </section>
+
+    <!-- Teaching Support -->
+    <section aria-labelledby="support" class="mt-12">
+      <div class="flex items-center gap-3">
+        <!-- Pencil icon -->
+        <svg class="w-6 h-6 shrink-0 text-gray-700 dark:text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.862 3.487a2.126 2.126 0 1 1 3.006 3.006L7.5 18.862 3 19.5l.638-4.5L16.862 3.487z"/>
+        </svg>
+        <h2 id="support" class="text-2xl md:text-3xl font-semibold">Grader / Teaching Support</h2>
+      </div>
+
+      <div class="mt-6 grid gap-4 sm:gap-6 sm:grid-cols-2">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-lg font-semibold">Introduction to Real Analysis <span class="text-gray-500">(MATH 3200)</span></h3>
+            <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300">Fall 2023</span>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-lg font-semibold">Graph Theory <span class="text-gray-500">(MATH 4850/6850)</span></h3>
+            <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300">Spring 2024</span>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-lg font-semibold">Honors Multivariable Calculus <span class="text-gray-500">(MATH 2500H)</span></h3>
+            <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300">Fall 2024</span>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-lg font-semibold">Measure Theory <span class="text-gray-500">(MATH 8100)</span></h3>
+            <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300">Fall 2025</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Small note -->
+    <p class="mt-12 text-sm text-gray-500 dark:text-gray-400">
+      Full syllabi and course materials are available upon request.
+    </p>
   </main>
 
   <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
@@ -41,6 +122,7 @@
 
   <script src="scripts/theme.js"></script>
   <script src="scripts/nav.js"></script>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
