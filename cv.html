@@ -1,4 +1,17 @@
-<title>CV • Andrew Lott</title>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PAGE TITLE • Andrew Lott</title>
+  <link rel="icon" href="images/profile-photo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="styles/site.css" />
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+  <div id="site-nav"></div>
+  <main class="max-w-screen-lg mx-auto px-4 pb-24"><title>CV • Andrew Lott</title>
 <main class="max-w-screen-lg mx-auto px-4 pb-24">
   <h1 class="text-3xl font-bold mt-6">Curriculum Vitae</h1>
   <p class="mt-4">
@@ -14,3 +27,12 @@
     ></iframe>
   </div>
 </main>
+  </main>
+  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+    © <span id="year"></span> Andrew Lott
+  </footer>
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
