@@ -3,45 +3,193 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PAGE TITLE • Andrew Lott</title>
+  <title>Preprints • Andrew Lott</title>
   <link rel="icon" href="images/profile-photo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class'};</script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
   <link rel="stylesheet" href="styles/site.css" />
+  <meta name="description" content="Preprints by Andrew Lott – additive combinatorics, number theory."/>
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
   <div id="site-nav"></div>
-  <main class="max-w-screen-lg mx-auto px-4 pb-24">
-<title>Projects • Andrew Lott</title>
-<main class="max-w-screen-lg mx-auto px-4 pb-24">
-  <h1 class="text-3xl font-bold mt-6">Preprints</h1>
-  <ul class="mt-6 space-y-4">
-    <li class="transition hover:translate-x-0.5">
-      <a class="underline text-blue-600 dark:text-blue-400" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2504.14424">
-        Polynomial configurations in dense subsets of the prime lattice
-      </a>
-      <span class="text-gray-500 dark:text-gray-400">
-        (with Á. Magyar, G. Petridis, J. Pintz), submitted, 2025.
-      </span>
-    </li>
-    <li class="transition hover:translate-x-0.5">
-      <a class="underline text-blue-600 dark:text-blue-400" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2505.17375">
-        Polynomial progressions in the generalized twin primes
-      </a>
-      <span class="text-gray-500 dark:text-gray-400">
-        (with N. R. Ponagandla), submitted, 2025.
-      </span>
-    </li>
-  </ul>
-</main>  </main>
+
+  <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <!-- Page Header -->
+    <header class="relative mt-8 sm:mt-10">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Preprints</h1>
+          <p class="mt-2 text-base sm:text-lg text-gray-600 dark:text-gray-300">Recent and submitted work. Clean citations, fast links, and copy‑ready BibTeX.</p>
+        </div>
+        <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
+          <span id="preprint-count" class="font-semibold">2</span>&nbsp;items
+        </span>
+      </div>
+
+      <!-- Quick actions -->
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <div class="relative flex-1">
+          <label for="filter-input" class="sr-only">Search preprints</label>
+          <input id="filter-input" type="text" placeholder="Search by title, coauthor, or year…"
+                 class="w-full rounded-xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 backdrop-blur px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <div class="pointer-events-none absolute right-3 top-2.5 text-gray-400">⌘K</div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="sort-btn" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Sort by year ↓</button>
+          <button id="expand-btn" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Expand all</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- List -->
+    <section id="preprints" class="mt-8 space-y-4">
+      <!-- Item: 2504.14424 -->
+      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-authors="Magyar Petridis Pintz" data-title="Polynomial configurations in dense subsets of the prime lattice">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2504.14424">
+              Polynomial configurations in dense subsets of the prime lattice
+            </a>
+          </h2>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-200 px-2.5 py-1 text-xs font-medium">submitted</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+          </div>
+        </div>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with Á. Magyar, G. Petridis, J. Pintz</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="https://arxiv.org/abs/2504.14424" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex="@article{LottMagyarPetridisPintz2025,\n  author = {Andrew Lott and {\'A}kos Magyar and Giorgis Petridis and J{\'a}nos Pintz},\n  title = {Polynomial configurations in dense subsets of the prime lattice},\n  journal = {arXiv preprint arXiv:2504.14424},\n  year = {2025}\n}">Copy BibTeX</button>
+        </div>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract/notes</summary>
+          <div class="mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+            Extends Tao–Ziegler style polynomial patterns to the prime lattice via a transference framework; uses box norms and a polynomial forms condition adapted to PET induction. (One‑sentence blurb; edit as you like.)
+          </div>
+        </details>
+      </article>
+
+      <!-- Item: 2505.17375 -->
+      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-authors="Ponagandla" data-title="Polynomial progressions in the generalized twin primes">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2505.17375">
+              Polynomial progressions in the generalized twin primes
+            </a>
+          </h2>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-200 px-2.5 py-1 text-xs font-medium">submitted</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+          </div>
+        </div>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with N. R. Ponagandla</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="https://arxiv.org/abs/2505.17375" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex="@article{LottPonagandla2025,\n  author = {Andrew Lott and N. R. Ponagandla},\n  title = {Polynomial progressions in the generalized twin primes},\n  journal = {arXiv preprint arXiv:2505.17375},\n  year = {2025}\n}">Copy BibTeX</button>
+        </div>
+        <details class="mt-3">
+          <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract/notes</summary>
+          <div class="mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+            Establishes polynomial progressions inside generalized twin primes by combining Maynard–Tao type distribution with a polynomial transference method. (Edit this blurb.)
+          </div>
+        </details>
+      </article>
+    </section>
+
+    <!-- Empty state (hidden by default) -->
+    <div id="empty-state" class="hidden mt-16 flex flex-col items-center text-center">
+      <div class="rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 p-10">
+        <div class="text-3xl">🗂️</div>
+      </div>
+      <p class="mt-4 text-gray-600 dark:text-gray-300">No preprints match your filter.</p>
+    </div>
+  </main>
+
   <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
     © <span id="year"></span> Andrew Lott
   </footer>
+
   <script src="scripts/theme.js"></script>
   <script src="scripts/nav.js"></script>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Client-side filtering & sorting
+    const input = document.getElementById('filter-input');
+    const sortBtn = document.getElementById('sort-btn');
+    const expandBtn = document.getElementById('expand-btn');
+    const list = document.getElementById('preprints');
+    const cards = Array.from(list.querySelectorAll('article'));
+    const empty = document.getElementById('empty-state');
+    const count = document.getElementById('preprint-count');
+
+    let sortDesc = true; // year desc by default
+
+    function applyFilter() {
+      const q = input.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const title = (card.dataset.title || '').toLowerCase();
+        const authors = (card.dataset.authors || '').toLowerCase();
+        const year = (card.dataset.year || '').toString();
+        const hit = !q || title.includes(q) || authors.includes(q) || year.includes(q);
+        card.classList.toggle('hidden', !hit);
+        if (hit) visible++;
+      });
+      empty.classList.toggle('hidden', visible !== 0);
+      count.textContent = visible;
+    }
+
+    input.addEventListener('input', applyFilter);
+
+    // Cmd/Ctrl+K focus
+    window.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault(); input.focus();
+      }
+    });
+
+    // Sorting by year
+    sortBtn.addEventListener('click', () => {
+      sortDesc = !sortDesc;
+      const sorted = cards.slice().sort((a, b) => {
+        const ya = +a.dataset.year; const yb = +b.dataset.year;
+        return sortDesc ? yb - ya : ya - yb;
+      });
+      sorted.forEach(el => list.appendChild(el));
+      sortBtn.textContent = `Sort by year ${sortDesc ? '↓' : '↑'}`;
+    });
+
+    // Expand/collapse all details
+    expandBtn.addEventListener('click', () => {
+      const openAny = Array.from(document.querySelectorAll('#preprints details')).some(d => !d.open);
+      document.querySelectorAll('#preprints details').forEach(d => d.open = openAny);
+      expandBtn.textContent = openAny ? 'Collapse all' : 'Expand all';
+    });
+
+    // Copy BibTeX
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-bibtex');
+        try {
+          await navigator.clipboard.writeText(text);
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          btn.classList.add('ring-2','ring-green-500');
+          setTimeout(() => { btn.textContent = original; btn.classList.remove('ring-2','ring-green-500'); }, 1100);
+        } catch (e) {
+          alert('Copy failed.');
+        }
+      });
+    });
+
+    // Initial filter to set counts correctly
+    applyFilter();
+  </script>
 </body>
 </html>
+
 
