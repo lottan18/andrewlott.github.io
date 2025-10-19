@@ -6,68 +6,157 @@
   <title>Undergraduate Publications • Andrew Lott</title>
   <link rel="icon" href="images/profile-photo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class'};</script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
   <link rel="stylesheet" href="styles/site.css" />
+  <meta name="description" content="Undergraduate publications and projects by Andrew Lott."/>
+  <!-- MathJax kept for consistency (renders fine if any LaTeX appears) -->
+  <script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]},svg:{fontCache:'global'}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
   <div id="site-nav"></div>
-  <main class="max-w-screen-lg mx-auto px-4 pb-24">
-    <h1 class="text-3xl font-bold mt-6">Undergraduate Projects</h1>
 
-    <ul class="mt-6 space-y-4 list-disc list-inside">
+  <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <!-- Local Nav -->
+    <nav class="mt-4 mb-2">
+      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900"><span aria-hidden="true">←</span> Back to main page</a>
+    </nav>
 
-      <!-- Newly inserted entry -->
-      <li>
-        <a class="underline text-blue-600 dark:text-blue-400" target="_blank" rel="noopener"
-           href="https://arxiv.org/abs/2508.03650">
-          Notes and computations on forbidden differences
-        </a>
-        <span class="text-gray-500 dark:text-gray-400">
-          (with C. Dean, H. Havard, E. Hawkins, A. Rice), arXiv:2508.03650 (2025).
+    <!-- Page Header -->
+    <header class="relative mt-6 sm:mt-8">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Undergraduate Publications</h1>
+          <p class="mt-2 text-base sm:text-lg text-gray-600 dark:text-gray-300">A curated list of undergraduate work with clean citations and quick links.</p>
+        </div>
+        <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
+          <span id="pub-count" class="font-semibold">5</span>&nbsp;items
         </span>
-      </li>
+      </div>
 
-      <li>
-        <a class="underline text-blue-600 dark:text-blue-400" target="_blank" rel="noopener"
-           href="https://arxiv.org/abs/2307.06874">
-          The sum-product problem for small sets
-        </a>
-        <span class="text-gray-500 dark:text-gray-400">
-          (with G. R. Clevenger, H. Havard, P. Heard, A. Rice, B. Wilson), Involve 18 (2025) no.1, 165–180.
-        </span>
-      </li>
+      <!-- Quick actions -->
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <div class="relative flex-1">
+          <label for="filter-input" class="sr-only">Search publications</label>
+          <input id="filter-input" type="text" placeholder="Search by title, coauthor, or year…" class="w-full rounded-xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 backdrop-blur px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <div class="pointer-events-none absolute right-3 top-2.5 text-gray-400">⌘K</div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="sort-btn" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Sort by year ↓</button>
+        </div>
+      </div>
+    </header>
 
-      <li>
-        <a class="underline text-blue-600 dark:text-blue-400" target="_blank" rel="noopener"
-           href="https://arxiv.org/abs/2208.09720">
-          Computations and observations on congruence covering systems
-        </a>
-        <span class="text-gray-500 dark:text-gray-400">
-          (with R. Agrawal, P. Bhatia, K. Gupta, P. Lamb, A. Rice, C. R. Ward), INTEGERS 24A (2024), Proc. Integers 2023, A1.
-        </span>
-      </li>
+    <!-- List -->
+    <section id="pubs" class="mt-8 space-y-4">
+      <!-- 2508.03650 -->
+      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-authors="Dean Havard Hawkins Rice" data-title="Notes and computations on forbidden differences">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2508.03650">
+              Notes and computations on forbidden differences
+            </a>
+          </h2>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-200 px-2.5 py-1 text-xs font-medium">arXiv</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+          </div>
+        </div>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with C. Dean, H. Havard, E. Hawkins, A. Rice</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="https://arxiv.org/abs/2508.03650" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{DeanHavardHawkinsRiceLott2025,\n  author = {Christian Dean and Haley Havard and Elizabeth Hawkins and Alan Rice and Andrew Lott},\n  title = {Notes and computations on forbidden differences},\n  journal = {arXiv:2508.03650},\n  year = {2025}\n}'>Copy BibTeX</button>
+        </div>
+      </article>
 
-      <li>
-        <a class="underline text-blue-600 dark:text-blue-400" target="_blank" rel="noopener"
-           href="https://arxiv.org/abs/2108.08410">
-          The pigeonhole principle and multicolor Ramsey numbers
-        </a>
-        <span class="text-gray-500 dark:text-gray-400">
-          (with V. Balaji, P. Lamb, D. Patel, A. Rice, S. Singh, C. R. Ward), Involve 15 (2022) no.5, 857–884.
-        </span>
-      </li>
+      <!-- 2307.06874 -->
+      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-authors="Clevenger Havard Heard Rice Wilson" data-title="The sum-product problem for small sets">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2307.06874">
+              The sum-product problem for small sets
+            </a>
+          </h2>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+          </div>
+        </div>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with G. R. Clevenger, H. Havard, P. Heard, A. Rice, B. Wilson</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="https://arxiv.org/abs/2307.06874" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{ClevengerEtAl2025,\n  author = {G. R. Clevenger and H. Havard and P. Heard and A. Rice and B. Wilson and Andrew Lott},\n  title = {The sum-product problem for small sets},\n  journal = {Involve},\n  volume = {18},\n  number = {1},\n  pages = {165--180},\n  year = {2025}\n}'>Copy BibTeX</button>
+        </div>
+      </article>
 
-      <li>
-        <a class="underline text-blue-600 dark:text-blue-400" target="_blank" rel="noopener"
-           href="https://arxiv.org/abs/2112.03127">
-          Schur’s theorem in integer lattices
-        </a>
-        <span class="text-gray-500 dark:text-gray-400">
-          (with V. Balaji, A. Rice), INTEGERS 22 (2022), A62.
-        </span>
-      </li>
+      <!-- 2208.09720 -->
+      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2024" data-authors="Agrawal Bhatia Gupta Lamb Rice Ward" data-title="Computations and observations on congruence covering systems">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2208.09720">
+              Computations and observations on congruence covering systems
+            </a>
+          </h2>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2024</span>
+          </div>
+        </div>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with R. Agrawal, P. Bhatia, K. Gupta, P. Lamb, A. Rice, C. R. Ward</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="https://arxiv.org/abs/2208.09720" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{AgrawalEtAl2024,\n  author = {R. Agrawal and P. Bhatia and K. Gupta and P. Lamb and A. Rice and C. R. Ward and Andrew Lott},\n  title = {Computations and observations on congruence covering systems},\n  journal = {INTEGERS},\n  volume = {24A},\n  year = {2024},\n  note = {Proc. Integers 2023, A1}\n}'>Copy BibTeX</button>
+        </div>
+      </article>
 
-    </ul>
+      <!-- 2108.08410 -->
+      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2108.08410">
+              The pigeonhole principle and multicolor Ramsey numbers
+            </a>
+          </h2>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
+          </div>
+        </div>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with V. Balaji, P. Lamb, D. Patel, A. Rice, S. Singh, C. R. Ward</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="https://arxiv.org/abs/2108.08410" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{BalajiEtAl2022,\n  author = {V. Balaji and P. Lamb and D. Patel and A. Rice and S. Singh and C. R. Ward and Andrew Lott},\n  title = {The pigeonhole principle and multicolor Ramsey numbers},\n  journal = {Involve},\n  volume = {15},\n  number = {5},\n  pages = {857--884},\n  year = {2022}\n}'>Copy BibTeX</button>
+        </div>
+      </article>
+
+      <!-- 2112.03127 -->
+      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Rice" data-title="Schur’s theorem in integer lattices">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2112.03127">
+              Schur’s theorem in integer lattices
+            </a>
+          </h2>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
+          </div>
+        </div>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with V. Balaji, A. Rice</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="https://arxiv.org/abs/2112.03127" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{BalajiLottRice2022,\n  author = {V. Balaji and Andrew Lott and A. Rice},\n  title = {Schur\'s theorem in integer lattices},\n  journal = {INTEGERS},\n  volume = {22},\n  pages = {A62},\n  year = {2022}\n}'>Copy BibTeX</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Empty state (hidden by default) -->
+    <div id="empty-state" class="hidden mt-16 flex flex-col items-center text-center">
+      <div class="rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 p-10">
+        <div class="text-3xl">🗂️</div>
+      </div>
+      <p class="mt-4 text-gray-600 dark:text-gray-300">No items match your filter.</p>
+    </div>
   </main>
 
   <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
@@ -76,6 +165,65 @@
 
   <script src="scripts/theme.js"></script>
   <script src="scripts/nav.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // filtering & sorting
+    const input = document.getElementById('filter-input');
+    const sortBtn = document.getElementById('sort-btn');
+    const list = document.getElementById('pubs');
+    const cards = Array.from(list.querySelectorAll('article'));
+    const empty = document.getElementById('empty-state');
+    const count = document.getElementById('pub-count');
+
+    let sortDesc = true;
+
+    function applyFilter(){
+      const q = input.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const title = (card.dataset.title||'').toLowerCase();
+        const authors = (card.dataset.authors||'').toLowerCase();
+        const year = (card.dataset.year||'').toString();
+        const hit = !q || title.includes(q) || authors.includes(q) || year.includes(q);
+        card.classList.toggle('hidden', !hit);
+        if(hit) visible++;
+      });
+      empty.classList.toggle('hidden', visible!==0);
+      count.textContent = visible;
+    }
+
+    input.addEventListener('input', applyFilter);
+
+    window.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase()==='k') { e.preventDefault(); input.focus(); }
+    });
+
+    sortBtn.addEventListener('click', () => {
+      sortDesc = !sortDesc;
+      const sorted = cards.slice().sort((a,b)=> (sortDesc? +b.dataset.year - +a.dataset.year : +a.dataset.year - +b.dataset.year));
+      sorted.forEach(el=> list.appendChild(el));
+      sortBtn.textContent = `Sort by year ${sortDesc ? '↓' : '↑'}`;
+    });
+
+    // Copy BibTeX
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-bibtex');
+        try {
+          await navigator.clipboard.writeText(text);
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          btn.classList.add('ring-2','ring-green-500');
+          setTimeout(() => { btn.textContent = original; btn.classList.remove('ring-2','ring-green-500'); }, 1100);
+        } catch(e){ alert('Copy failed.'); }
+      });
+    });
+
+    // init
+    applyFilter();
+  </script>
 </body>
 </html>
+
