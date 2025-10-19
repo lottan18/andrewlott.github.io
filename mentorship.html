@@ -4,59 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mentorship • Andrew Lott</title>
+  <meta name="description" content="Mentorship, advising, and outreach by Andrew Lott." />
+  <link rel="icon" href="images/profile-photo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class'};</script>
   <link rel="stylesheet" href="styles/site.css" />
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
   <div id="site-nav"></div>
 
-  <main class="max-w-screen-lg mx-auto px-4 pb-24">
-    <h1 class="text-3xl font-bold mt-6 tracking-tight">Mentorship & Outreach</h1>
+  <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <!-- Local Nav -->
+    <nav class="mt-4 mb-2">
+      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900"><span aria-hidden="true">←</span> Back to main page</a>
+    </nav>
 
-    <section class="mt-10 space-y-8 text-lg leading-relaxed">
-
-      <div>
-        <h2 class="text-2xl font-semibold mb-3">Directed Reading Projects</h2>
-        <ul class="list-disc list-inside space-y-3">
-          <li>
-            <strong>Spring 2025</strong> — Directed José López-Gervacio in an undergraduate reading project on <em>Roth’s Theorem in additive combinatorics</em>, using Yufei Zhao’s 
-            <a href="https://yufeizhao.com/gtacbook/gtacbook.pdf" target="_blank" rel="noopener" class="underline text-blue-500 dark:text-blue-400"><em>Graph Theory and Additive Combinatorics</em></a>.
-          </li>
-          <li>
-            <strong>Fall 2025</strong> — Directed Priya Jani in an undergraduate reading project on <em>prime number theory</em>, using Paul Pollack’s
-            <a href="https://pollack.uga.edu/NABDofficial.pdf" target="_blank" rel="noopener" class="underline text-blue-500 dark:text-blue-400"> <em>Not Always Buried Deep</em></a>.
-          </li>
-        </ul>
+    <!-- Header -->
+    <header class="relative mt-6 sm:mt-8">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Mentorship</h1>
+          <p class="mt-2 text-base sm:text-lg text-gray-600 dark:text-gray-300">Directed reading, undergraduate research, outreach, and competitions.</p>
+        </div>
+        
       </div>
+    </header>
 
-      <div>
-        <h2 class="text-2xl font-semibold mb-3">Undergraduate Research</h2>
-        <ul class="list-disc list-inside space-y-3">
-          <li>
-            <strong>Summer 2023 & Summer 2024</strong> — Teaching assistant for the <em>Kinnard Undergraduate Research Program</em> at Millsaps College.
-          </li>
-        </ul>
-      </div>
+    <!-- Content Sections -->
+    <section class="mt-8 grid gap-6">
+      <!-- DRP -->
+      <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-5 shadow-sm">
+        <div class="flex items-start justify-between">
+          <h2 class="text-xl sm:text-2xl font-semibold">Directed Reading Projects</h2>
+          
+        </div>
+        <div class="mt-4 space-y-4">
+          <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="text-sm text-gray-600 dark:text-gray-300">Spring 2025</div>
+                <h3 class="text-base sm:text-lg font-medium">Undergraduate DRP on <span class="italic">Roth’s Theorem</span></h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Mentored <span class="font-medium">José López‑Gervacio</span> using Zhao’s <a href="https://yufeizhao.com/gtacbook/gtacbook.pdf" target="_blank" rel="noopener" class="underline text-blue-700 dark:text-blue-300">Graph Theory and Additive Combinatorics</a>.</p>
+              </div>
+              
+            </div>
+          </article>
+          <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="text-sm text-gray-600 dark:text-gray-300">Fall 2025</div>
+                <h3 class="text-base sm:text-lg font-medium">Undergraduate DRP on <span class="italic">Prime Number Theory</span></h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Mentored <span class="font-medium">Priya Jani</span> using Pollack’s <a href="https://pollack.uga.edu/NABDofficial.pdf" target="_blank" rel="noopener" class="underline text-blue-700 dark:text-blue-300">Not Always Buried Deep</a>.</p>
+              </div>
+              
+            </div>
+          </article>
+        </div>
+      </section>
 
-      <div>
-        <h2 class="text-2xl font-semibold mb-3">Outreach</h2>
-        <ul class="list-disc list-inside space-y-3">
-          <li>
-            <strong>Spring 2025</strong> — Gave an invited talk for the <em>Athens Math Circle</em> on Ramsey theory.
-          </li>
-        </ul>
-      </div>
+      <!-- Undergraduate Research -->
+      <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-5 shadow-sm">
+        <div class="flex items-start justify-between">
+          <h2 class="text-xl sm:text-2xl font-semibold">Undergraduate Research</h2>
+          
+        </div>
+        <div class="mt-4 space-y-4">
+          <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="text-sm text-gray-600 dark:text-gray-300">Summer 2023 & Summer 2024</div>
+                <h3 class="text-base sm:text-lg font-medium">Kinnard Undergraduate Research Program — Millsaps College</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Teaching assistant for the undergraduate research program.</p>
+              </div>
+              
+            </div>
+          </article>
+        </div>
+      </section>
 
-      <div>
-        <h2 class="text-2xl font-semibold mb-3">Competitions</h2>
-        <ul class="list-disc list-inside space-y-3">
-          <li>
-            <strong>Fall 2025</strong> — Wrote problems and volunteered for the <em>UGA High School Math Competition</em>.
-          </li>
-        </ul>
-      </div>
+      <!-- Outreach -->
+      <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-5 shadow-sm">
+        <div class="flex items-start justify-between">
+          <h2 class="text-xl sm:text-2xl font-semibold">Outreach</h2>
+          
+        </div>
+        <div class="mt-4 space-y-4">
+          <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="text-sm text-gray-600 dark:text-gray-300">Spring 2025</div>
+                <h3 class="text-base sm:text-lg font-medium">Athens Math Circle — Ramsey Theory Talk</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Invited talk introducing Ramsey numbers and coloring arguments for middle/high school students.</p>
+              </div>
+              
+            </div>
+          </article>
+        </div>
+      </section>
 
+      <!-- Competitions -->
+      <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-5 shadow-sm">
+        <div class="flex items-start justify-between">
+          <h2 class="text-xl sm:text-2xl font-semibold">Competitions</h2>
+          
+        </div>
+        <div class="mt-4 space-y-4">
+          <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="text-sm text-gray-600 dark:text-gray-300">Fall 2025</div>
+                <h3 class="text-base sm:text-lg font-medium">UGA High School Math Competition — Problem Writing & Volunteering</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Wrote problems and supported contest administration on-site.</p>
+              </div>
+              
+            </div>
+          </article>
+        </div>
+      </section>
     </section>
   </main>
 
@@ -66,7 +130,9 @@
 
   <script src="scripts/theme.js"></script>
   <script src="scripts/nav.js"></script>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
 
