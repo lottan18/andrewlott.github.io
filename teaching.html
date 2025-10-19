@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Teaching • Andrew Lott</title>
+  <link rel="icon" href="images/profile-photo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' };
-  </script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
   <link rel="stylesheet" href="styles/site.css" />
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
   <div id="site-nav"></div>
-
   <main class="max-w-screen-lg mx-auto px-4 pb-28">
+    <!-- Back to main -->
+    <nav class="mt-4 mb-2">
+      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900"><span aria-hidden="true">←</span> Back to main page</a>
+    </nav>
+
     <!-- Page header -->
     <header class="mt-8 md:mt-12 mb-6">
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Teaching</h1>
@@ -34,7 +37,7 @@
 
       <div class="mt-6 grid gap-4 sm:gap-6 sm:grid-cols-2">
         <!-- Card -->
-        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40">
           <div class="flex items-baseline justify-between">
             <h3 class="text-lg font-semibold">Precalculus <span class="text-gray-500">(MATH 1113)</span></h3>
             <span class="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">Instructor</span>
@@ -45,7 +48,7 @@
           </div>
         </article>
 
-        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40">
           <div class="flex items-baseline justify-between">
             <h3 class="text-lg font-semibold">Calculus I <span class="text-gray-500">(MATH 2250)</span></h3>
             <span class="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">Instructor</span>
@@ -68,7 +71,7 @@
       </div>
 
       <div class="mt-6 grid gap-4 sm:gap-6 sm:grid-cols-2">
-        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40">
           <div class="flex items-baseline justify-between">
             <h3 class="text-lg font-semibold">Introduction to Real Analysis <span class="text-gray-500">(MATH 3100)</span></h3>
             <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
@@ -78,7 +81,7 @@
           </div>
         </article>
 
-        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40">
           <div class="flex items-baseline justify-between">
             <h3 class="text-lg font-semibold">Graph Theory <span class="text-gray-500">(MATH 4690/6690)</span></h3>
             <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
@@ -88,7 +91,7 @@
           </div>
         </article>
 
-        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40">
           <div class="flex items-baseline justify-between">
             <h3 class="text-lg font-semibold">Honors Multivariable Calculus <span class="text-gray-500">(MATH 3500H)</span></h3>
             <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
@@ -98,7 +101,7 @@
           </div>
         </article>
 
-        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all bg-white/60 dark:bg-gray-950/40">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40">
           <div class="flex items-baseline justify-between">
             <h3 class="text-lg font-semibold">Measure Theory <span class="text-gray-500">(MATH 8100)</span></h3>
             <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
@@ -109,14 +112,8 @@
         </article>
       </div>
     </section>
-
-
   </main>
-
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
-    © <span id="year"></span> Andrew Lott
-  </footer>
-
+  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">© <span id="year"></span> Andrew Lott</footer>
   <script src="scripts/theme.js"></script>
   <script src="scripts/nav.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
