@@ -8,71 +8,70 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class'};</script>
   <link rel="stylesheet" href="styles/site.css" />
+  <meta name="description" content="Andrew Lott — PhD student at UGA. Research in number theory, additive combinatorics, harmonic analysis."/>
 </head>
-<body class="bg-gradient-to-b from-white to-slate-50 text-gray-900 dark:from-gray-900 dark:to-gray-950 dark:text-gray-100 antialiased">
+<body class="bg-gradient-to-b from-white to-slate-50 text-gray-900 dark:from-gray-900 dark:to-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
   <div id="site-nav"></div>
 
   <main class="max-w-screen-lg mx-auto px-4 pb-24">
-    <section class="pt-10 md:pt-16 text-center">
-      <div class="mx-auto mb-8 md:mb-10">
-        <div
-          class="h-36 w-36 md:h-44 md:w-44 rounded-2xl bg-cover bg-center shadow-2xl ring-1 ring-black/10 dark:ring-white/10 mx-auto"
-          style="background-image:url('images/profile-photo.png');">
+    <!-- Hero -->
+    <section class="pt-10 md:pt-16">
+      <div class="grid grid-cols-1 md:grid-cols-[auto,1fr] items-center gap-6 md:gap-10">
+        <!-- Avatar -->
+        <div class="mx-auto md:mx-0">
+          <div class="h-36 w-36 md:h-44 md:w-44 rounded-2xl bg-cover bg-center shadow-2xl ring-1 ring-black/10 dark:ring-white/10" style="background-image:url('images/profile-photo.png');"></div>
         </div>
-      </div>
+        <!-- Intro -->
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Andrew Lott</h1>
+          <p class="mt-2 text-base md:text-lg text-gray-700 dark:text-gray-300">PhD student, University of Georgia <span class="text-gray-500">(Boyd 434J)</span></p>
+          <p class="mt-1"><a class="underline decoration-2 underline-offset-4 text-blue-600 dark:text-blue-400 hover:opacity-90" href="mailto:andrew.lott@uga.edu">andrew.lott@uga.edu</a></p>
 
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Andrew Lott</h1>
-      <p class="mt-3 text-base md:text-lg text-gray-700 dark:text-gray-300">PhD student, University of Georgia (Boyd 434J)</p>
-      <p class="mt-1">
-        <a class="underline decoration-2 underline-offset-4 text-blue-600 dark:text-blue-400 hover:opacity-90"
-           href="mailto:andrew.lott@uga.edu">andrew.lott@uga.edu</a>
-      </p>
+          <!-- Meta chips -->
+          <div class="mt-4 flex flex-wrap gap-2 text-sm">
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-950/40 px-2.5 py-1 text-gray-700 dark:text-gray-300">Number Theory</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-950/40 px-2.5 py-1 text-gray-700 dark:text-gray-300">Additive Combinatorics</span>
+            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-950/40 px-2.5 py-1 text-gray-700 dark:text-gray-300">Harmonic Analysis</span>
+          </div>
 
-      <div class="mt-8 md:mt-10 flex flex-wrap gap-3 md:gap-4 justify-center">
-        <a href="preprints.html"
-           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-          Projects
-        </a>
-
-
-        <a href="mentorship.html"
-           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-          Mentorship and Outreach
-        </a>
-        <a href="teaching.html"
-           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-          Teaching
-        </a>
-        <a href="talks.html"
-           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-          Talks
-        </a>
-        <a href="undergradpublications.html"
-           class="px-4 py-2 md:px-5 md:py-2.5 rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-          Undergraduate Projects
-        </a>
-      </div>
-    </section>
-
-    <section class="mt-12 md:mt-14">
-      <div class="mx-auto max-w-3xl rounded-2xl bg-white/60 dark:bg-white/5 backdrop-blur-sm ring-1 ring-gray-200/70 dark:ring-white/10 p-6 md:p-8">
-        <ul class="list-disc list-inside space-y-3 text-base md:text-lg text-gray-800 dark:text-gray-200">
-          <li>
-            My research sits at the intersection of number theory, harmonic analysis, and combinatorics—especially
-            density Ramsey theory questions concerning prime numbers.
-          </li>
-          <li>
-            My advisors are
+          <!-- Advisors -->
+          <p class="mt-3 text-sm md:text-base text-gray-700 dark:text-gray-300">Advised by
             <a href="https://math.uga.edu/directory/people/akos-magyar" target="_blank" rel="noopener" class="underline">Ákos Magyar</a>
             and
             <a href="https://www.math.uga.edu/directory/people/giorgis-petridis" target="_blank" rel="noopener" class="underline">Giorgis Petridis</a>.
-          </li>
-          <li>
-            In Spring 2026, I will be a visiting researcher at the Alfréd Rényi Institute of Mathematics in Budapest. 
-          </li>
-        </ul>
+          </p>
+
+          <!-- News line (optional) -->
+          <p class="mt-2 text-sm md:text-base text-gray-700 dark:text-gray-300">In Spring 2026 I’ll be a visiting researcher at the Alfréd Rényi Institute of Mathematics (Budapest).</p>
+        </div>
+      </div>
+
+      <!-- Primary nav tiles -->
+      <div class="mt-6 flex flex-wrap gap-2 md:gap-3">
+        <a href="preprints.html" class="inline-flex items-center gap-2 rounded-xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 px-3 py-2 text-sm bg-white/70 dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <span>Projects / Preprints</span>
+          <span aria-hidden="true" class="text-gray-400">→</span>
+        </a>
+        <a href="undergradpublications.html" class="inline-flex items-center gap-2 rounded-xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 px-3 py-2 text-sm bg-white/70 dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <span>Undergraduate Publications</span>
+          <span aria-hidden="true" class="text-gray-400">→</span>
+        </a>
+        <a href="talks.html" class="inline-flex items-center gap-2 rounded-xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 px-3 py-2 text-sm bg-white/70 dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <span>Talks</span>
+          <span aria-hidden="true" class="text-gray-400">→</span>
+        </a>
+        <a href="teaching.html" class="inline-flex items-center gap-2 rounded-xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 px-3 py-2 text-sm bg-white/70 dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <span>Teaching</span>
+          <span aria-hidden="true" class="text-gray-400">→</span>
+        </a>
+        <a href="mentorship.html" class="inline-flex items-center gap-2 rounded-xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 px-3 py-2 text-sm bg-white/70 dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <span>Mentorship</span>
+          <span aria-hidden="true" class="text-gray-400">→</span>
+        </a>
       </div>
     </section>
+
+    
   </main>
 
   <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-10 text-sm text-gray-500 dark:text-gray-400">
@@ -81,9 +80,12 @@
 
   <script src="scripts/theme.js"></script>
   <script src="scripts/nav.js"></script>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
+
 
 
 
