@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects • Andrew Lott</title>
+  <title>Research & Projects • Andrew Lott</title>
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
   <link rel="stylesheet" href="styles/site.css" />
-  <meta name="description" content="Preprints by Andrew Lott – additive combinatorics, number theory."/>
+  <meta name="description" content="Research, preprints, and earlier projects by Andrew Lott — additive combinatorics and number theory."/>
   <!-- MathJax -->
-  <script>window.MathJax={tex:{inlineMath:[["$","$"]]},svg:{fontCache:'global'}};</script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [["$","$"],["\\(","\\)"]] }, svg: { fontCache:'global' } };
+  </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <style>
+    /* Unify abstract/MathJax behavior across both sections */
     .abstract { line-height: 1.65; }
     .abstract * { white-space: normal !important; }
     .abstract br { display: none !important; }
     .abstract mjx-container { display: inline !important; vertical-align: baseline !important; }
-    .abstract mjx-container[display="true"] { display: inline !important; }
+    .abstract mjx-container[display="true"], .abstract mjx-container[display="false"] { display: inline !important; }
     .abstract mjx-container > svg { display: inline !important; }
-  </style>
-  <style>
-    /* Force inline math & prevent weird line wrapping in ChatGPT preview */
-    #preprints details > div { white-space: normal !important; line-height: 1.65; }
-    #preprints details > div br { display:none !important; }
-    #preprints mjx-container[display="true"],
-    #preprints mjx-container[display="false"] { display:inline !important; vertical-align: baseline !important; }
-  </style>
-  <style>
-    .abstract br{display:none!important}
-    .abstract mjx-container[display="true"], .abstract mjx-container[display="false"] {display:inline!important;vertical-align:baseline!important}
+    /* Ensure details content doesn't overflow in either section */
+    #grad-list details > div, #ug-list details > div { white-space: normal !important; line-height: 1.65; }
+    #grad-list details > div br, #ug-list details > div br { display: none !important; }
+    #grad-list mjx-container[display="true"], #grad-list mjx-container[display="false"],
+    #ug-list   mjx-container[display="true"], #ug-list   mjx-container[display="false"] {
+      display:inline !important; vertical-align: baseline !important;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
@@ -40,92 +37,335 @@
   <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
     <!-- Local Nav -->
     <nav class="mt-4 mb-2">
-      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900"><span aria-hidden="true">←</span> Back to main page</a>
+      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">
+        <span aria-hidden="true">←</span> Back to main page
+      </a>
     </nav>
+
     <!-- Page Header -->
     <header class="relative mt-8 sm:mt-10">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Projects</h1>
-          <p class="mt-2 text-base sm:text-lg text-gray-600 dark:text-gray-300"></p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Research & Projects</h1>
+          <p class="mt-3 text-base sm:text-lg text-gray-700 dark:text-gray-300">
+            I study additive combinatorics and analytic number theory, and I am especially interested in problems concerning prime numbers.
+            From Jan–Jun 2026 I’ll be at the Rényi Institute in Budapest, where I will continue to work on related problems. 
+          </p>
+          <p class="mt-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
+            <strong>Undergraduate research </strong>
+            Working with <strong>Prof. Alex Rice</strong> at <strong>Millsaps College</strong> shaped my early interest in number theory and combinatorics. 
+            I was a <strong>student</strong> in the Millsaps research programs in <strong>2021</strong> and <strong>2022</strong>, and returned as a <strong>TA</strong> in the summers of <strong>2023</strong> and <strong>2024</strong>.
+            Two of the undergraduate projects below were written with students I mentored/TA’d.
+          </p>
         </div>
-        <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
-          <span id="preprint-count" class="font-semibold">2</span>&nbsp;items
-        </span>
       </div>
 
-      <!-- Quick actions -->
+      <!-- Global quick actions -->
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <div class="relative flex-1">
-          <label for="filter-input" class="sr-only">Search projects</label>
-          <input id="filter-input" type="text" placeholder="Search by title, coauthor, or year…"
+          <label for="global-filter" class="sr-only">Search projects</label>
+          <input id="global-filter" type="text" placeholder="Search all items by title, coauthor, or year…"
                  class="w-full rounded-xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 backdrop-blur px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
           <div class="pointer-events-none absolute right-3 top-2.5 text-gray-400">⌘K</div>
         </div>
         <div class="flex items-center gap-2">
-          <button id="sort-btn" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Sort by year ↓</button>
-          <button id="expand-btn" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Expand all</button>
+          <button id="expand-all" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Expand all</button>
         </div>
       </div>
     </header>
 
-    <!-- List -->
-    <section id="preprints" class="mt-8 space-y-4">
-      <!-- Item: 2504.14424 -->
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-authors="Magyar Petridis Pintz" data-title="Polynomial configurations in dense subsets of the prime lattice">
-        <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
-            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2504.14424">
-              Polynomial configurations in dense subsets of the prime lattice
-            </a>
-          </h2>
-          <div class="flex items-center gap-2">
-            <span class="inline-flex items-center rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-200 px-2.5 py-1 text-xs font-medium">submitted</span>
-            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
-          </div>
+    <!-- CURRENT RESEARCH (Graduate / Active) -->
+    <section class="mt-10">
+      <div class="flex items-center justify-between gap-3">
+        <h2 class="text-2xl font-semibold">Current Research (Graduate / Active)</h2>
+        <div class="flex items-center gap-2">
+          <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
+            <span id="grad-count" class="font-semibold">2</span>&nbsp;items
+          </span>
+          <button id="grad-sort" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Sort by year ↓</button>
         </div>
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with Á. Magyar, G. Petridis, J. Pintz</p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          <a href="https://arxiv.org/abs/2504.14424" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex="@article{LottMagyarPetridisPintz2025,\n  author = {Andrew Lott and {\'A}kos Magyar and Giorgis Petridis and J{\'a}nos Pintz},\n  title = {Polynomial configurations in dense subsets of the prime lattice},\n  journal = {arXiv preprint arXiv:2504.14424},\n  year = {2025}\n}">Copy BibTeX</button>
-        </div>
-        <details class="mt-3">
-          <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-          <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed"><p>We provide a multidimensional extension of previous results on the existence of polynomial progressions in dense subsets of the primes. Let $A$ be a subset of the prime lattice $\mathbb{P}^d$ of positive relative upper density. We show that $A$ contains all polynomial configurations of the form $x + P_0(y)v_0, \ldots, x + P_\ell(y)v_\ell$, for some $x \in \mathbb{Z}^d$ and $y \in \mathbb{N}$, which satisfy a certain non-degeneracy condition. We also obtain quantitative bounds on the size of such polynomial configuration, if $A$ is a subset of the first $N$ positive integers.</p></div>
-        </details>
-      </article>
+      </div>
 
-      <!-- Item: 2505.17375 -->
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-authors="Ponagandla" data-title="Polynomial progressions in the generalized twin primes">
-        <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
-            <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2505.17375">
-              Polynomial progressions in the generalized twin primes
-            </a>
-          </h2>
-          <div class="flex items-center gap-2">
-            <span class="inline-flex items-center rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-200 px-2.5 py-1 text-xs font-medium">submitted</span>
-            <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+      <div id="grad-list" class="mt-6 space-y-4">
+        <!-- 2504.14424 -->
+        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+                 data-year="2025" data-authors="Magyar Petridis Pintz Lott" data-title="Polynomial configurations in dense subsets of the prime lattice">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2504.14424">
+                Polynomial configurations in dense subsets of the prime lattice
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-200 px-2.5 py-1 text-xs font-medium">submitted</span>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+            </div>
           </div>
-        </div>
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with N. R. Ponagandla</p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          <a href="https://arxiv.org/abs/2505.17375" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-          <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex="@article{LottPonagandla2025,\n  author = {Andrew Lott and N. R. Ponagandla},\n  title = {Polynomial progressions in the generalized twin primes},\n  journal = {arXiv preprint arXiv:2505.17375},\n  year = {2025}\n}">Copy BibTeX</button>
-        </div>
-        <details class="mt-3">
-          <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-          <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed"><p>By Maynard's theorem and the subsequent improvements by the Polymath Project, there exists a positive integer $b \le 246$ such that there are infinitely many primes $p$ such that $p + b$ is also prime. Let $P_1, \ldots, P_t \in \mathbb{Z}[y]$ with $P_1(0) = \cdots = P_t(0) = 0$. We use the transference argument of Tao and Ziegler to prove there exist positive integers $x$, $y$, and $b \le 246$ such that $x + P_1(y)$, $x + P_2(y)$, $\ldots$, $x + P_t(y)$ and $(x + P_1(y)) + b$, $\ldots$, $(x + P_t(y)) + b$ are all prime. Our work is inspired by Pintz, who proved a similar result for the special case of arithmetic progressions.</p></div>
-        </details>
-      </article>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with Á. Magyar, G. Petridis, J. Pintz</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2504.14424" target="_blank" rel="noopener"
+               class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+              data-bibtex="@article{LottMagyarPetridisPintz2025,\n  author = {Andrew Lott and {\'A}kos Magyar and Giorgis Petridis and J{\'a}nos Pintz},\n  title = {Polynomial configurations in dense subsets of the prime lattice},\n  journal = {arXiv preprint arXiv:2504.14424},\n  year = {2025}\n}">Copy BibTeX</button>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p>We provide a multidimensional extension of previous results on the existence of polynomial progressions in dense subsets of the primes. Let $A\subset \mathbb{P}^d$ have positive relative upper density. Then $A$ contains polynomial configurations $x+P_i(y)v_i$ (for $i=0,\dots,\ell$) under a nondegeneracy condition. Quantitative bounds follow via a transference argument using box norms and a refined polynomial forms condition under PET.</p>
+            </div>
+          </details>
+        </article>
+
+        <!-- 2505.17375 -->
+        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+                 data-year="2025" data-authors="Ponagandla Lott" data-title="Polynomial progressions in the generalized twin primes">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2505.17375">
+                Polynomial progressions in the generalized twin primes
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-200 px-2.5 py-1 text-xs font-medium">submitted</span>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+            </div>
+          </div>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with N. R. Ponagandla</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2505.17375" target="_blank" rel="noopener"
+               class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+              data-bibtex="@article{LottPonagandla2025,\n  author = {Andrew Lott and N. R. Ponagandla},\n  title = {Polynomial progressions in the generalized twin primes},\n  journal = {arXiv preprint arXiv:2505.17375},\n  year = {2025}\n}">Copy BibTeX</button>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p>Using Maynard–Polymath bounded gaps and Tao–Ziegler transference, we show there exist $x,y$ and $b\le 246$ such that $x+P_i(y)$ and $(x+P_i(y))+b$ are simultaneously prime for $P_1,\ldots,P_t\in \mathbb{Z}[y]$ with $P_i(0)=0$, extending Pintz’s AP case to polynomial constellations.</p>
+            </div>
+          </details>
+        </article>
+      </div>
     </section>
 
-    <!-- Empty state (hidden by default) -->
-    <div id="empty-state" class="hidden mt-16 flex flex-col items-center text-center">
+    <!-- EARLIER PROJECTS (Undergraduate with Alex Rice at Millsaps) -->
+    <section class="mt-14">
+      <div class="flex items-center justify-between gap-3">
+        <h2 class="text-2xl font-semibold">Earlier Projects (Undergraduate Research with Alex Rice at Millsaps College)</h2>
+        <div class="flex items-center gap-2">
+          <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
+            <span id="ug-count" class="font-semibold">4</span>&nbsp;items
+          </span>
+          <button id="ug-sort" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Sort by year ↓</button>
+        </div>
+      </div>
+
+      <div id="ug-list" class="mt-6 space-y-4">
+        <!-- 2508.03650 (TA) -->
+        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+                 data-year="2025" data-authors="Dean Havard Hawkins Heard Rice Lott" data-title="Notes and computations on forbidden differences">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2508.03650">
+                Notes and computations on forbidden differences
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-200 px-2.5 py-1 text-xs font-medium">submitted</span>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
+            <span class="inline-flex items-center gap-1 rounded-full bg-violet-200/40 text-violet-600 dark:bg-violet-800/30 dark:text-violet-300 ring-1 ring-violet-200/60 dark:ring-violet-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Teaching Assistant">TA</span>
+            <span>with C. Dean, H. Havard, E. Hawkins, P. Heard, A. Rice</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p><strong>Abstract.</strong> We study the extremal function $D(X,N)$ for “forbidden differences” sets $X$, including intersective cases such as squares and $\mathcal{P}-1$. We give formulas/estimates in several structured families and include computations illuminating possible behaviors.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2508.03650" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@misc{DeanHavardHawkinsHeardLottRice2025,
+  author       = {Christian Dean and Haley Havard and Elizabeth Hawkins and Patch Heard and Andrew Lott and Alex Rice},
+  title        = {Notes and computations on forbidden differences},
+  eprint       = {2508.03650},
+  archivePrefix= {arXiv},
+  primaryClass = {math.NT},
+  year         = {2025}
+}'>Copy BibTeX</button>
+          </div>
+        </article>
+
+        <!-- 2307.06874 (TA/Involve) -->
+        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+                 data-year="2025" data-authors="Clevenger Havard Heard Lott Rice Wilson" data-title="The sum-product problem for small sets">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2307.06874">
+                The sum-product problem for small sets
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</span>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
+            <span class="inline-flex items-center gap-1 rounded-full bg-violet-200/40 text-violet-600 dark:bg-violet-800/30 dark:text-violet-300 ring-1 ring-violet-200/60 dark:ring-violet-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Teaching Assistant">TA</span>
+            <span>with G. R. Clevenger, H. Havard, P. Heard, A. Rice, B. Wilson</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p><strong>Abstract.</strong> We determine $\mathrm{SP}(k)$ for $2\le k\le 9$, with proofs via Freiman-type results and a case analysis for product sets of near-APs; for $k=8,9$ we analyze the sumset of two geometric progressions with common ratio $r>1$.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2307.06874" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{ClevengerEtAl2025Involve,
+  author  = {Ginny Ray Clevenger and Haley Havard and Patch Heard and Andrew Lott and Alex Rice and Brittany Wilson},
+  title   = {The sum-product problem for small sets},
+  journal = {Involve, a Journal of Mathematics},
+  volume  = {18},
+  number  = {1},
+  pages   = {165--180},
+  year    = {2025},
+  doi     = {10.2140/involve.2025.18.165}
+}'>Copy BibTeX</button>
+          </div>
+        </article>
+
+        <!-- 2108.08410 (Student/Involve) --><article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2108.08410">
+                The pigeonhole principle and multicolor Ramsey numbers
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</span>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
+            <span class="inline-flex items-center gap-1 rounded-full bg-amber-200/40 text-amber-600 dark:bg-amber-800/30 dark:text-amber-300 ring-1 ring-amber-200/60 dark:ring-amber-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Student">Student</span>
+            <span>with V. Balaji, P. Lamb, D. Patel, A. Rice, S. Singh, C. R. Ward</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p><strong>Abstract.</strong> For integers $k,r\ge 2$, the diagonal Ramsey number $R_r(k)$ is the minimum $N\in\mathbb{N}$ such that every $r$-coloring of the edges of a complete graph on $N$ vertices yields a monochromatic subgraph on $k$ vertices. Here we make a careful effort to extract explicit upper bounds for $R_r(k)$ from the pigeonhole principle alone. Our main term improves on previously documented explicit bounds for $r\ge3$, and we also consider an often-ignored secondary term, which allows us to subtract a uniformly bounded-below positive proportion of the main term. Asymptotically, we give a self-contained proof that $$R_r(k)\le \Big(\tfrac{3+e}{2}\Big)\,\frac{(r(k-2))!}{((k-2)!)^r}\,(1+o_{r\to\infty}(1)),$$ and we note our methods combine with previous estimates on $R_r(3)$ to improve the constant $\tfrac{3+e}{2}$ to $\tfrac{3+e}{2}-\tfrac{d}{48}$, where $d=66-R_4(3)\ge 4$. We also compare our formulas, and previously documented formulas, to numerical data.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2108.08410" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{BalajiLambLottPatelRiceSinghWard2022,
+  author  = {Vishal Balaji and Powers Lamb and Andrew Lott and Dhruv Patel and Alex Rice and Sakshi Singh and Christine Rose Ward},
+  title   = {The pigeonhole principle and multicolor Ramsey numbers},
+  journal = {Involve, a Journal of Mathematics},
+  volume  = {15},
+  number  = {5},
+  pages   = {857--884},
+  year    = {2022},
+  doi     = {10.2140/involve.2022.15.857}
+}'>Copy BibTeX</button>
+          </div>
+        </article>
+
+<!-- 2208.09720 (Student/Integers Proc.) -->
+        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+                 data-year="2024" data-authors="Agrawal Bhatia Gupta Lamb Lott Rice Ward" data-title="Computations and observations on congruence covering systems">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2208.09720">
+                Computations and observations on congruence covering systems
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS (Proc.)</span>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2024</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
+            <span class="inline-flex items-center gap-1 rounded-full bg-amber-200/40 text-amber-600 dark:bg-amber-800/30 dark:text-amber-300 ring-1 ring-amber-200/60 dark:ring-amber-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Student">Student</span>
+            <span>with R. Agrawal, P. Bhatia, K. Gupta, P. Lamb, A. Rice, C. R. Ward</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p><strong>Abstract.</strong> We classify distinct covering systems with at most ten moduli (up to natural equivalences) and determine the minimum cardinality with all moduli &gt; 2, showing it is 11, with computational evidence and comparisons to prior formulas.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2208.09720" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@inproceedings{AgrawalBhatiaGuptaLambLottRiceWard2024,
+  author    = {Raj Agrawal and Prarthana Bhatia and Kratik Gupta and Powers Lamb and Andrew Lott and Alex Rice and Christine Rose Ward},
+  title     = {Computations and Observations on Congruence Covering Systems},
+  booktitle = {Combinatorial Number Theory: Proceedings of the Integers Conference 2023},
+  series    = {INTEGERS: Electronic Journal of Combinatorial Number Theory},
+  volume    = {24A},
+  pages     = {A1},
+  year      = {2024},
+  url       = {https://math.colgate.edu/~integers/a1Proc23/a1Proc23.pdf},
+  eprint    = {2208.09720},
+  archivePrefix = {arXiv}
+}'>Copy BibTeX</button>
+          </div>
+        </article>
+
+        <!-- 2112.03127 (Student/INTEGERS) -->
+        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+                 data-year="2022" data-authors="Balaji Lott Rice" data-title="Schur’s theorem in integer lattices">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2112.03127">
+                Schur’s theorem in integer lattices
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS</span>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
+            <span class="inline-flex items-center gap-1 rounded-full bg-amber-200/40 text-amber-600 dark:bg-amber-800/30 dark:text-amber-300 ring-1 ring-amber-200/60 dark:ring-amber-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Student">Student</span>
+            <span>with V. Balaji, A. Rice</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p><strong>Abstract.</strong> We extend Schur-type monochromatic equations $x_1+\cdots+x_{k-1}=x_k$ to integer lattices: if $k\ge d+1$, any $r$-coloring of $\{1,\dots,R_r(k)^d-1\}^d$ yields a monochromatic solution with $\{x_1,\dots,x_d\}$ linearly independent; we also give computations for small $(d,k,r)$.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2112.03127" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{BalajiLottRice2022,
+  author  = {Vishal Balaji and Andrew Lott and Alex Rice},
+  title   = {Schur\'s theorem in integer lattices},
+  journal = {INTEGERS},
+  volume  = {22},
+  pages   = {A62},
+  year    = {2022}
+}'>Copy BibTeX</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Empty state (global) -->
+    <div id="global-empty" class="hidden mt-16 flex flex-col items-center text-center">
       <div class="rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 p-10">
         <div class="text-3xl">🗂️</div>
       </div>
-      <p class="mt-4 text-gray-600 dark:text-gray-300">No preprints match your filter.</p>
+      <p class="mt-4 text-gray-600 dark:text-gray-300">No items match your filter.</p>
     </div>
   </main>
 
@@ -139,57 +379,81 @@
     // Year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Client-side filtering & sorting
-    const input = document.getElementById('filter-input');
-    const sortBtn = document.getElementById('sort-btn');
-    const expandBtn = document.getElementById('expand-btn');
-    const list = document.getElementById('preprints');
-    const cards = Array.from(list.querySelectorAll('article'));
-    const empty = document.getElementById('empty-state');
-    const count = document.getElementById('preprint-count');
+    // Elements
+    const globalFilter = document.getElementById('global-filter');
+    const globalEmpty  = document.getElementById('global-empty');
+    const expandAllBtn = document.getElementById('expand-all');
 
-    let sortDesc = true; // year desc by default
+    // Grad section
+    const gradList  = document.getElementById('grad-list');
+    const gradCards = Array.from(gradList.querySelectorAll('article'));
+    const gradCount = document.getElementById('grad-count');
+    const gradSort  = document.getElementById('grad-sort');
+    let gradDesc = true;
 
-    function applyFilter() {
-      const q = input.value.trim().toLowerCase();
-      let visible = 0;
-      cards.forEach(card => {
-        const title = (card.dataset.title || '').toLowerCase();
-        const authors = (card.dataset.authors || '').toLowerCase();
-        const year = (card.dataset.year || '').toString();
+    // UG section
+    const ugList  = document.getElementById('ug-list');
+    const ugCards = Array.from(ugList.querySelectorAll('article'));
+    const ugCount = document.getElementById('ug-count');
+    const ugSort  = document.getElementById('ug-sort');
+    let ugDesc = true;
+
+    function applyGlobalFilter(){
+      const q = (globalFilter.value || '').trim().toLowerCase();
+      let visibleGrad = 0, visibleUG = 0;
+
+      gradCards.forEach(card => {
+        const title = (card.dataset.title||'').toLowerCase();
+        const authors = (card.dataset.authors||'').toLowerCase();
+        const year = (card.dataset.year||'').toString();
         const hit = !q || title.includes(q) || authors.includes(q) || year.includes(q);
         card.classList.toggle('hidden', !hit);
-        if (hit) visible++;
+        if(hit) visibleGrad++;
       });
-      empty.classList.toggle('hidden', visible !== 0);
-      count.textContent = visible;
+
+      ugCards.forEach(card => {
+        const title = (card.dataset.title||'').toLowerCase();
+        const authors = (card.dataset.authors||'').toLowerCase();
+        const year = (card.dataset.year||'').toString();
+        const hit = !q || title.includes(q) || authors.includes(q) || year.includes(q);
+        card.classList.toggle('hidden', !hit);
+        if(hit) visibleUG++;
+      });
+
+      gradCount.textContent = visibleGrad;
+      ugCount.textContent = visibleUG;
+      globalEmpty.classList.toggle('hidden', (visibleGrad + visibleUG) !== 0);
     }
 
-    input.addEventListener('input', applyFilter);
-
-    // Cmd/Ctrl+K focus
+    // Focus shortcut
     window.addEventListener('keydown', e => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault(); input.focus();
-      }
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase()==='k') { e.preventDefault(); globalFilter.focus(); }
     });
 
-    // Sorting by year
-    sortBtn.addEventListener('click', () => {
-      sortDesc = !sortDesc;
-      const sorted = cards.slice().sort((a, b) => {
-        const ya = +a.dataset.year; const yb = +b.dataset.year;
-        return sortDesc ? yb - ya : ya - yb;
-      });
-      sorted.forEach(el => list.appendChild(el));
-      sortBtn.textContent = `Sort by year ${sortDesc ? '↓' : '↑'}`;
+    // Sorters
+    function sortByYear(listEl, cardsArr, desc){
+      const sorted = cardsArr.slice().sort((a,b)=> (desc? +b.dataset.year - +a.dataset.year : +a.dataset.year - +b.dataset.year));
+      sorted.forEach(el=> listEl.appendChild(el));
+    }
+
+    gradSort.addEventListener('click', () => {
+      gradDesc = !gradDesc;
+      sortByYear(gradList, gradCards, gradDesc);
+      gradSort.textContent = `Sort by year ${gradDesc ? '↓' : '↑'}`;
     });
 
-    // Expand/collapse all details
-    expandBtn.addEventListener('click', () => {
-      const openAny = Array.from(document.querySelectorAll('#preprints details')).some(d => !d.open);
-      document.querySelectorAll('#preprints details').forEach(d => d.open = openAny);
-      expandBtn.textContent = openAny ? 'Collapse all' : 'Expand all';
+    ugSort.addEventListener('click', () => {
+      ugDesc = !ugDesc;
+      sortByYear(ugList, ugCards, ugDesc);
+      ugSort.textContent = `Sort by year ${ugDesc ? '↓' : '↑'}`;
+    });
+
+    // Expand/collapse all details across both sections
+    expandAllBtn.addEventListener('click', () => {
+      const details = Array.from(document.querySelectorAll('details'));
+      const openAny = details.some(d => !d.open);
+      details.forEach(d => d.open = openAny);
+      expandAllBtn.textContent = openAny ? 'Collapse all' : 'Expand all';
     });
 
     // Copy BibTeX
@@ -202,16 +466,18 @@
           btn.textContent = 'Copied!';
           btn.classList.add('ring-2','ring-green-500');
           setTimeout(() => { btn.textContent = original; btn.classList.remove('ring-2','ring-green-500'); }, 1100);
-        } catch (e) {
-          alert('Copy failed.');
-        }
+        } catch(e){ alert('Copy failed.'); }
       });
     });
 
-    // Initial filter to set counts correctly
-    applyFilter();
+    // Initial render
+    sortByYear(gradList, gradCards, true);
+    sortByYear(ugList, ugCards, true);
+    applyGlobalFilter();
+    globalFilter.addEventListener('input', applyGlobalFilter);
   </script>
 </body>
 </html>
+
 
 
