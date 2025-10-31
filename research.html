@@ -7,7 +7,7 @@
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
-  <link rel="stylesheet" href="styles/site.css" />
+  <!-- Removed local stylesheet for previewability -->
   <meta name="description" content="Research, preprints, and earlier projects by Andrew Lott — additive combinatorics and number theory."/>
   <!-- MathJax -->
   <script>
@@ -37,7 +37,7 @@
   <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
     <!-- Local Nav -->
     <nav class="mt-4 mb-2">
-      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">
+      <a href="#" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">
         <span aria-hidden="true">←</span> Back to main page
       </a>
     </nav>
@@ -186,14 +186,12 @@
               <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
             </div>
           </div>
-          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
-            <span class="inline-flex items-center gap-1 rounded-full bg-violet-200/40 text-violet-600 dark:bg-violet-800/30 dark:text-violet-300 ring-1 ring-violet-200/60 dark:ring-violet-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Teaching Assistant">TA</span>
-            <span>with C. Dean, H. Havard, E. Hawkins, P. Heard, A. Rice</span>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with C. Dean, H. Havard, E. Hawkins, P. Heard, A. Rice</span>
           </div>
           <details class="mt-3">
             <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
             <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-              <p><strong>Abstract.</strong> We explore from several perspectives the following question: given $X\subseteq \mathbb{Z}$ and $N\in \mathbb{N}$, what is the maximum size $D(X,N)$ of $A\subseteq \{1,2,\dots,N\}$ before $A$ is forced to contain two distinct elements that differ by an element of $X$? The set of forbidden differences, $X$, is called \textit{intersective} if $D(X,N)=o(N)$, with the most well-studied examples being $X=S=\{n^2: n\in \mathbb{N}\}$ and $X=\mathcal{P}-1=\{p-1: p\text{ prime}\}$. We study $D(X,N)$ and the structure of extremal sets when $X$ is a finite set, a union of arithmetic progressions, or a translate of a multiplicative set, and give formulas and estimates in a number of cases. We also describe several computational explorations that illuminate the range of possible behaviors.</p>
+              <p><strong>Abstract.</strong> We explore from several perspectives the following question: given $X\subseteq \mathbb{Z}$ and $N\in \mathbb{N}$, what is the maximum size $D(X,N)$ of $A\subseteq \{1,2,\dots,N\}$ before $A$ is forced to contain two distinct elements that differ by an element of $X$? The set of forbidden differences, $X$, is called <em>intersective</em> if $D(X,N)=o(N)$, with the most well-studied examples being $X=S=\{n^2: n\in \mathbb{N}\}$ and $X=\mathcal{P}-1=\{p-1: p\text{ prime}\}$. We study $D(X,N)$ and the structure of extremal sets when $X$ is a finite set, a union of arithmetic progressions, or a translate of a multiplicative set, and give formulas and estimates in a number of cases. We also describe several computational explorations that illuminate the range of possible behaviors.</p>
             </div>
           </details>
           <div class="mt-3 flex flex-wrap gap-2">
@@ -220,13 +218,11 @@
               </a>
             </h3>
             <div class="flex items-center gap-2">
-              <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</span>
+              <a href="https://msp.org/involve/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</a>
               <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
             </div>
           </div>
-          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
-            <span class="inline-flex items-center gap-1 rounded-full bg-violet-200/40 text-violet-600 dark:bg-violet-800/30 dark:text-violet-300 ring-1 ring-violet-200/60 dark:ring-violet-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Teaching Assistant">TA</span>
-            <span>with G. R. Clevenger, H. Havard, P. Heard, A. Rice, B. Wilson</span>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with G. R. Clevenger, H. Havard, P. Heard, A. Rice, B. Wilson</span>
           </div>
           <details class="mt-3">
             <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
@@ -249,7 +245,8 @@
           </div>
         </article>
 
-        <!-- 2108.08410 (Student/Involve) --><article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
+        <!-- 2108.08410 (Student/Involve) -->
+        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h3 class="text-lg sm:text-xl font-semibold leading-snug">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
@@ -258,13 +255,11 @@
               </a>
             </h3>
             <div class="flex items-center gap-2">
-              <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</span>
+              <a href="https://msp.org/involve/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</a>
               <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
             </div>
           </div>
-          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
-            <span class="inline-flex items-center gap-1 rounded-full bg-amber-200/40 text-amber-600 dark:bg-amber-800/30 dark:text-amber-300 ring-1 ring-amber-200/60 dark:ring-amber-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Student">Student</span>
-            <span>with V. Balaji, P. Lamb, D. Patel, A. Rice, S. Singh, C. R. Ward</span>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with V. Balaji, P. Lamb, D. Patel, A. Rice, S. Singh, C. R. Ward</span>
           </div>
           <details class="mt-3">
             <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
@@ -298,13 +293,11 @@
               </a>
             </h3>
             <div class="flex items-center gap-2">
-              <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS (Proc.)</span>
+              <a href="https://math.colgate.edu/~integers/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS (Proc.)</a>
               <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2024</span>
             </div>
           </div>
-          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
-            <span class="inline-flex items-center gap-1 rounded-full bg-amber-200/40 text-amber-600 dark:bg-amber-800/30 dark:text-amber-300 ring-1 ring-amber-200/60 dark:ring-amber-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Student">Student</span>
-            <span>with R. Agrawal, P. Bhatia, K. Gupta, P. Lamb, A. Rice, C. R. Ward</span>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with R. Agrawal, P. Bhatia, K. Gupta, P. Lamb, A. Rice, C. R. Ward</span>
           </div>
           <details class="mt-3">
             <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
@@ -340,13 +333,11 @@
               </a>
             </h3>
             <div class="flex items-center gap-2">
-              <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS</span>
+              <a href="https://math.colgate.edu/~integers/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS</a>
               <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
             </div>
           </div>
-          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300">
-            <span class="inline-flex items-center gap-1 rounded-full bg-amber-200/40 text-amber-600 dark:bg-amber-800/30 dark:text-amber-300 ring-1 ring-amber-200/60 dark:ring-amber-700 px-2 py-0.5 text-xs font-medium" title="Undergraduate Student">Student</span>
-            <span>with V. Balaji, A. Rice</span>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with V. Balaji, A. Rice</span>
           </div>
           <details class="mt-3">
             <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
@@ -382,8 +373,7 @@
     © <span id="year"></span> Andrew Lott
   </footer>
 
-  <script src="scripts/theme.js"></script>
-  <script src="scripts/nav.js"></script>
+  <!-- Removed local script files; added inline stubs for previewability -->
   <script>
     // Year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -487,6 +477,4 @@
   </script>
 </body>
 </html>
-
-
 
