@@ -8,36 +8,28 @@
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class'};</script>
-  <link rel="stylesheet" href="styles/site.css" />
-  <!-- MathJax so titles can include LaTeX -->
+  <style>
+    mjx-container[jax="SVG"][display="false"] { display:inline; }
+    .card-link { text-decoration:none; color:inherit; display:block; }
+    .card-link:focus-visible { outline:2px solid rgb(59 130 246); outline-offset:4px; border-radius:1rem; }
+  </style>
   <script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]]},svg:{fontCache:'global'}};</script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-  <style>
-    /* Smooth card polish + keep inline math inline */
-    mjx-container[jax="SVG"][display="false"] { display:inline; }
-  </style>
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
-  <div id="site-nav"></div>
-
   <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-    <!-- Local Nav -->
     <nav class="mt-4 mb-2">
       <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900"><span aria-hidden="true">←</span> Back to main page</a>
     </nav>
 
-    <!-- Header -->
     <header class="relative mt-6 sm:mt-8">
       <div class="flex items-start justify-between gap-4">
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Talks</h1>
-        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Talks</h1>
         <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
           <span id="talk-count" class="font-semibold">0</span>&nbsp;talks
         </span>
       </div>
 
-      <!-- Controls -->
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <div class="relative flex-1">
           <label for="filter-input" class="sr-only">Search talks</label>
@@ -46,68 +38,65 @@
         </div>
         <div class="flex items-center gap-2">
           <button id="sort-btn" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Sort by year ↓</button>
-          <div class="relative">
-            <select id="year-filter" class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 px-3 py-2 text-sm">
-              <option value="">All years</option>
-              <option>2025</option>
-              <option>2024</option>
-              <option>2023</option>
-            </select>
-          </div>
+          <select id="year-filter" class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 px-3 py-2 text-sm">
+            <option value="">All years</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
         </div>
       </div>
     </header>
 
-    <!-- Talks list -->
     <section id="talks" class="mt-8 space-y-4">
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-venue="AMS Fall Southeastern Sectional Meeting; Tulane University; UGA Number Theory Seminar" data-title="Sárközy’s Theorem in Function Fields">
-        <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">Sárközy’s Theorem in Function Fields</h2>
-          <div class="flex items-center gap-2">
+      <!-- 2025: Sárközy’s Theorem in Function Fields -->
+      <a class="card-link group" href="Notes_for_Fall_25_NT_seminar_Talk_UGA.pdf" target="_blank" rel="noopener" data-year="2025" data-venue="UGA Number Theory Seminar" data-title="Sárközy’s Theorem in Function Fields">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h2 class="text-lg sm:text-xl font-semibold leading-snug">Sárközy’s Theorem in Function Fields</h2>
             <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
           </div>
-        </div>
-        <ul class="mt-1 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
-          <li>AMS Fall Southeastern Sectional Meeting — Tulane University</li>
-          <li>UGA Number Theory Seminar</li>
-        </ul>
-      </article>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">UGA Number Theory Seminar</p>
+        </article>
+      </a>
 
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-venue="INTEGERS 2025 Conference — UGA" data-title="Polynomial Progressions in the Primes">
-        <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">Polynomial Progressions in the Primes</h2>
-          <div class="flex items-center gap-2">
+      <!-- 2025: Polynomial Progressions in the Primes -->
+      <a class="card-link group" href="INTEGERS_Presentation_on_Polynomial_Patterns.pdf" target="_blank" rel="noopener" data-year="2025" data-venue="INTEGERS 2025 Conference — UGA" data-title="Polynomial Progressions in the Primes">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h2 class="text-lg sm:text-xl font-semibold leading-snug">Polynomial Progressions in the Primes</h2>
             <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
           </div>
-        </div>
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">INTEGERS 2025 Conference - UGA</p>
-      </article>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">INTEGERS 2025 Conference — UGA</p>
+        </article>
+      </a>
 
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2024" data-venue="UGA Graduate Student Seminar" data-title="The Sum-Product Problem for Small Sets">
-        <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">The Sum-Product Problem for Small Sets</h2>
-          <div class="flex items-center gap-2">
+      <!-- 2024: The Sum-Product Problem for Small Sets (arXiv link) -->
+      <a class="card-link group" href="https://arxiv.org/abs/2307.06874" target="_blank" rel="noopener" data-year="2024" data-venue="UGA Graduate Student Seminar" data-title="The Sum-Product Problem for Small Sets">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h2 class="text-lg sm:text-xl font-semibold leading-snug">The Sum-Product Problem for Small Sets</h2>
             <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2024</span>
           </div>
-        </div>
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">UGA Graduate Student Seminar</p>
-      </article>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">UGA Graduate Student Seminar</p>
+        </article>
+      </a>
 
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2023" data-venue="AMS Southeastern Sectional Meeting; INTEGERS 2023 Conference — UGA" data-title="Schur’s Theorem in Integer Lattices">
-        <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">Schur’s Theorem in Integer Lattices</h2>
-          <div class="flex items-center gap-2">
+      <!-- 2023: Schur’s Theorem in Integer Lattices -->
+      <a class="card-link group" href="AMSconferencepresentation.pdf" target="_blank" rel="noopener" data-year="2023" data-venue="AMS Southeastern Sectional Meeting; INTEGERS 2023 Conference — UGA" data-title="Schur’s Theorem in Integer Lattices">
+        <article class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h2 class="text-lg sm:text-xl font-semibold leading-snug">Schur’s Theorem in Integer Lattices</h2>
             <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2023</span>
           </div>
-        </div>
-        <ul class="mt-1 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
-          <li>AMS Spring Southeastern Sectional Meeting — Georgia Tech</li>
-          <li>INTEGERS 2023 Conference - UGA</li>
-        </ul>
-      </article>
+          <ul class="mt-1 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
+            <li>AMS Spring Southeastern Sectional Meeting — Georgia Tech</li>
+            <li>INTEGERS 2023 Conference — UGA</li>
+          </ul>
+        </article>
+      </a>
     </section>
 
-    <!-- Empty state -->
     <div id="empty-state" class="hidden mt-16 flex flex-col items-center text-center">
       <div class="rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 p-10"><div class="text-3xl">🎤</div></div>
       <p class="mt-4 text-gray-600 dark:text-gray-300">No talks match your filter.</p>
@@ -118,22 +107,15 @@
     © <span id="year"></span> Andrew Lott
   </footer>
 
-  <script src="scripts/theme.js"></script>
-  <script src="scripts/nav.js"></script>
   <script>
-    // Year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Filtering & sorting
     const input = document.getElementById('filter-input');
     const sortBtn = document.getElementById('sort-btn');
     const yearSel = document.getElementById('year-filter');
     const list = document.getElementById('talks');
-    let cards = Array.from(list.querySelectorAll('article'));
+    let cards = Array.from(list.querySelectorAll('[data-year]'));
     const empty = document.getElementById('empty-state');
     const count = document.getElementById('talk-count');
-
-    // Start in reverse-chronological order (newest first)
     let sortDesc = true;
 
     function sortAndRender(){
@@ -143,40 +125,28 @@
     }
 
     function applyFilter(){
-      const q = input.value.trim().toLowerCase();
-      const yf = (yearSel.value||'').trim();
-      let visible = 0;
-      cards.forEach(card => {
-        const title = (card.dataset.title||'').toLowerCase();
-        const venue = (card.dataset.venue||'').toLowerCase();
-        const year = (card.dataset.year||'').toString();
-        const qHit = !q || title.includes(q) || venue.includes(q) || year.includes(q);
-        const yHit = !yf || year===yf;
-        const hit = qHit && yHit;
-        card.classList.toggle('hidden', !hit);
-        if (hit) visible++;
+      const q=(input.value||'').trim().toLowerCase();
+      const yf=(yearSel.value||'').trim();
+      let visible=0;
+      cards.forEach(a=>{
+        const t=(a.dataset.title||'').toLowerCase();
+        const v=(a.dataset.venue||'').toLowerCase();
+        const y=(a.dataset.year||'').toString();
+        const hit=(!q||t.includes(q)||v.includes(q)||y.includes(q))&&(!yf||y===yf);
+        a.classList.toggle('hidden',!hit);
+        if(hit)visible++;
       });
-      empty.classList.toggle('hidden', visible!==0);
-      count.textContent = visible;
+      empty.classList.toggle('hidden',visible!==0);
+      count.textContent=visible;
     }
 
-    input.addEventListener('input', applyFilter);
-    yearSel.addEventListener('change', applyFilter);
-
-    window.addEventListener('keydown', e => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase()==='k') { e.preventDefault(); input.focus(); }
-    });
-
-    sortBtn.addEventListener('click', () => {
-      sortDesc = !sortDesc;
-      sortAndRender();
-      applyFilter();
-    });
-
-    // Init: sort newest→oldest and then apply filter/count
-    sortAndRender();
-    applyFilter();
+    input.addEventListener('input',applyFilter);
+    yearSel.addEventListener('change',applyFilter);
+    window.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();input.focus();}});
+    sortBtn.addEventListener('click',()=>{sortDesc=!sortDesc;sortAndRender();applyFilter();});
+    sortAndRender();applyFilter();
   </script>
 </body>
 </html>
+
 
