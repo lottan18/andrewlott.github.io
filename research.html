@@ -14,26 +14,30 @@
     window.MathJax = { tex: { inlineMath: [["$","$"],["\\(","\\)"]] }, svg: { fontCache:'global' } };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-  <style>
-    /* Unify abstract/MathJax behavior across both sections */
-    .abstract { line-height: 1.65; }
-    .abstract * { white-space: normal !important; }
-    .abstract br { display: none !important; }
-    .abstract mjx-container { display: inline !important; vertical-align: baseline !important; }
-    .abstract mjx-container[display="true"], .abstract mjx-container[display="false"] { display: inline !important; }
-    .abstract mjx-container > svg { display: inline !important; }
-    /* Ensure details content doesn't overflow in either section */
-    #grad-list details > div, #ug-list details > div { white-space: normal !important; line-height: 1.65; }
-    #grad-list details > div br, #ug-list details > div br { display: none !important; }
-    #grad-list mjx-container[display="true"], #grad-list mjx-container[display="false"],
-    #ug-list   mjx-container[display="true"], #ug-list   mjx-container[display="false"] {
-      display:inline !important; vertical-align: baseline !important;
-   /* Keep the title "Sárközy's theorem in F_q[t]" on one line */
-    .titleglue { white-space: nowrap !important; }
-    .titleglue mjx-container { display: inline !important; white-space: nowrap !important; vertical-align: baseline !important; }
-    .titleglue mjx-container > svg { display: inline !important; }
-    }
-  </style>
+<style>
+  /* Unify abstract/MathJax behavior across both sections */
+  .abstract { line-height: 1.65; }
+  .abstract * { white-space: normal !important; }
+  .abstract br { display: none !important; }
+  .abstract mjx-container { display: inline !important; vertical-align: baseline !important; }
+  .abstract mjx-container[display="true"], .abstract mjx-container[display="false"] { display: inline !important; }
+  .abstract mjx-container > svg { display: inline !important; }
+
+  /* Ensure details content doesn't overflow in either section */
+  #grad-list details > div, #ug-list details > div { white-space: normal !important; line-height: 1.65; }
+  #grad-list details > div br, #ug-list details > div br { display: none !important; }
+  #grad-list mjx-container[display="true"], #grad-list mjx-container[display="false"],
+  #ug-list   mjx-container[display="true"], #ug-list   mjx-container[display="false"] {
+    display: inline !important; 
+    vertical-align: baseline !important;
+  }  /* <-- this closing brace was missing */
+
+  /* Keep the title "Sárközy's theorem in F_q[t]" on one line */
+  .titleglue { white-space: nowrap !important; }
+  .titleglue mjx-container { display: inline !important; white-space: nowrap !important; vertical-align: baseline !important; }
+  .titleglue mjx-container > svg { display: inline !important; }
+</style>
+
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
   <div id="site-nav"></div>
