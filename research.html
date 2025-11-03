@@ -28,6 +28,10 @@
     #grad-list mjx-container[display="true"], #grad-list mjx-container[display="false"],
     #ug-list   mjx-container[display="true"], #ug-list   mjx-container[display="false"] {
       display:inline !important; vertical-align: baseline !important;
+    /* Keep the title "Sárközy's theorem in F_q[t]" on one line */
+    .titleglue { white-space: nowrap !important; }
+    .titleglue mjx-container { display: inline !important; white-space: nowrap !important; vertical-align: baseline !important; }
+    .titleglue mjx-container > svg { display: inline !important; }
     }
   </style>
 </head>
@@ -96,20 +100,7 @@
       </div>
 
       <div id="grad-list" class="mt-6 space-y-4">
-<style>
-  /* keep the title phrase on one line */
-  .alott-titleglue{white-space:nowrap!important}
-  .alott-titleglue mjx-container{display:inline!important;white-space:nowrap!important;vertical-align:baseline!important}
-  .alott-titleglue mjx-container>svg{display:inline!important}
-  /* (optional) abstract shim scoped to this card only */
-  .alott-abs{line-height:1.65}
-  .alott-abs *{white-space:normal!important}
-  .alott-abs br{display:none!important}
-  .alott-abs mjx-container{display:inline!important;vertical-align:baseline!important}
-  .alott-abs mjx-container[display="true"],
-  .alott-abs mjx-container[display="false"]{display:inline!important}
-  .alott-abs mjx-container>svg{display:inline!important}
-</style>
+
 <!--2510.27581 -->
 <article class="group rounded-2xl border border-gray-800 bg-gray-900/60 backdrop-blur p-5 shadow-md hover:shadow-lg transition-shadow" data-year="2025" data-authors="Fan Lott" data-title="Sárközy's theorem in F_q[t] via the van der Corput property">
 <div class="flex flex-wrap items-start justify-between gap-3">
