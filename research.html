@@ -15,48 +15,82 @@
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style>
+<style>
   /* Unify abstract/MathJax behavior across both sections */
   .abstract { line-height: 1.65; }
   .abstract * { white-space: normal !important; }
   .abstract br { display: none !important; }
-  .abstract mjx-container { display: inline !important; vertical-align: baseline !important; }
-  .abstract mjx-container[display="true"], .abstract mjx-container[display="false"] { display: inline !important; }
-  .abstract mjx-container > svg { display: inline !important; }
+
+  /* Inline MathJax inside normal abstract text */
+  .abstract mjx-container {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+
+  .abstract mjx-container[display="false"] {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+
+  .abstract mjx-container > svg {
+    display: inline !important;
+  }
 
   /* Ensure details content doesn't overflow in either section */
-  #grad-list details > div, #ug-list details > div { white-space: normal !important; line-height: 1.65; }
-  #grad-list details > div br, #ug-list details > div br { display: none !important; }
-  #grad-list mjx-container[display="true"], #grad-list mjx-container[display="false"],
-  #ug-list   mjx-container[display="true"], #ug-list   mjx-container[display="false"] {
-    display: inline !important; 
+  #grad-list details > div, #ug-list details > div {
+    white-space: normal !important;
+    line-height: 1.65;
+  }
+
+  #grad-list details > div br, #ug-list details > div br {
+    display: none !important;
+  }
+
+  #grad-list mjx-container[display="false"],
+  #ug-list mjx-container[display="false"] {
+    display: inline !important;
     vertical-align: baseline !important;
-  }  /* <-- this closing brace was missing */
+  }
 
-  /* Keep the title "Sárközy's theorem in F_q[t]" on one line */
-  .titleglue { white-space: nowrap !important; }
-  .titleglue mjx-container { display: inline !important; white-space: nowrap !important; vertical-align: baseline !important; }
-  .titleglue mjx-container > svg { display: inline !important; }
+  /* Keep vulnerable title chunks on one line */
+  .titleglue {
+    white-space: nowrap !important;
+  }
 
-  /* Allow selected displayed equations inside abstracts to display properly */
-.mathblock {
-  margin: 0.7rem 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-bottom: 0.15rem;
-}
+  .titleglue mjx-container {
+    display: inline !important;
+    white-space: nowrap !important;
+    vertical-align: baseline !important;
+  }
 
-#grad-list .abstract .mathblock mjx-container[display="true"],
-#ug-list .abstract .mathblock mjx-container[display="true"] {
-  display: block !important;
-  text-align: left !important;
-  margin: 0 !important;
-  min-width: max-content;
-}
+  .titleglue mjx-container > svg {
+    display: inline !important;
+  }
 
-#grad-list .abstract .mathblock mjx-container[display="true"] > svg,
-#ug-list .abstract .mathblock mjx-container[display="true"] > svg {
-  display: inline-block !important;
-}
+  /* Proper displayed equations in abstracts */
+  .mathblock {
+    margin: 0.85rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.15rem;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  .abstract .mathblock mjx-container,
+  .abstract .mathblock mjx-container[display="true"] {
+    display: inline-block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  .abstract .mathblock mjx-container > svg,
+  .abstract .mathblock mjx-container[display="true"] > svg {
+    display: inline-block !important;
+  }
+</style>
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8CCWTZD59"></script>
