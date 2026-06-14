@@ -7,112 +7,157 @@
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
-  <!-- Removed local stylesheet for previewability -->
   <meta name="description" content="Research, preprints, and earlier projects by Andrew Lott — additive combinatorics and number theory."/>
+
   <!-- MathJax -->
   <script>
     window.MathJax = { tex: { inlineMath: [["$","$"],["\\(","\\)"]] }, svg: { fontCache:'global' } };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<style>
-<style>
-  /* Unify abstract/MathJax behavior across both sections */
-  .abstract { line-height: 1.65; }
-  .abstract * { white-space: normal !important; }
-  .abstract br { display: none !important; }
 
-  /* Inline MathJax inside normal abstract text */
-  .abstract mjx-container {
-    display: inline !important;
-    vertical-align: baseline !important;
-  }
+  <style>
+    html { scroll-behavior: smooth; }
 
-  .abstract mjx-container[display="false"] {
-    display: inline !important;
-    vertical-align: baseline !important;
-  }
+    a { text-underline-offset: 3px; }
 
-  .abstract mjx-container > svg {
-    display: inline !important;
-  }
+    article {
+      position: relative;
+    }
 
-  /* Ensure details content doesn't overflow in either section */
-  #grad-list details > div, #ug-list details > div {
-    white-space: normal !important;
-    line-height: 1.65;
-  }
+    article::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 1rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 180ms ease;
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.18);
+    }
 
-  #grad-list details > div br, #ug-list details > div br {
-    display: none !important;
-  }
+    article:hover::before {
+      opacity: 1;
+    }
 
-  #grad-list mjx-container[display="false"],
-  #ug-list mjx-container[display="false"] {
-    display: inline !important;
-    vertical-align: baseline !important;
-  }
+    details summary {
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      user-select: none;
+    }
 
-  /* Keep vulnerable title chunks on one line */
-  .titleglue {
-    white-space: nowrap !important;
-  }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
 
-  .titleglue mjx-container {
-    display: inline !important;
-    white-space: nowrap !important;
-    vertical-align: baseline !important;
-  }
+    details summary::after {
+      content: "+";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.05rem;
+      height: 1.05rem;
+      border-radius: 9999px;
+      border: 1px solid currentColor;
+      font-size: 0.75rem;
+      line-height: 1;
+      opacity: 0.75;
+    }
 
-  .titleglue mjx-container > svg {
-    display: inline !important;
-  }
+    details[open] summary::after {
+      content: "−";
+    }
 
-  /* Proper displayed equations in abstracts */
-  .mathblock {
-    margin: 0.85rem 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 0.15rem;
-    text-align: center !important;
-    white-space: nowrap !important;
-  }
+    .abstract { line-height: 1.65; }
+    .abstract * { white-space: normal !important; }
+    .abstract br { display: none !important; }
 
-  .abstract .mathblock mjx-container,
-  .abstract .mathblock mjx-container[display="true"] {
-    display: inline-block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
-    vertical-align: middle !important;
-  }
+    .abstract mjx-container {
+      display: inline !important;
+      vertical-align: baseline !important;
+    }
 
-  .abstract .mathblock mjx-container > svg,
-  .abstract .mathblock mjx-container[display="true"] > svg {
-    display: inline-block !important;
-  }
-</style>
-</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8CCWTZD59"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    .abstract mjx-container[display="false"] {
+      display: inline !important;
+      vertical-align: baseline !important;
+    }
 
-  gtag('config', 'G-R8CCWTZD59');
-</script>
+    .abstract mjx-container > svg {
+      display: inline !important;
+    }
+
+    .paper-list details > div {
+      white-space: normal !important;
+      line-height: 1.65;
+    }
+
+    .paper-list details > div br {
+      display: none !important;
+    }
+
+    .paper-list mjx-container[display="false"] {
+      display: inline !important;
+      vertical-align: baseline !important;
+    }
+
+    .titleglue {
+      white-space: nowrap !important;
+    }
+
+    .titleglue mjx-container {
+      display: inline !important;
+      white-space: nowrap !important;
+      vertical-align: baseline !important;
+    }
+
+    .titleglue mjx-container > svg {
+      display: inline !important;
+    }
+
+    .mathblock {
+      margin: 0.85rem 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 0.15rem;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+
+    .abstract .mathblock mjx-container,
+    .abstract .mathblock mjx-container[display="true"] {
+      display: inline-block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+
+    .abstract .mathblock mjx-container > svg,
+    .abstract .mathblock mjx-container[display="true"] > svg {
+      display: inline-block !important;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8CCWTZD59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R8CCWTZD59');
+  </script>
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
   <div id="site-nav"></div>
 
   <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
     <!-- Local Nav -->
-    <nav class="mt-4 mb-2">
-      <a href="/">
+    <nav class="mt-4 mb-2 text-sm text-gray-600 dark:text-gray-400">
+      <a href="/" class="inline-flex items-center gap-1 underline decoration-transparent hover:decoration-current">
         <span aria-hidden="true">←</span> Back to main page
       </a>
     </nav>
-
     <!-- Page Header -->
     <header class="relative mt-8 sm:mt-10">
       <div class="flex items-start justify-between gap-4">
@@ -142,35 +187,14 @@
           </p>
         </div>
       </div>
-      <!-- Global quick actions -->
-      <div class="mt-6 flex flex-col sm:flex-row gap-3">
-        <div class="relative flex-1">
-          <label for="global-filter" class="sr-only">Search projects</label>
-          <input id="global-filter" type="text" placeholder="Search all items by title, coauthor, or year…"
-                 class="w-full rounded-xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 backdrop-blur px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <div class="pointer-events-none absolute right-3 top-2.5 text-gray-400">⌘K</div>
-        </div>
-        <div class="flex items-center gap-2">
-          <button id="expand-all" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Expand all</button>
-        </div>
-      </div>
     </header>
 
-
-    <section class="mt-10">
-      <div class="flex items-center justify-between gap-3">
-        <h2 class="text-2xl font-semibold">Preprints</h2>
-        <div class="flex items-center gap-2">
-          <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
-            <span id="grad-count" class="font-semibold">3</span>&nbsp;items
-          </span>
-          <button id="grad-sort" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Sort by year ↓</button>
-        </div>
+    <section class="mt-10" aria-labelledby="preprints-heading">
+      <div class="flex items-center justify-between gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
+        <h2 id="preprints-heading" class="text-2xl font-semibold">Preprints</h2>
       </div>
 
-      <div id="grad-list" class="mt-6 space-y-4">
-
-<!-- 2605.28997 -->
+      <div id="preprint-list" class="paper-list mt-6 space-y-4">
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
          data-year="2026" data-authors="Le Lott" data-title="Bourgain's L2 pointwise ergodic theorem over function fields">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
@@ -191,15 +215,6 @@
   <div class="mt-3 flex flex-wrap gap-2">
     <a href="https://arxiv.org/abs/2605.28997" target="_blank" rel="noopener"
        class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-    <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
-      data-bibtex="@misc{LeLott2026,
-  author       = {Thái Hoàng Lê and Andrew Lott},
-  title        = {Bourgain's $L^2$ pointwise ergodic theorem over function fields},
-  eprint       = {2605.28997},
-  archivePrefix= {arXiv},
-  primaryClass = {math.DS},
-  year         = {2026}
-}">Copy BibTeX</button>
   </div>
 
   <details class="mt-3">
@@ -236,7 +251,6 @@
   </details>
 </article>
 
-<!-- 2605.16216 -->
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
          data-year="2026" data-authors="Adajar Agrawal Choudhuri Chuah Fan Hegde Lott Nandakumar Ponagandla" data-title="Extensions of the Furstenberg-Sarkozy theorem via the arithmetic level-d inequality">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
@@ -257,15 +271,6 @@
   <div class="mt-3 flex flex-wrap gap-2">
     <a href="https://arxiv.org/abs/2605.16216" target="_blank" rel="noopener"
        class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-    <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
-      data-bibtex='@misc{AdajarAgrawalChoudhuriChuahFanHegdeLottNandakumarPonagandla2026,
-  author       = {Carlo Francisco E. Adajar and Rishika Agrawal and Mukul Rai Choudhuri and Chian Yeong Chuah and Steve Fan and Swaroop Hegde and Andrew Lott and Krishnamohan Nandakumar and Nagendar Reddy Ponagandla},
-  title        = {Extensions of the Furstenberg-Sárközy theorem via the arithmetic level-$d$ inequality},
-  eprint       = {2605.16216},
-  archivePrefix= {arXiv},
-  primaryClass = {math.NT},
-  year         = {2026}
-}'>Copy BibTeX</button>
   </div>
 
   <details class="mt-3">
@@ -276,8 +281,6 @@
   </details>
 </article>
 
-        
-<!-- 2510.27581 -->
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
          data-year="2025" data-authors="Fan Lott" data-title="Sárközy's theorem in F_q[t] via the van der Corput property">
   <div class="flex flex-wrap items-start justify-between gap-3">
@@ -296,15 +299,6 @@
   <div class="mt-3 flex flex-wrap gap-2">
     <a href="https://arxiv.org/abs/2510.27581" target="_blank" rel="noopener"
        class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-    <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
-      data-bibtex='@misc{FanLott2025,
-  author       = {Steve Fan and Andrew Lott},
-  title        = {S{\'a}rk{\"o}zy\'s theorem in $\mathbb{F}_q[t]$ via the van der Corput property},
-  eprint       = {2510.27581},
-  archivePrefix= {arXiv},
-  primaryClass = {math.NT},
-  year         = {2025}
-}'>Copy BibTeX</button>
   </div>
   <details class="mt-3">
     <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
@@ -313,22 +307,16 @@
     </div>
   </details>
 </article>
+      </div>
+    </section>
 
-
-    <section class="mt-10">
-      <div class="flex items-center justify-between gap-3">
-        <h2 class="text-2xl font-semibold">Publications</h2>
-        <div class="flex items-center gap-2">
-          <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
-            <span id="grad-count" class="font-semibold">7</span>&nbsp;items
-          </span>
-          <button id="grad-sort" class="rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900">Sort by year ↓</button>
-        </div>
+    <section class="mt-12" aria-labelledby="publications-heading">
+      <div class="flex items-center justify-between gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
+        <h2 id="publications-heading" class="text-2xl font-semibold">Publications</h2>
       </div>
 
-      <div id="grad-list" class="mt-6 space-y-4">
-        <!-- 2504.14424 -->
-        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+      <div id="publication-list" class="paper-list mt-6 space-y-4">
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
                  data-year="2025" data-authors="Magyar Petridis Pintz Lott" data-title="Polynomial configurations in dense subsets of the prime lattice">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h3 class="text-lg sm:text-xl font-semibold leading-snug">
@@ -346,13 +334,6 @@
           <div class="mt-3 flex flex-wrap gap-2">
             <a href="https://arxiv.org/abs/2504.14424" target="_blank" rel="noopener"
                class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
-              data-bibtex='@article{LottMagyarPetridisPintz2025,
-  author = {Andrew Lott and {\'A}kos Magyar and Giorgis Petridis and J{\'a}nos Pintz},
-  title = {Polynomial configurations in dense subsets of the prime lattice},
-  journal = {arXiv preprint arXiv:2504.14424},
-  year = {2025}
-}'>Copy BibTeX</button>
           </div>
           <details class="mt-3">
             <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
@@ -362,8 +343,7 @@
           </details>
         </article>
 
-        <!-- 2505.17375 -->
-        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
                  data-year="2025" data-authors="Ponagandla Lott" data-title="Polynomial progressions in the generalized twin primes">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h3 class="text-lg sm:text-xl font-semibold leading-snug">
@@ -381,13 +361,6 @@
           <div class="mt-3 flex flex-wrap gap-2">
             <a href="https://arxiv.org/abs/2505.17375" target="_blank" rel="noopener"
                class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
-              data-bibtex='@article{LottPonagandla2025,
-  author = {Andrew Lott and N. R. Ponagandla},
-  title = {Polynomial progressions in the generalized twin primes},
-  journal = {arXiv preprint arXiv:2505.17375},
-  year = {2025}
-}'>Copy BibTeX</button>
           </div>
   <details class="mt-3">
   <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
@@ -405,13 +378,8 @@
 </details>
 
         </article>
-      </div>
-    </section>
 
-
-      <div id="ug-list" class="mt-6 space-y-4">
-        <!-- 2508.03650 (TA) -->
-        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
                  data-year="2025" data-authors="Dean Havard Hawkins Heard Rice Lott" data-title="Notes and computations on forbidden differences">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h3 class="text-lg sm:text-xl font-semibold leading-snug">
@@ -435,19 +403,10 @@
           </details>
           <div class="mt-3 flex flex-wrap gap-2">
             <a href="https://arxiv.org/abs/2508.03650" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@misc{DeanHavardHawkinsHeardLottRice2025,
-  author       = {Christian Dean and Haley Havard and Elizabeth Hawkins and Patch Heard and Andrew Lott and Alex Rice},
-  title        = {Notes and computations on forbidden differences},
-  eprint       = {2508.03650},
-  archivePrefix= {arXiv},
-  primaryClass = {math.NT},
-  year         = {2025}
-}'>Copy BibTeX</button>
           </div>
         </article>
 
-        <!-- 2307.06874 (TA/Involve) -->
-        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
                  data-year="2025" data-authors="Clevenger Havard Heard Lott Rice Wilson" data-title="The sum-product problem for small sets">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h3 class="text-lg sm:text-xl font-semibold leading-snug">
@@ -471,21 +430,10 @@
           </details>
           <div class="mt-3 flex flex-wrap gap-2">
             <a href="https://arxiv.org/abs/2307.06874" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{ClevengerEtAl2025Involve,
-  author  = {Ginny Ray Clevenger and Haley Havard and Patch Heard and Andrew Lott and Alex Rice and Brittany Wilson},
-  title   = {The sum-product problem for small sets},
-  journal = {Involve, a Journal of Mathematics},
-  volume  = {18},
-  number  = {1},
-  pages   = {165--180},
-  year    = {2025},
-  doi     = {10.2140/involve.2025.18.165}
-}'>Copy BibTeX</button>
           </div>
         </article>
 
-        <!-- 2108.08410 (Student/Involve) -->
-        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h3 class="text-lg sm:text-xl font-semibold leading-snug">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
@@ -508,21 +456,10 @@
           </details>
           <div class="mt-3 flex flex-wrap gap-2">
             <a href="https://arxiv.org/abs/2108.08410" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{BalajiLambLottPatelRiceSinghWard2022,
-  author  = {Vishal Balaji and Powers Lamb and Andrew Lott and Dhruv Patel and Alex Rice and Sakshi Singh and Christine Rose Ward},
-  title   = {The pigeonhole principle and multicolor Ramsey numbers},
-  journal = {Involve, a Journal of Mathematics},
-  volume  = {15},
-  number  = {5},
-  pages   = {857--884},
-  year    = {2022},
-  doi     = {10.2140/involve.2022.15.857}
-}'>Copy BibTeX</button>
           </div>
         </article>
 
-        <!-- 2208.09720 (Student/Integers Proc.) -->
-        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
                  data-year="2024" data-authors="Agrawal Bhatia Gupta Lamb Lott Rice Ward" data-title="Computations and observations on congruence covering systems">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h3 class="text-lg sm:text-xl font-semibold leading-snug">
@@ -546,23 +483,10 @@
           </details>
           <div class="mt-3 flex flex-wrap gap-2">
             <a href="https://arxiv.org/abs/2208.09720" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@inproceedings{AgrawalBhatiaGuptaLambLottRiceWard2024,
-  author    = {Raj Agrawal and Prarthana Bhatia and Kratik Gupta and Powers Lamb and Andrew Lott and Alex Rice and Christine Rose Ward},
-  title     = {Computations and Observations on Congruence Covering Systems},
-  booktitle = {Combinatorial Number Theory: Proceedings of the Integers Conference 2023},
-  series    = {INTEGERS: Electronic Journal of Combinatorial Number Theory},
-  volume    = {24A},
-  pages     = {A1},
-  year      = {2024},
-  url       = {https://math.colgate.edu/~integers/a1Proc23/a1Proc23.pdf},
-  eprint    = {2208.09720},
-  archivePrefix = {arXiv}
-}'>Copy BibTeX</button>
           </div>
         </article>
 
-        <!-- 2112.03127 (Student/INTEGERS) -->
-        <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
                  data-year="2022" data-authors="Balaji Lott Rice" data-title="Schur’s theorem in integer lattices">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h3 class="text-lg sm:text-xl font-semibold leading-snug">
@@ -586,134 +510,18 @@
           </details>
           <div class="mt-3 flex flex-wrap gap-2">
             <a href="https://arxiv.org/abs/2112.03127" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-            <button class="copy-btn rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800" data-bibtex='@article{BalajiLottRice2022,
-  author  = {Vishal Balaji and Andrew Lott and Alex Rice},
-  title   = {Schur\'s theorem in integer lattices},
-  journal = {INTEGERS},
-  volume  = {22},
-  pages   = {A62},
-  year    = {2022}
-}'>Copy BibTeX</button>
           </div>
         </article>
       </div>
     </section>
-
-    <!-- Empty state (global) -->
-    <div id="global-empty" class="hidden mt-16 flex flex-col items-center text-center">
-      <div class="rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 p-10">
-        <div class="text-3xl">🗂️</div>
-      </div>
-      <p class="mt-4 text-gray-600 dark:text-gray-300">No items match your filter.</p>
-    </div>
   </main>
 
   <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
     © <span id="year"></span> Andrew Lott
   </footer>
 
-  <!-- Removed local script files; added inline stubs for previewability -->
   <script>
-    // Year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Elements
-    const globalFilter = document.getElementById('global-filter');
-    const globalEmpty  = document.getElementById('global-empty');
-    const expandAllBtn = document.getElementById('expand-all');
-
-    // Grad section
-    const gradList  = document.getElementById('grad-list');
-    const gradCards = Array.from(gradList.querySelectorAll('article'));
-    const gradCount = document.getElementById('grad-count');
-    const gradSort  = document.getElementById('grad-sort');
-    let gradDesc = true;
-
-    // UG section
-    const ugList  = document.getElementById('ug-list');
-    const ugCards = Array.from(ugList.querySelectorAll('article'));
-    const ugCount = document.getElementById('ug-count');
-    const ugSort  = document.getElementById('ug-sort');
-    let ugDesc = true;
-
-    function applyGlobalFilter(){
-      const q = (globalFilter.value || '').trim().toLowerCase();
-      let visibleGrad = 0, visibleUG = 0;
-
-      gradCards.forEach(card => {
-        const title = (card.dataset.title||'').toLowerCase();
-        const authors = (card.dataset.authors||'').toLowerCase();
-        const year = (card.dataset.year||'').toString();
-        const hit = !q || title.includes(q) || authors.includes(q) || year.includes(q);
-        card.classList.toggle('hidden', !hit);
-        if(hit) visibleGrad++;
-      });
-
-      ugCards.forEach(card => {
-        const title = (card.dataset.title||'').toLowerCase();
-        const authors = (card.dataset.authors||'').toLowerCase();
-        const year = (card.dataset.year||'').toString();
-        const hit = !q || title.includes(q) || authors.includes(q) || year.includes(q);
-        card.classList.toggle('hidden', !hit);
-        if(hit) visibleUG++;
-      });
-
-      gradCount.textContent = visibleGrad;
-      ugCount.textContent = visibleUG;
-      globalEmpty.classList.toggle('hidden', (visibleGrad + visibleUG) !== 0);
-    }
-
-    // Focus shortcut
-    window.addEventListener('keydown', e => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase()==='k') { e.preventDefault(); globalFilter.focus(); }
-    });
-
-    // Sorters
-    function sortByYear(listEl, cardsArr, desc){
-      const sorted = cardsArr.slice().sort((a,b)=> (desc? +b.dataset.year - +a.dataset.year : +a.dataset.year - +b.dataset.year));
-      sorted.forEach(el=> listEl.appendChild(el));
-    }
-
-    gradSort.addEventListener('click', () => {
-      gradDesc = !gradDesc;
-      sortByYear(gradList, gradCards, gradDesc);
-      gradSort.textContent = `Sort by year ${gradDesc ? '↓' : '↑'}`;
-    });
-
-    ugSort.addEventListener('click', () => {
-      ugDesc = !ugDesc;
-      sortByYear(ugList, ugCards, ugDesc);
-      ugSort.textContent = `Sort by year ${ugDesc ? '↓' : '↑'}`;
-    });
-
-    // Expand/collapse all details across both sections
-    expandAllBtn.addEventListener('click', () => {
-      const details = Array.from(document.querySelectorAll('details'));
-      const openAny = details.some(d => !d.open);
-      details.forEach(d => d.open = openAny);
-      expandAllBtn.textContent = openAny ? 'Collapse all' : 'Expand all';
-    });
-
-    // Copy BibTeX
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', async () => {
-        const text = btn.getAttribute('data-bibtex');
-        try {
-          await navigator.clipboard.writeText(text);
-          const original = btn.textContent;
-          btn.textContent = 'Copied!';
-          btn.classList.add('ring-2','ring-green-500');
-          setTimeout(() => { btn.textContent = original; btn.classList.remove('ring-2','ring-green-500'); }, 1100);
-        } catch(e){ alert('Copy failed.'); }
-      });
-    });
-
-    // Initial render
-    sortByYear(gradList, gradCards, true);
-    sortByYear(ugList, ugCards, true);
-    applyGlobalFilter();
-    globalFilter.addEventListener('input', applyGlobalFilter);
   </script>
 </body>
 </html>
-
