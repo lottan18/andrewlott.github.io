@@ -52,21 +52,23 @@
     }
 
     details summary::after {
-      content: "+";
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      content: "";
+      display: inline-block;
       width: 1.05rem;
       height: 1.05rem;
       border-radius: 9999px;
       border: 1px solid currentColor;
-      font-size: 0.75rem;
-      line-height: 1;
       opacity: 0.75;
+      background:
+        linear-gradient(currentColor, currentColor) center / 0.55rem 1px no-repeat,
+        linear-gradient(currentColor, currentColor) center / 1px 0.55rem no-repeat;
+      vertical-align: middle;
+      flex: 0 0 auto;
     }
 
     details[open] summary::after {
-      content: "−";
+      background:
+        linear-gradient(currentColor, currentColor) center / 0.55rem 1px no-repeat;
     }
 
     .abstract { line-height: 1.65; }
@@ -383,7 +385,7 @@
 
     <section class="mt-12" aria-labelledby="earlier-publications-heading">
       <div class="flex items-center justify-between gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
-        <h2 id="earlier-publications-heading" class="text-2xl font-semibold">Undergraduate publications</h2>
+        <h2 id="earlier-publications-heading" class="text-2xl font-semibold">Earlier publications and mentored research</h2>
       </div>
 
       <div id="earlier-publications-list" class="paper-list mt-6 space-y-4">
