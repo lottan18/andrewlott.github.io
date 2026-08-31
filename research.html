@@ -1,3 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research â€¢ Andrew Lott</title>
+  <link rel="icon" href="images/besticon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
+  <meta name="description" content="Research, preprints, and earlier projects by Andrew Lott â€” additive combinatorics and number theory."/>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = { tex: { inlineMath: [["$","$"],["\\(","\\)"]] }, svg: { fontCache:'global' } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    a { text-underline-offset: 3px; }
+
+    article {
+      position: relative;
+    }
+
+    article::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 1rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 180ms ease;
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.18);
+    }
+
+    article:hover::before {
+      opacity: 1;
+    }
+
+    details summary {
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      user-select: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary::after {
+      content: "";
+      display: inline-block;
+      width: 1.05rem;
+      height: 1.05rem;
+      border-radius: 9999px;
+      border: 1px solid currentColor;
+      opacity: 0.75;
+      background:
+        linear-gradient(currentColor, currentColor) center / 0.55rem 1px no-repeat,
+        linear-gradient(currentColor, currentColor) center / 1px 0.55rem no-repeat;
+      vertical-align: middle;
+      flex: 0 0 auto;
+    }
+
+    details[open] summary::after {
+      background:
+        linear-gradient(currentColor, currentColor) center / 0.55rem 1px no-repeat;
+    }
+
+    .abstract { line-height: 1.65; }
+    .abstract * { white-space: normal !important; }
+    .abstract br { display: none !important; }
+
+    .abstract mjx-container {
+      display: inline !important;
+      vertical-align: baseline !important;
+    }
+
+    .abstract mjx-container[display="false"] {
+      display: inline !important;
+      vertical-align: baseline !important;
+    }
+
+    .abstract mjx-container > svg {
+      display: inline !important;
+    }
+
+    .paper-list details > div {
+      white-space: normal !important;
+      line-height: 1.65;
+    }
+
+    .paper-list details > div br {
+      display: none !important;
+    }
+
+    .paper-list mjx-container[display="false"] {
+      display: inline !important;
+      vertical-align: baseline !important;
+    }
+
+    .titleglue {
+      white-space: nowrap !important;
+    }
+
+    .titleglue mjx-container {
+      display: inline !important;
+      white-space: nowrap !important;
+      vertical-align: baseline !important;
+    }
+
+    .titleglue mjx-container > svg {
+      display: inline !important;
+    }
+
+    .mathblock {
+      margin: 0.85rem 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 0.15rem;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+
+    .abstract .mathblock mjx-container,
+    .abstract .mathblock mjx-container[display="true"] {
+      display: inline-block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+
+    .abstract .mathblock mjx-container > svg,
+    .abstract .mathblock mjx-container[display="true"] > svg {
+      display: inline-block !important;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8CCWTZD59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R8CCWTZD59');
+  </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
+  <div id="site-nav"></div>
+
+  <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <!-- Local Nav -->
+    <nav class="mt-4 mb-2 text-sm text-gray-600 dark:text-gray-400">
+      <a href="/" class="inline-flex items-center gap-1 underline decoration-transparent hover:decoration-current">
+        <span aria-hidden="true">â†</span> Back to main page
+      </a>
+    </nav>
+    <!-- Page Header -->
+    <header class="relative mt-8 sm:mt-10">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Research</h1>
+
+          <p class="mt-3 text-base sm:text-lg text-gray-700 dark:text-gray-300">
+            My research interests lie at the intersection of ergodic theory and additive combinatorics. I am particularly interested in exponential sum estimates, higher order Fourier analysis, the transference principle, pointwise ergodic theorems, Ramsey theory, and function fields. 
+          </p>
+
+
+
+          <p class="mt-3 text-base sm:text-lg text-gray-700 dark:text-gray-300">
+            Since 2023, I have been part of the  
+              <a href="https://math-rtg-agant.franklinresearch.uga.edu/number-theory-and-arithmetic-geometry" target="_blank" rel="noopener" class="underline">UGA number theory group</a>. 
+            From January-June 2026 I have been a visiting researcher at the AlfrÃ©d RÃ©nyi Institute of Mathematics in Budapest, Hungary for the  
+               <a href="https://erdoscenter.renyi.hu/articles/simons-semester-new-directions-modern-harmonic-analysis-and-applications-2026-spring" target="_blank" rel="noopener" class="underline">Simons Semester in New Directions in Modern Harmonic Analysis and Applications</a>.
+          </p>
+
+          <p class="mt-3 text-base sm:text-lg text-gray-700 dark:text-gray-300">
+            Working with 
+            <a href="https://alexricemath.com" target="_blank" rel="noopener" class="underline">Alex Rice</a>
+            at Millsaps College shaped my early interest in number theory and combinatorics.
+            I was a student in the 
+            <a href="https://alexricemath.com/kinnaird-program/" target="_blank" rel="noopener" class="underline"> Millsaps College undergraduate research program </a>
+            in 2021 and 2022, and returned as a TA in 2023 and 2024.
+          </p>
+        </div>
+      </div>
+    </header>
+
     <section class="mt-10" aria-labelledby="preprints-heading">
       <div class="flex items-center justify-between gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
         <h2 id="preprints-heading" class="text-2xl font-semibold">Preprints</h2>
@@ -60,13 +253,12 @@
   <details class="mt-3">
     <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
     <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>Let $S_N=\{1\le d\le N:d=x^2+y^2\text{ for some }x,y\in\mathbb{Z}\}$. We prove a power-saving form of the van der Corput property for $S_N$. As a consequence, we obtain a strong Sárközy-type result: if $A\subseteq [N]$ has no nonzero difference equal to a sum of two squares, then $|A|\ll_\varepsilon N^{7/8+\varepsilon}$ for every $\varepsilon>0$, improving upon an earlier quasipolynomial bound due to Rice.</p>
+      <p>Let $S_N=\{1\le d\le N:d=x^2+y^2\text{ for some }x,y\in\mathbb{Z}\}$. We prove a power-saving form of the van der Corput property for $S_N$. As a consequence, we obtain a strong SÃ¡rkÃ¶zy-type result: if $A\subseteq [N]$ has no nonzero difference equal to a sum of two squares, then $|A|\ll_\varepsilon N^{7/8+\varepsilon}$ for every $\varepsilon>0$, improving upon an earlier quasipolynomial bound due to Rice.</p>
 
       <p>The shape of this bound is optimal, as a construction of Younis yields a set $A\subseteq [N]$ with $|A|\gg N^{1/2}$ such that $(A-A)\cap S_N=\emptyset$.</p>
     </div>
   </details>
 </article>
-
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
          data-year="2026" data-authors="Le Lott" data-title="Bourgain's L2 pointwise ergodic theorem over function fields">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
@@ -82,12 +274,14 @@
     </div>
   </div>
 
-  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with T. H. Lê</p>
+  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with T. H. LÃª</p>
 
   <div class="mt-3 flex flex-wrap gap-2">
     <a href="https://arxiv.org/abs/2605.28997" target="_blank" rel="noopener"
        class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
   </div>
+
+  
 
   <details class="mt-3">
     <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
@@ -118,7 +312,7 @@
         \]
       </div>
 
-      <p>where the constant $C_2>0$ depends only on $P_1,\ldots,P_\ell$ and $q$. Our tools include the circle method in function fields and refinements of Weyl sum estimates in this setting, further developing the work of Lê-Liu-Wooley and Champagne-Ge-Lê-Liu-Wooley. These refinements are of independent interest.</p>
+      <p>where the constant $C_2>0$ depends only on $P_1,\ldots,P_\ell$ and $q$. Our tools include the circle method in function fields and refinements of Weyl sum estimates in this setting, further developing the work of LÃª-Liu-Wooley and Champagne-Ge-LÃª-Liu-Wooley. These refinements are of independent interest.</p>
     </div>
   </details>
 </article>
@@ -129,7 +323,7 @@
     <h3 class="text-lg sm:text-xl font-semibold leading-snug min-w-0">
       <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
          href="https://arxiv.org/abs/2605.16216">
-        Extensions of the Furstenberg-Sárközy theorem via the arithmetic <span class="titleglue">level-$d$</span> inequality
+        Extensions of the Furstenberg-SÃ¡rkÃ¶zy theorem via the arithmetic <span class="titleglue">level-$d$</span> inequality
       </a>
     </h3>
     <div class="flex items-center gap-2 sm:justify-self-end whitespace-nowrap">
@@ -148,7 +342,7 @@
   <details class="mt-3">
     <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
     <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>Green and Sawhney recently obtained a quasipolynomial bound in the Furstenberg–Sárközy theorem for square differences by proving an “arithmetic level-$d$” inequality, thereby yielding a greatly improved density increment scheme. We apply their method to treat general intersective polynomials $h\in\mathbb{Z}[x]$. In particular, let</p>
+      <p>Green and Sawhney recently obtained a quasipolynomial bound in the Furstenbergâ€“SÃ¡rkÃ¶zy theorem for square differences by proving an â€œarithmetic level-$d$â€ inequality, thereby yielding a greatly improved density increment scheme. We apply their method to treat general intersective polynomials $h\in\mathbb{Z}[x]$. In particular, let</p>
 
       <div class="mathblock">
         \[
@@ -164,7 +358,7 @@
         \]
       </div>
 
-      <p>This is the best quantitative upper bound presently known for sets lacking intersective polynomial differences, improving upon the work of Arala. In order to achieve the admissible exponent range $0&lt;\mu&lt;1/2$, we use sieve methods to develop novel exponential sum estimates in the style of Rice, and we use the “random sparsification” procedure of Green and Sawhney.</p>
+      <p>This is the best quantitative upper bound presently known for sets lacking intersective polynomial differences, improving upon the work of Arala. In order to achieve the admissible exponent range $0&lt;\mu&lt;1/2$, we use sieve methods to develop novel exponential sum estimates in the style of Rice, and we use the â€œrandom sparsificationâ€ procedure of Green and Sawhney.</p>
     </div>
   </details>
 </article>
@@ -178,12 +372,12 @@
 
       <div id="publication-list" class="paper-list mt-6 space-y-4">
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-         data-year="2026" data-authors="Fan Lott" data-title="Sárközy's theorem in F_q[t] via the van der Corput property">
+         data-year="2026" data-authors="Fan Lott" data-title="SÃ¡rkÃ¶zy's theorem in F_q[t] via the van der Corput property">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
     <h3 class="text-lg sm:text-xl font-semibold leading-snug min-w-0">
       <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
          href="https://arxiv.org/abs/2510.27581">
-        Sárközy's theorem in <span class="titleglue">$\mathbb{F}_q[t]$</span> via the van der Corput property
+        SÃ¡rkÃ¶zy's theorem in <span class="titleglue">$\mathbb{F}_q[t]$</span> via the van der Corput property
       </a>
     </h3>
     <div class="flex flex-wrap items-center gap-2 sm:flex-nowrap sm:justify-self-end">
@@ -203,7 +397,7 @@
   <details class="mt-3">
     <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
     <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>Fix a positive prime power $q$, and let $\mathbb{F}_q[t]$ be the ring of polynomials over the finite field $\mathbb{F}_q$ with $\text{char}(\mathbb{F}_q)&gt;2$. Suppose $A\subseteq\{f\in\mathbb{F}_q[t]:\text{deg }f\leq N\}$ contains no pair of elements whose difference is of the form $P-1$ with $P$ irreducible. Adapting Green's approach to Sárközy's theorem for shifted primes in $\mathbb{Z}$ using the van der Corput property, we show that</p>
+      <p>Fix a positive prime power $q$, and let $\mathbb{F}_q[t]$ be the ring of polynomials over the finite field $\mathbb{F}_q$ with $\text{char}(\mathbb{F}_q)&gt;2$. Suppose $A\subseteq\{f\in\mathbb{F}_q[t]:\text{deg }f\leq N\}$ contains no pair of elements whose difference is of the form $P-1$ with $P$ irreducible. Adapting Green's approach to SÃ¡rkÃ¶zy's theorem for shifted primes in $\mathbb{Z}$ using the van der Corput property, we show that</p>
 
       <div class="mathblock">
         \[
@@ -211,72 +405,73 @@
         \]
       </div>
 
-      <p>improving upon the bound $O\big(q^{(1-c/\log N)(N+1)}\big)$ due to Lê and Spencer. An important distinction between Green's argument and ours lies in the properties of exponential sums over function fields, which differ in several interesting ways from their number-field counterparts.</p>
+      <p>improving upon the bound $O\big(q^{(1-c/\log N)(N+1)}\big)$ due to LÃª and Spencer. An important distinction between Green's argument and ours lies in the properties of exponential sums over function fields, which differ in several interesting ways from their number-field counterparts.</p>
     </div>
   </details>
 </article>
 
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-         data-year="2026" data-authors="Magyar Petridis Pintz Lott" data-title="Polynomial configurations in dense subsets of the prime lattice">
-  <div class="flex flex-wrap items-start justify-between gap-3">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug">
-      <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2504.14424">
-        Polynomial configurations in dense subsets of the prime lattice
-      </a>
-    </h3>
-    <div class="flex items-center gap-2">
-      <a href="https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica" target="_blank" rel="noopener"
-         class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Acta Arith.</a>
-      <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2026</span>
-    </div>
-  </div>
-
-  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with Á. Magyar, G. Petridis, J. Pintz</p>
-
-  <div class="mt-3 flex flex-wrap gap-2">
-    <a href="https://arxiv.org/abs/2504.14424" target="_blank" rel="noopener"
-       class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-  </div>
-
-  <details class="mt-3">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-    <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>We provide a multidimensional extension of previous results on the existence of polynomial progressions in dense subsets of the primes. Let $A$ be a subset of the prime lattice $\mathbb{P}^d$ of positive relative upper density. We show that $A$ contains all polynomial configurations of the form $x+P_0(y)v_0,\ldots,x+P_\ell(y)v_\ell$, for some $x\in\mathbb{Z}^d$ and $y\in\mathbb{N}$, which satisfy a certain non-degeneracy condition. We also obtain quantitative bounds on the size of such polynomial configuration, if $A$ is a subset of the first $N$ positive integers.</p>
-    </div>
-  </details>
-</article>
+                 data-year="2026" data-authors="Magyar Petridis Pintz Lott" data-title="Polynomial configurations in dense subsets of the prime lattice">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2504.14424">
+                Polynomial configurations in dense subsets of the prime lattice
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <a href="https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Acta Arith.</a>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2026</span>
+            </div>
+          </div>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with Ã. Magyar, G. Petridis, J. Pintz</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2504.14424" target="_blank" rel="noopener"
+               class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p>We provide a multidimensional extension of previous results on the existence of polynomial progressions in dense subsets of the primes. Let $A$ be a subset of the prime lattice $\mathbb{P}^d$ of positive relative upper density. We show that $A$ contains all polynomial configurations of the form $x + P_0(y)v_0, \ldots, x + P_\ell(y)v_\ell$, for some $x \in \mathbb{Z}^d$ and $y \in \mathbb{N}$, which satisfy a certain non-degeneracy condition. We also obtain quantitative bounds on the size of such polynomial configuration, if $A$ is a subset of the first $N$ positive integers.</p>
+            </div>
+          </details>
+        </article>
 
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-         data-year="2026" data-authors="Ponagandla Lott" data-title="Polynomial progressions in the generalized twin primes">
-  <div class="flex flex-wrap items-start justify-between gap-3">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug">
-      <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2505.17375">
-        Polynomial progressions in the generalized twin primes
-      </a>
-    </h3>
-    <div class="flex items-center gap-2">
-      <a href="https://pubs.ams.org/journals/proc/" target="_blank" rel="noopener"
-         class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Proc. AMS</a>
-      <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2026</span>
-    </div>
-  </div>
-
-  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with N. R. Ponagandla</p>
-
-  <div class="mt-3 flex flex-wrap gap-2">
-    <a href="https://arxiv.org/abs/2505.17375" target="_blank" rel="noopener"
-       class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-  </div>
-
+                 data-year="2026" data-authors="Ponagandla Lott" data-title="Polynomial progressions in the generalized twin primes">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2505.17375">
+                Polynomial progressions in the generalized twin primes
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <a href="https://pubs.ams.org/journals/proc/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Proc. AMS</a>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2026</span>
+            </div>
+          </div>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with N. R. Ponagandla</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2505.17375" target="_blank" rel="noopener"
+               class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          </div>
   <details class="mt-3">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-    <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>By Maynard's theorem and the subsequent improvements by the Polymath Project, there exists a positive integer $b\leq246$ such that there are infinitely many primes $p$ such that $p+b$ is also prime. Let $P_1,\ldots,P_t\in\mathbb{Z}[y]$ with $P_1(0)=\cdots=P_t(0)=0$. We use the transference argument of Tao and Ziegler to prove there exist positive integers $x$, $y$, and $b\leq246$ such that $x+P_1(y),\ldots,x+P_t(y)$ and $x+P_1(y)+b,\ldots,x+P_t(y)+b$ are all prime. Our work is inspired by Pintz, who proved a similar result for the special case of arithmetic progressions.</p>
-    </div>
-  </details>
-</article>
+  <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+  <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+    <p>
+      By Maynard's theorem and the subsequent improvements by the Polymath Project, there exists a positive integer
+      $b \le 246$ such that there are infinitely many primes $p$ such that $p + b$ is also prime.
+      Let $P_1, \ldots, P_t \in \mathbb{Z}[y]$ with $P_1(0) = \cdots = P_t(0) = 0$.
+      We use the transference argument of Tao and Ziegler to prove there exist positive integers $x$, $y$, and $b \le 246$
+      such that $x + P_1(y)$, $x + P_2(y)$, $\ldots$, $x + P_t(y)$ and $(x + P_1(y)) + b$, $\ldots$, $(x + P_t(y)) + b$
+      are all prime. Our work is inspired by Pintz, who proved a similar result for the special case of
+      arithmetic progressions.
+    </p>
+  </div>
+</details>
+
+        </article>
       </div>
     </section>
 
@@ -286,172 +481,151 @@
       </div>
 
       <div id="earlier-publications-list" class="paper-list mt-6 space-y-4">
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+                 data-year="2026" data-authors="Dean Havard Hawkins Heard Rice Lott" data-title="Notes and computations on forbidden differences">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2508.03650">
+                Notes and computations on forbidden differences
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <a href="https://journals.calstate.edu/pump" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">PUMP</a>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2026</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with C. Dean, H. Havard, E. Hawkins, P. Heard, A. Rice</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p>We explore from several perspectives the following question: given $X\subseteq\mathbb{Z}$ and $N\in\mathbb{N}$, what is the maximum size $D(X,N)$ of $A\subseteq\{1,2,\dots,N\}$ before $A$ is forced to contain two distinct elements that differ by an element of $X$? The set of forbidden differences, $X$, is called <em>intersective</em> if $D(X,N)=o(N)$, with the most well-studied examples being $X=S=\{n^2:n\in\mathbb{N}\}$ and $X=\mathcal{P}-1=\{p-1:p\text{ prime}\}$.</p>
+
+              <p>In addition to some new results, including exact formulas and estimates for $D(X,N)$ in some non-intersective cases like $X=\mathcal{P}$ and $X=S+k$, $k\in\mathbb{N}$, we also provide a comprehensive survey of known bounds and extensive computational data. In particular, we utilize an existing algorithm for finding maximum cliques in graphs to determine $D(S,N)$ for $N\leq 300$ and $D(\mathcal{P}-1,N)$ for $N\leq 500$. None of these exact values appear previously in the literature.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2508.03650" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          </div>
+        </article>
 
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-         data-year="2026" data-authors="Dean Havard Hawkins Heard Rice Lott" data-title="Notes and computations on forbidden differences">
-  <div class="flex flex-wrap items-start justify-between gap-3">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug">
-      <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2508.03650">
-        Notes and computations on forbidden differences
-      </a>
-    </h3>
-    <div class="flex items-center gap-2">
-      <a href="https://journals.calstate.edu/pump" target="_blank" rel="noopener"
-         class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">PUMP</a>
-      <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2026</span>
-    </div>
-  </div>
+                 data-year="2025" data-authors="Clevenger Havard Heard Lott Rice Wilson" data-title="The sum-product problem for small sets">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2307.06874">
+                The sum-product problem for small sets
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <a href="https://msp.org/involve/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</a>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with G. R. Clevenger, H. Havard, P. Heard, A. Rice, B. Wilson</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p>For $A\subseteq\mathbb{R}$, let $A+A=\{a+b:a,b\in A\}$ and $AA=\{ab:a,b\in A\}$. For $k\in\mathbb{N}$, let $\mathrm{SP}(k)$ denote the minimum value of $\max\{|A+A|,|AA|\}$ over all $A\subseteq\mathbb{N}$ with $|A|=k$. Here we establish $\mathrm{SP}(k)=3k-3$ for $2\leq k\leq 7$, the $k=7$ case achieved for example by $\{1,2,3,4,6,8,12\}$, while $\mathrm{SP}(k)=3k-2$ for $k=8,9$, the $k=9$ case achieved for example by $\{1,2,3,4,6,8,9,12,16\}$. For $4\leq k\leq 7$, we provide two proofs using different applications of Freiman's $3k-4$ theorem; one of the proofs includes extensive case analysis on the product sets of $k$-element subsets of $(2k-3)$-term arithmetic progressions. For $k=8,9$, we apply Freiman's $3k-3$ theorem for product sets, and investigate the sumset of the union of two geometric progressions with the same common ratio $r&gt;1$, with separate treatments of the overlapping cases $r\neq 2$ and $r\geq 2$.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2307.06874" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          </div>
+        </article>
 
-  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with C. Dean, H. Havard, E. Hawkins, P. Heard, A. Rice</p>
-
-  <div class="mt-3 flex flex-wrap gap-2">
-    <a href="https://arxiv.org/abs/2508.03650" target="_blank" rel="noopener"
-       class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-  </div>
-
-  <details class="mt-3">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-    <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>We explore from several perspectives the following question: given $X\subseteq\mathbb{Z}$ and $N\in\mathbb{N}$, what is the maximum size $D(X,N)$ of $A\subseteq\{1,2,\dots,N\}$ before $A$ is forced to contain two distinct elements that differ by an element of $X$? The set of forbidden differences, $X$, is called <em>intersective</em> if $D(X,N)=o(N)$, with the most well-studied examples being $X=S=\{n^2:n\in\mathbb{N}\}$ and $X=\mathcal{P}-1=\{p-1:p\text{ prime}\}$.</p>
-
-      <p>In addition to some new results, including exact formulas and estimates for $D(X,N)$ in some non-intersective cases like $X=\mathcal{P}$ and $X=S+k$, $k\in\mathbb{N}$, we also provide a comprehensive survey of known bounds and extensive computational data. In particular, we utilize an existing algorithm for finding maximum cliques in graphs to determine $D(S,N)$ for $N\leq300$ and $D(\mathcal{P}-1,N)$ for $N\leq500$. None of these exact values appear previously in the literature.</p>
-    </div>
-  </details>
-</article>
-
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-         data-year="2025" data-authors="Clevenger Havard Heard Lott Rice Wilson" data-title="The sum-product problem for small sets">
-  <div class="flex flex-wrap items-start justify-between gap-3">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug">
-      <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2307.06874">
-        The sum-product problem for small sets
-      </a>
-    </h3>
-    <div class="flex items-center gap-2">
-      <a href="https://msp.org/involve/" target="_blank" rel="noopener"
-         class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</a>
-      <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2025</span>
-    </div>
-  </div>
-
-  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with G. R. Clevenger, H. Havard, P. Heard, A. Rice, B. Wilson</p>
-
-  <div class="mt-3 flex flex-wrap gap-2">
-    <a href="https://arxiv.org/abs/2307.06874" target="_blank" rel="noopener"
-       class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-  </div>
-
-  <details class="mt-3">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-    <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>For $A\subseteq\mathbb{R}$, let $A+A=\{a+b:a,b\in A\}$ and $AA=\{ab:a,b\in A\}$. For $k\in\mathbb{N}$, let $\mathrm{SP}(k)$ denote the minimum value of $\max\{|A+A|,|AA|\}$ over all $A\subseteq\mathbb{N}$ with $|A|=k$. Here we establish $\mathrm{SP}(k)=3k-3$ for $2\leq k\leq7$, the $k=7$ case achieved for example by $\{1,2,3,4,6,8,12\}$, while $\mathrm{SP}(k)=3k-2$ for $k=8,9$, the $k=9$ case achieved for example by $\{1,2,3,4,6,8,9,12,16\}$.</p>
-
-      <p>For $4\leq k\leq7$, we provide two proofs using different applications of Freiman's $3k-4$ theorem; one of the proofs includes extensive case analysis on the product sets of $k$-element subsets of $(2k-3)$-term arithmetic progressions. For $k=8,9$, we apply Freiman's $3k-3$ theorem for product sets, and investigate the sumset of the union of two geometric progressions with the same common ratio $r&gt;1$, with separate treatments of the overlapping cases $r\neq2$ and $r\geq2$.</p>
-    </div>
-  </details>
-</article>
+<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2108.08410">
+                The pigeonhole principle and multicolor Ramsey numbers
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <a href="https://msp.org/involve/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</a>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with V. Balaji, P. Lamb, D. Patel, A. Rice, S. Singh, C. R. Ward</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p><strong>Abstract.</strong> For integers $k,r\ge 2$, the diagonal Ramsey number $R_r(k)$ is the minimum $N\in\mathbb{N}$ such that every $r$-coloring of the edges of a complete graph on $N$ vertices yields a monochromatic subgraph on $k$ vertices. Here we make a careful effort to extract explicit upper bounds for $R_r(k)$ from the pigeonhole principle alone. Our main term improves on previously documented explicit bounds for $r\ge3$, and we also consider an often-ignored secondary term, which allows us to subtract a uniformly bounded-below positive proportion of the main term. Asymptotically, we give a self-contained proof that $$R_r(k)\le \Big(\tfrac{3+e}{2}\Big)\,\frac{(r(k-2))!}{((k-2)!)^r}\,(1+o_{r\to\infty}(1)),$$ and we note our methods combine with previous estimates on $R_r(3)$ to improve the constant $\tfrac{3+e}{2}$ to $\tfrac{3+e}{2}-\tfrac{d}{48}$, where $d=66-R_4(3)\ge 4$. We also compare our formulas, and previously documented formulas, to numerical data.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2108.08410" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          </div>
+        </article>
 
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-         data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
-  <div class="flex flex-wrap items-start justify-between gap-3">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug">
-      <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2108.08410">
-        The pigeonhole principle and multicolor Ramsey numbers
-      </a>
-    </h3>
-    <div class="flex items-center gap-2">
-      <a href="https://msp.org/involve/" target="_blank" rel="noopener"
-         class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">Involve</a>
-      <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
-    </div>
-  </div>
-
-  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with V. Balaji, P. Lamb, D. Patel, A. Rice, S. Singh, C. R. Ward</p>
-
-  <div class="mt-3 flex flex-wrap gap-2">
-    <a href="https://arxiv.org/abs/2108.08410" target="_blank" rel="noopener"
-       class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-  </div>
-
-  <details class="mt-3">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-    <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>For integers $k,r\geq2$, the diagonal Ramsey number $R_r(k)$ is the minimum $N\in\mathbb{N}$ such that every $r$-coloring of the edges of a complete graph on $N$ vertices yields a monochromatic subgraph on $k$ vertices. Here we make a careful effort to extract explicit upper bounds for $R_r(k)$ from the pigeonhole principle alone. Our main term improves on previously documented explicit bounds for $r\geq3$, and we also consider an often-ignored secondary term, which allows us to subtract a uniformly bounded-below positive proportion of the main term. Asymptotically, we give a self-contained proof that</p>
-
-      <div class="mathblock">
-        \[
-        R_r(k)\leq\left(\frac{3+e}{2}\right)\frac{(r(k-2))!}{((k-2)!)^r}\left(1+o_{r\to\infty}(1)\right),
-        \]
-      </div>
-
-      <p>and we note that our methods combine with previous estimates on $R_r(3)$ to improve the constant $(3+e)/2$ to $(3+e)/2-d/48$, where $d=66-R_4(3)\geq4$. We also compare our formulas, and previously documented formulas, to numerical data.</p>
-    </div>
-  </details>
-</article>
+                 data-year="2024" data-authors="Agrawal Bhatia Gupta Lamb Lott Rice Ward" data-title="Computations and observations on congruence covering systems">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2208.09720">
+                Computations and observations on congruence covering systems
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <a href="https://math.colgate.edu/~integers/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS (Proc.)</a>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2024</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with R. Agrawal, P. Bhatia, K. Gupta, P. Lamb, A. Rice, C. R. Ward</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p><strong>Abstract.</strong> A <em>covering system</em> is a collection of integer congruences such that every integer satisfies at least one congruence in the collection. A covering system is called <em>distinct</em> if all of its moduli are distinct. An expansive literature has developed on covering systems since their introduction by ErdÅ‘s. Here we provide a full classification of distinct covering systems with at most ten moduli, which we group together based on two forms of equivalence. As a consequence, we determine the minimum cardinality of a distinct covering system with all moduli exceeding $2$, which is $11$.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2208.09720" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          </div>
+        </article>
 
 <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-         data-year="2024" data-authors="Agrawal Bhatia Gupta Lamb Lott Rice Ward" data-title="Computations and observations on congruence covering systems">
-  <div class="flex flex-wrap items-start justify-between gap-3">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug">
-      <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2208.09720">
-        Computations and observations on congruence covering systems
-      </a>
-    </h3>
-    <div class="flex items-center gap-2">
-      <a href="https://math.colgate.edu/~integers/" target="_blank" rel="noopener"
-         class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS (Proc.)</a>
-      <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2024</span>
-    </div>
-  </div>
-
-  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with R. Agrawal, P. Bhatia, K. Gupta, P. Lamb, A. Rice, C. R. Ward</p>
-
-  <div class="mt-3 flex flex-wrap gap-2">
-    <a href="https://arxiv.org/abs/2208.09720" target="_blank" rel="noopener"
-       class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-  </div>
-
-  <details class="mt-3">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-    <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>A <em>covering system</em> is a collection of integer congruences such that every integer satisfies at least one congruence in the collection. A covering system is called <em>distinct</em> if all of its moduli are distinct. An expansive literature has developed on covering systems since their introduction by Erdős. Here we provide a full classification of distinct covering systems with at most ten moduli, which we group together based on two forms of equivalence. As a consequence, we determine the minimum cardinality of a distinct covering system with all moduli exceeding $2$, which is $11$.</p>
-    </div>
-  </details>
-</article>
-
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-         data-year="2022" data-authors="Balaji Lott Rice" data-title="Schur’s theorem in integer lattices">
-  <div class="flex flex-wrap items-start justify-between gap-3">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug">
-      <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
-         href="https://arxiv.org/abs/2112.03127">
-        Schur’s theorem in integer lattices
-      </a>
-    </h3>
-    <div class="flex items-center gap-2">
-      <a href="https://math.colgate.edu/~integers/" target="_blank" rel="noopener"
-         class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS</a>
-      <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
-    </div>
-  </div>
-
-  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">with V. Balaji, A. Rice</p>
-
-  <div class="mt-3 flex flex-wrap gap-2">
-    <a href="https://arxiv.org/abs/2112.03127" target="_blank" rel="noopener"
-       class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
-  </div>
-
-  <details class="mt-3">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
-    <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-      <p>A standard proof of Schur’s Theorem yields that any $r$-coloring of $\{1,2,\dots,R_r-1\}$ yields a monochromatic solution to $x+y=z$, where $R_r$ is the classical $r$-color Ramsey number, the minimum $N$ such that any $r$-coloring of a complete graph on $N$ vertices yields a monochromatic triangle. We explore generalizations and modifications of this result in higher-dimensional integer lattices, showing in particular that if $k\geq d+1$, then any $r$-coloring of $\{1,2,\dots,R_r(k)^d-1\}^d$ yields a monochromatic solution to $x_1+\cdots+x_{k-1}=x_k$ with $\{x_1,\dots,x_d\}$ linearly independent, where $R_r(k)$ is the analogous Ramsey number in which triangles are replaced by complete graphs on $k$ vertices. We also obtain computational results and examples in the case $d=2$, $k=3$, and $r\in\{2,3,4\}$.</p>
-    </div>
-  </details>
-</article>
+                 data-year="2022" data-authors="Balaji Lott Rice" data-title="Schurâ€™s theorem in integer lattices">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+              <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
+                 href="https://arxiv.org/abs/2112.03127">
+                Schurâ€™s theorem in integer lattices
+              </a>
+            </h3>
+            <div class="flex items-center gap-2">
+              <a href="https://math.colgate.edu/~integers/" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200 px-2.5 py-1 text-xs font-medium">INTEGERS</a>
+              <span class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-700 px-2.5 py-1 text-xs text-gray-600 dark:text-gray-300">2022</span>
+            </div>
+          </div>
+          <div class="mt-1 grid grid-cols-[auto,1fr] items-center gap-x-2 text-sm text-gray-600 dark:text-gray-300"><span>with V. Balaji, A. Rice</span>
+          </div>
+          <details class="mt-3">
+            <summary class="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Abstract</summary>
+            <div class="abstract mt-2 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p><strong>Abstract.</strong> A standard proof of Schurâ€™s Theorem yields that any $r$-coloring of $\{1,2,\dots,R_r-1\}$ yields a monochromatic solution to $x+y=z$, where $R_r$ is the classical $r$-color Ramsey number, the minimum $N$ such that any $r$-coloring of a complete graph on $N$ vertices yields a monochromatic triangle. We explore generalizations and modifications of this result in higher dimensional integer lattices, showing in particular that if $k\ge d+1$, then any $r$-coloring of $\{1,2,\dots,R_r(k)^d-1\}^d$ yields a monochromatic solution to $x_1+\cdots+x_{k-1}=x_k$ with $\{x_1,\dots,x_d\}$ linearly independent, where $R_r(k)$ is the analogous Ramsey number in which triangles are replaced by complete graphs on $k$ vertices. We also obtain computational results and examples in the case $d=2$, $k=3$, and $r\in\{2,3,4\}$.</p>
+            </div>
+          </details>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://arxiv.org/abs/2112.03127" target="_blank" rel="noopener" class="rounded-lg border border-gray-200 dark:border-gray-800 px-2.5 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">arXiv</a>
+          </div>
+        </article>
       </div>
     </section>
+  </main>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+    Â© <span id="year"></span> Andrew Lott
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
