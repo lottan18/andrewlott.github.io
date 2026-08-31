@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home • Andrew Lott</title>
+  <title>Home &#8226; Andrew Lott</title>
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class'};</script>
   <link rel="stylesheet" href="styles/site.css" />
-  <meta name="description" content="Andrew Lott — PhD candidate at UGA. Research in number theory, additive combinatorics, harmonic analysis." />
+  <meta name="description" content="Andrew Lott &#8212; Mathematics PhD candidate at UGA. Research in the circle method, additive combinatorics, and ergodic theory." />
 
   <style>
     .fade-in {
@@ -23,6 +23,12 @@
       to {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in {
+        animation: none;
       }
     }
   </style>
@@ -57,14 +63,14 @@
           </div>
         </div>
 
-        <div class="fade-in">
+        <div class="fade-in min-w-0">
           <h1 class="text-[2.6rem] md:text-5xl font-extrabold tracking-tight leading-tight text-gray-950 dark:text-white">
             Andrew Lott
           </h1>
 
           <p class="mt-3 text-lg md:text-xl font-medium text-gray-800 dark:text-gray-200">
             <span class="block md:inline">Mathematics PhD candidate</span>
-            <span class="hidden md:inline text-gray-400 dark:text-gray-600">&nbsp;•&nbsp;</span>
+            <span class="hidden md:inline text-gray-400 dark:text-gray-600">&nbsp;&#8226;&nbsp;</span>
             <span class="block md:inline">
               University of Georgia <span class="text-gray-500 font-normal">(Boyd 434J)</span>
             </span>
@@ -77,36 +83,46 @@
             >andrew.lott@uga.edu</a>
           </p>
 
-          <p class="mt-4 text-base md:text-lg text-gray-800 dark:text-gray-200">
-            I am a mathematics PhD candidate expecting to graduate May 2027. My advisors are 
+          <p class="mt-4 max-w-3xl text-base md:text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+            I expect to graduate in May 2027. I am advised by
             <a
               href="https://www.researchgate.net/profile/Akos-Magyar"
               target="_blank"
               rel="noopener"
               class="underline underline-offset-4"
-            >Ákos Magyar</a>
+            >&#193;kos Magyar</a>
             and
             <a
               href="https://www.math.uga.edu/directory/people/giorgis-petridis"
               target="_blank"
               rel="noopener"
               class="underline underline-offset-4"
-            >Giorgis Petridis</a>. From January to June 2026 I was a visiting researcher at the Rényi Institute in Budapest. 
-            
-            I am entering the job market this semester. 
+            >Giorgis Petridis</a>.
           </p>
 
+          <p class="mt-3 max-w-3xl text-base md:text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+            From January through June 2026, I was a visiting researcher at the R&#233;nyi Institute in Budapest. I am entering the academic job market in fall 2026.
+          </p>
 
           <!-- Clickable research-area chips -->
-          <div class="mt-6 flex flex-wrap items-center gap-2 text-sm md:text-base">
+          <nav class="mt-6 flex flex-wrap items-center gap-2 text-sm md:text-base" aria-label="Research areas">
 
             <a
-              href="https://en.wikipedia.org/wiki/Additive_number_theory"
+              href="https://en.wikipedia.org/wiki/Hardy%E2%80%93Ramanujan%E2%80%93Littlewood_circle_method"
               target="_blank"
               rel="noopener noreferrer"
               class="whitespace-nowrap inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 px-3 py-1 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition"
             >
-              Additive Number Theory
+              Circle Method
+            </a>
+
+            <a
+              href="https://en.wikipedia.org/wiki/Additive_combinatorics"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whitespace-nowrap inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 px-3 py-1 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition"
+            >
+              Additive Combinatorics
             </a>
 
             <a
@@ -118,18 +134,9 @@
               Ergodic Theory
             </a>
 
-            <a
-              href="https://en.wikipedia.org/wiki/Gowers_norm"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="whitespace-nowrap inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 px-3 py-1 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition"
-            >
-              Higher-Order Fourier Analysis
-            </a>
+          </nav>
 
-          </div>
-
-          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <nav class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" aria-label="Main sections">
 
             <a
               href="research.html"
@@ -159,7 +166,7 @@
               <div class="font-semibold text-lg">Talks</div>
             </a>
 
-          </div>
+          </nav>
 
         </div>
       </div>
@@ -167,7 +174,7 @@
   </main>
 
   <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-10 text-sm text-gray-500 dark:text-gray-400">
-    © <span id="year"></span> Andrew Lott
+    &#169; <span id="year"></span> Andrew Lott
   </footer>
 
   <script src="scripts/theme.js"></script>
