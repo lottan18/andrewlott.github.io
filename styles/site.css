@@ -1,23 +1,235 @@
-/* tiny tweak for the toggle switch (same as your inline styles) */
+:root {
+  color-scheme: light;
+  --site-bg: #f7f3ea;
+  --site-surface: #fffdf8;
+  --site-text: #172033;
+  --site-muted: #586274;
+  --site-link: #1f5d73;
+  --site-accent: #ad4f38;
+  --site-border: #d8d2c4;
+  --site-soft: #eee7da;
+}
+
+html.dark {
+  color-scheme: dark;
+  --site-bg: #0c1320;
+  --site-surface: #141e2d;
+  --site-text: #f4efe6;
+  --site-muted: #afb8c6;
+  --site-link: #7dc4d4;
+  --site-accent: #d97a5f;
+  --site-border: #2b3a4d;
+  --site-soft: #1b2839;
+}
+
+body {
+  background-color: var(--site-bg) !important;
+  color: var(--site-text) !important;
+}
+
+::selection {
+  background: rgb(31 93 115 / 22%);
+  color: var(--site-text);
+}
+
+/* Light-theme surfaces and typography */
+html:not(.dark) :not(body).bg-white,
+html:not(.dark) :not(body)[class*="bg-white/"] {
+  background-color: var(--site-surface) !important;
+}
+
+html:not(.dark) .bg-gray-100 {
+  background-color: var(--site-soft) !important;
+}
+
+html:not(.dark) .text-gray-950,
+html:not(.dark) .text-gray-900,
+html:not(.dark) .text-gray-800 {
+  color: var(--site-text) !important;
+}
+
+html:not(.dark) .text-gray-700,
+html:not(.dark) .text-gray-600,
+html:not(.dark) .text-gray-500,
+html:not(.dark) .text-gray-400 {
+  color: var(--site-muted) !important;
+}
+
+html:not(.dark) .border-gray-200,
+html:not(.dark) .border-gray-300,
+html:not(.dark) [class*="border-blue-200"] {
+  border-color: var(--site-border) !important;
+}
+
+html:not(.dark) [class*="ring-gray-300"],
+html:not(.dark) [class*="ring-black/"] {
+  --tw-ring-color: var(--site-border) !important;
+}
+
+html:not(.dark) .hover\:bg-gray-50:hover,
+html:not(.dark) .hover\:bg-white:hover {
+  background-color: #f5efe4 !important;
+}
+
+html:not(.dark) .hover\:border-gray-300:hover {
+  border-color: #c7bdad !important;
+}
+
+/* Links and the two restrained accent families */
+html:not(.dark) a.underline,
+html:not(.dark) .text-blue-600,
+html:not(.dark) .text-blue-700 {
+  color: var(--site-link) !important;
+}
+
+html:not(.dark) .bg-blue-50,
+html:not(.dark) [class*="bg-blue-50/"],
+html:not(.dark) [class*="bg-blue-400/"] {
+  background-color: rgb(31 93 115 / 9%) !important;
+}
+
+html:not(.dark) .text-emerald-700,
+html:not(.dark) .text-sky-700 {
+  color: var(--site-link) !important;
+}
+
+html:not(.dark) .bg-emerald-50,
+html:not(.dark) .bg-sky-50 {
+  background-color: rgb(31 93 115 / 10%) !important;
+}
+
+html:not(.dark) [class*="border-emerald-"],
+html:not(.dark) [class*="border-sky-"] {
+  border-color: rgb(31 93 115 / 30%) !important;
+}
+
+html:not(.dark) .text-amber-600,
+html:not(.dark) .text-amber-700,
+html:not(.dark) .text-violet-600 {
+  color: var(--site-accent) !important;
+}
+
+html:not(.dark) .bg-amber-50,
+html:not(.dark) [class*="bg-amber-200/"],
+html:not(.dark) [class*="bg-violet-200/"] {
+  background-color: rgb(173 79 56 / 11%) !important;
+}
+
+html:not(.dark) [class*="ring-amber-"],
+html:not(.dark) [class*="ring-violet-"] {
+  --tw-ring-color: rgb(173 79 56 / 32%) !important;
+}
+
+.bg-blue-600 {
+  background-color: #1f5d73 !important;
+}
+
+/* Dark companion palette */
+html.dark :not(body)[class*="dark:bg-gray-9"] {
+  background-color: var(--site-surface) !important;
+}
+
+html.dark [class*="dark:border-gray-"] {
+  border-color: var(--site-border) !important;
+}
+
+html.dark [class*="dark:ring-gray-"],
+html.dark [class*="dark:ring-white/"] {
+  --tw-ring-color: var(--site-border) !important;
+}
+
+html.dark [class*="dark:text-gray-1"],
+html.dark [class*="dark:text-gray-2"],
+html.dark [class*="dark:text-white"] {
+  color: var(--site-text) !important;
+}
+
+html.dark [class*="dark:text-gray-3"],
+html.dark [class*="dark:text-gray-4"],
+html.dark [class*="dark:text-gray-6"] {
+  color: var(--site-muted) !important;
+}
+
+html.dark a.underline,
+html.dark [class*="dark:text-blue-"],
+html.dark [class*="dark:text-emerald-"],
+html.dark [class*="dark:text-sky-"] {
+  color: var(--site-link) !important;
+}
+
+html.dark [class*="dark:bg-blue-"],
+html.dark [class*="dark:bg-emerald-"],
+html.dark [class*="dark:bg-sky-"] {
+  background-color: rgb(125 196 212 / 12%) !important;
+}
+
+html.dark [class*="dark:text-amber-"],
+html.dark [class*="dark:text-violet-"] {
+  color: var(--site-accent) !important;
+}
+
+html.dark [class*="dark:bg-amber-"],
+html.dark [class*="dark:bg-violet-"] {
+  background-color: rgb(217 122 95 / 14%) !important;
+}
+
+/* Shared navigation */
+.site-brand {
+  color: var(--site-text) !important;
+  text-decoration: none;
+}
+
+.site-nav-link {
+  color: var(--site-muted) !important;
+}
+
+.site-nav-link:hover {
+  background-color: var(--site-soft);
+  color: var(--site-text) !important;
+}
+
+.site-nav-link.is-active {
+  color: var(--site-text) !important;
+  box-shadow: 0 0 0 1px var(--site-border);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--site-link);
+  outline-offset: 3px;
+}
+
+/* Theme toggle */
 .toggle-switch {
   width: 40px;
   height: 20px;
-  background-color: #ccc;
+  flex: 0 0 auto;
+  background-color: var(--site-soft);
+  border: 1px solid var(--site-border);
   border-radius: 9999px;
   position: relative;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.25s, border-color 0.25s;
 }
+
 .toggle-switch::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: 1px;
+  left: 1px;
   width: 16px;
   height: 16px;
-  background-color: white;
+  background-color: var(--site-surface);
   border-radius: 9999px;
-  transition: transform 0.3s;
+  box-shadow: 0 1px 3px rgb(23 32 51 / 22%);
+  transition: transform 0.25s;
 }
-.toggle-switch.dark::before { transform: translateX(20px); }
-.toggle-switch.dark { background-color: #4b5563; }
+
+.toggle-switch.dark {
+  background-color: var(--site-link);
+  border-color: var(--site-link);
+}
+
+.toggle-switch.dark::before {
+  transform: translateX(20px);
+}
