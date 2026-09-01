@@ -3,7 +3,7 @@
   --site-bg: #f7f3ea;
   --site-surface: #fffdf8;
   --site-text: #172033;
-  --site-muted: #586274;
+  --site-muted: #172033;
   --site-link: #1f5d73;
   --site-accent: #ad4f38;
   --site-border: #d8d2c4;
@@ -32,15 +32,14 @@ html:not(.dark) .bg-gray-100 {
 
 html:not(.dark) .text-gray-950,
 html:not(.dark) .text-gray-900,
-html:not(.dark) .text-gray-800 {
-  color: var(--site-text) !important;
-}
-
+html:not(.dark) .text-gray-800,
 html:not(.dark) .text-gray-700,
 html:not(.dark) .text-gray-600,
 html:not(.dark) .text-gray-500,
-html:not(.dark) .text-gray-400 {
-  color: var(--site-muted) !important;
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-gray-300,
+html:not(.dark) .text-gray-200 {
+  color: var(--site-text) !important;
 }
 
 html:not(.dark) .border-gray-200,
@@ -110,4 +109,9 @@ html:not(.dark) [class*="ring-violet-"] {
 
 .bg-blue-600 {
   background-color: #1f5d73 !important;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--site-text) !important;
+  opacity: 1;
 }
