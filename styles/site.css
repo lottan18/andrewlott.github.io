@@ -443,6 +443,15 @@ textarea::placeholder {
   }
 }
 
+
+@media (max-width: 360px) {
+  .site-nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 0.75rem 1.5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .site-nav-link::after,
   .surface-card {
