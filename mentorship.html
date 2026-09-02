@@ -8,7 +8,7 @@
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class'};</script>
-  <link rel="stylesheet" href="styles/site.css?v=20260901-1" />
+  <link rel="stylesheet" href="styles/site.css?v=20260901-2" />
   <style>
     /* Make entire cards clickable without changing layout */
     .card-link { position:absolute; inset:0; border-radius:0.75rem; }
@@ -24,55 +24,52 @@
   gtag('config', 'G-R8CCWTZD59');
 </script>
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
-  <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-    <!-- Local Nav -->
-    <nav class="mt-4 mb-2">
-      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900"><span aria-hidden="true">←</span> Back to main page</a>
-    </nav>
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900 site-page">
+  <div id="site-nav"></div>
+  <main class="page-shell">
 
     <!-- Header -->
-    <header class="relative mt-6 sm:mt-8">
+    <header class="page-header">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Mentorship</h1>
+          <h1 class="page-title">Mentorship</h1>
         </div>
       </div>
     </header>
 
     <!-- Content Sections -->
-    <section class="mt-8 grid gap-6">
+    <section class="mentorship-sections">
       <!-- DRP -->
-      <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-5 shadow-sm">
+      <section class="mentorship-group">
         <div class="flex items-start justify-between">
-          <h2 class="text-xl sm:text-2xl font-semibold">Directed Reading Projects</h2>
+          <h2 class="section-title">Directed Reading Projects</h2>
         </div>
         <div class="mt-4 space-y-4">
-          <article class="relative rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+          <article class="surface-card mentorship-card relative">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <div class="text-sm text-gray-600 dark:text-gray-300">Spring 2025</div>
-                <h3 class="text-base sm:text-lg font-medium">Undergraduate DRP on <span class="italic">Roth’s Theorem</span></h3>
+                <h3 class="card-title">Undergraduate DRP on <span class="italic">Roth’s Theorem</span></h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Mentored <span class="font-medium">José López-Gervacio</span> using Zhao’s <a href="https://yufeizhao.com/gtacbook/gtacbook.pdf" target="_blank" rel="noopener" class="underline text-blue-700 dark:text-blue-300">Graph Theory and Additive Combinatorics</a>.</p>
               </div>
             </div>
             <a class="card-link" href="https://www.math.uga.edu/directed-reading-program" target="_blank" rel="noopener noreferrer" aria-label="UGA Directed Reading Program page (Roth's Theorem DRP)"><span class="sr-only">UGA DRP page</span></a>
           </article>
-          <article class="relative rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+          <article class="surface-card mentorship-card relative">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <div class="text-sm text-gray-600 dark:text-gray-300">Fall 2025</div>
-                <h3 class="text-base sm:text-lg font-medium">Undergraduate DRP on <span class="italic">Prime Number Theory</span></h3>
+                <h3 class="card-title">Undergraduate DRP on <span class="italic">Prime Number Theory</span></h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Mentored <span class="font-medium">Priya Jani</span> using Pollack’s <a href="https://pollack.uga.edu/NABDofficial.pdf" target="_blank" rel="noopener" class="underline text-blue-700 dark:text-blue-300">Not Always Buried Deep</a>.</p>
               </div>
             </div>
             <a class="card-link" href="https://www.math.uga.edu/directed-reading-program" target="_blank" rel="noopener noreferrer" aria-label="UGA Directed Reading Program page (Prime Number Theory DRP)"><span class="sr-only">UGA DRP page</span></a>
           </article>
-          <article class="relative rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+          <article class="surface-card mentorship-card relative">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <div class="text-sm text-gray-600 dark:text-gray-300">Spring 2026, Fall 2026</div>
-                <h3 class="text-base sm:text-lg font-medium">DRP Coordinator</h3>
+                <h3 class="card-title">DRP Coordinator</h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Coordinator for the UGA Directed Reading Program.</p>
               </div>
             </div>
@@ -82,16 +79,16 @@
       </section>
 
       <!-- Undergraduate Research -->
-      <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-5 shadow-sm">
+      <section class="mentorship-group">
         <div class="flex items-start justify-between">
-          <h2 class="text-xl sm:text-2xl font-semibold">Undergraduate Research</h2>
+          <h2 class="section-title">Undergraduate Research</h2>
         </div>
         <div class="mt-4 space-y-4">
-          <article class="relative rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+          <article class="surface-card mentorship-card relative">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <div class="text-sm text-gray-600 dark:text-gray-300">Summer 2023 &amp; Summer 2024</div>
-                <h3 class="text-base sm:text-lg font-medium">Kinnaird Undergraduate Research Program — Millsaps College</h3>
+                <h3 class="card-title">Kinnaird Undergraduate Research Program — Millsaps College</h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Teaching assistant for the undergraduate research program.</p>
               </div>
             </div>
@@ -101,16 +98,16 @@
       </section>
 
       <!-- Outreach -->
-      <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-5 shadow-sm">
+      <section class="mentorship-group">
         <div class="flex items-start justify-between">
-          <h2 class="text-xl sm:text-2xl font-semibold">Outreach</h2>
+          <h2 class="section-title">Outreach</h2>
         </div>
         <div class="mt-4 space-y-4">
-          <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+          <article class="surface-card mentorship-card">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <div class="text-sm text-gray-600 dark:text-gray-300">Spring 2025</div>
-                <h3 class="text-base sm:text-lg font-medium">Athens Math Circle</h3>
+                <h3 class="card-title">Athens Math Circle</h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Gave talk introducing Ramsey numbers for middle/high school students.</p>
                 
               </div>
@@ -121,38 +118,38 @@
       </section>
 
       <!-- Competitions -->
-      <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-5 shadow-sm">
+      <section class="mentorship-group">
         <div class="flex items-start justify-between">
-          <h2 class="text-xl sm:text-2xl font-semibold">Competitions</h2>
+          <h2 class="section-title">Competitions</h2>
         </div>
         <div class="mt-4 space-y-4">
-          <article class="relative rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+          <article class="surface-card mentorship-card relative">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <div class="text-sm text-gray-600 dark:text-gray-300">Fall 2025</div>
-                <h3 class="text-base sm:text-lg font-medium">UGA High School Math Competition</h3>
+                <h3 class="card-title">UGA High School Math Competition</h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Volunteer and problem writer.</p>
               </div>
             </div>
             <a class="card-link" href="https://www.math.uga.edu/uga-high-school-math-tournament" target="_blank" rel="noopener noreferrer" aria-label="UGA High School Math Competition page"><span class="sr-only">UGA High School Math Competition page</span></a>
           </article>
 
-          <article class="relative rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+          <article class="surface-card mentorship-card relative">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <div class="text-sm text-gray-600 dark:text-gray-300">2021 &amp; 2022</div>
-                <h3 class="text-base sm:text-lg font-medium">Millsaps College High School Math Competition</h3>
+                <h3 class="card-title">Millsaps College High School Math Competition</h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Volunteer and problem writer.</p>
               </div>
             </div>
             <a class="card-link" href="https://alexricemath.com/high-school-competition/" target="_blank" rel="noopener noreferrer" aria-label="Millsaps College High School Math Competition page"><span class="sr-only">Millsaps College High School Math Competition page</span></a>
           </article>
 
-          <article class="relative rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+          <article class="surface-card mentorship-card relative">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <div class="text-sm text-gray-600 dark:text-gray-300">2022</div>
-                <h3 class="text-base sm:text-lg font-medium">Jackson Preparatory School Mathcounts Team</h3>
+                <h3 class="card-title">Jackson Preparatory School Mathcounts Team</h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Assistant coach</p>
               </div>
             </div>
@@ -163,13 +160,14 @@
     </section>
   </main>
 
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+  <footer class="site-footer border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
     © <span id="year"></span> Andrew Lott
   </footer>
 
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
+  <script src="/scripts/nav.js?v=20260901-2"></script>
 </body>
 </html>
 
