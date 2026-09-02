@@ -3,32 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PAGE TITLE • Andrew Lott</title>
+  <title>About • Andrew Lott</title>
   <link rel="icon" href="images/profile-photo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class'};</script>
-  <link rel="stylesheet" href="styles/site.css?v=20260901-1" />
+  <link rel="stylesheet" href="styles/site.css?v=20260901-2" />
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
-  <main class="max-w-screen-lg mx-auto px-4 pb-24">
-<title>About • Andrew Lott</title>
-<main class="max-w-screen-lg mx-auto px-4 pb-24">
-  <h1 class="text-3xl font-bold mt-6">About</h1>
-  <div class="prose dark:prose-invert mt-6 max-w-none">
-    <p>
-      I’m a PhD student in mathematics at the University of Georgia. My research interests include
-      additive combinatorics, harmonic analysis, ergodic theory, and their applications to density problems
-      with primes. Outside research, I care a lot about teaching and mentoring undergraduates.
-    </p>
-    <p>
-      Email: <a href="mailto:andrew.lott@uga.edu">andrew.lott@uga.edu</a>.
-    </p>
-  </div>
-</main>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased site-page">
+  <div id="site-nav"></div>
+
+  <main class="page-shell">
+    <header class="page-header">
+      <h1 class="page-title">About</h1>
+    </header>
+
+    <div class="about-prose body-copy">
+      <p>
+        I’m a PhD student in mathematics at the University of Georgia. My research interests include
+        additive combinatorics, harmonic analysis, ergodic theory, and their applications to density problems
+        with primes. Outside research, I care a lot about teaching and mentoring undergraduates.
+      </p>
+      <p>
+        Email: <a href="mailto:andrew.lott@uga.edu">andrew.lott@uga.edu</a>.
+      </p>
+    </div>
   </main>
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+
+  <footer class="site-footer border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
     © <span id="year"></span> Andrew Lott
   </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script src="/scripts/nav.js?v=20260901-2"></script>
 </body>
 </html>
