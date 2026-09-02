@@ -7,7 +7,7 @@
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class'};</script>
-  <link rel="stylesheet" href="styles/site.css?v=20260901-1" />
+  <link rel="stylesheet" href="styles/site.css?v=20260901-2" />
   <meta name="description" content="Andrew Lott &#8212; Mathematics PhD candidate at UGA. Research in the circle method, additive combinatorics, and ergodic theory." />
 
   <style>
@@ -43,9 +43,10 @@
   </script>
 </head>
 
-<body class="min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
+<body class="min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900 site-home">
+  <div id="site-nav"></div>
 
-  <main class="flex-1 max-w-screen-xl mx-auto px-6 pb-24">
+  <main class="site-home-shell flex-1">
     <section class="pt-10 md:pt-16">
       <div class="grid grid-cols-1 md:grid-cols-[auto,1fr] items-center gap-8 md:gap-14">
 
@@ -62,7 +63,7 @@
         </div>
 
         <div class="fade-in min-w-0">
-          <h1 class="text-[2.6rem] md:text-5xl font-extrabold tracking-tight leading-tight text-gray-950 dark:text-white">
+          <h1 class="hero-title">
             Andrew Lott
           </h1>
 
@@ -81,7 +82,7 @@
             >andrew.lott@uga.edu</a>
           </p>
       
-          <p class="mt-4 max-w-3xl text-base md:text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+          <p class="body-copy mt-4 max-w-3xl">
              I expect to graduate in May 2027, and I am entering the academic job market beginning in Fall 2026. My advisors are
             <a
               href="https://www.researchgate.net/profile/Akos-Magyar"
@@ -99,7 +100,7 @@
           </p>
 
 
-          <p class="mt-3 text-base sm:text-lg text-gray-800 dark:text-gray-200">
+          <p class="body-copy mt-3">
             Since 2023, I have been part of the  
               <a href="https://math-rtg-agant.franklinresearch.uga.edu/number-theory-and-arithmetic-geometry" target="_blank" rel="noopener" class="underline">UGA number theory group</a>. 
             From January-June 2026 I was a visiting researcher at the Alfr&#233;d R&#233;nyi Institute of Mathematics in Budapest, Hungary for the  
@@ -138,44 +139,12 @@
 
           </nav>
 
-          <nav class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" aria-label="Main sections">
-
-            <a
-              href="research.html"
-              class="rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 bg-white/80 dark:bg-gray-900/60 p-5 shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-gray-900 transition-all"
-            >
-              <div class="font-semibold text-lg">Research</div>
-            </a>
-
-            <a
-              href="teaching.html"
-              class="rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 bg-white/80 dark:bg-gray-900/60 p-5 shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-gray-900 transition-all"
-            >
-              <div class="font-semibold text-lg">Teaching</div>
-            </a>
-
-            <a
-              href="mentorship.html"
-              class="rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 bg-white/80 dark:bg-gray-900/60 p-5 shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-gray-900 transition-all"
-            >
-              <div class="font-semibold text-lg">Mentorship</div>
-            </a>
-
-            <a
-              href="talks.html"
-              class="rounded-2xl ring-1 ring-gray-300/70 dark:ring-gray-700/70 bg-white/80 dark:bg-gray-900/60 p-5 shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-gray-900 transition-all"
-            >
-              <div class="font-semibold text-lg">Talks</div>
-            </a>
-
-          </nav>
-
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-10 text-sm text-gray-500 dark:text-gray-400">
+  <footer class="site-footer border-t border-gray-200 dark:border-gray-800 text-center py-10 text-sm text-gray-500 dark:text-gray-400">
     &#169; <span id="year"></span> Andrew Lott
   </footer>
 
@@ -183,5 +152,6 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
+  <script src="/scripts/nav.js?v=20260901-2"></script>
 </body>
 </html>
