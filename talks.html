@@ -11,27 +11,11 @@
   <script>
     tailwind.config = { darkMode: 'class' };
   </script>
-  <link rel="stylesheet" href="styles/site.css?v=20260901-1" />
+  <link rel="stylesheet" href="styles/site.css?v=20260901-2" />
 
   <style>
     mjx-container[jax="SVG"][display="false"] { display: inline; }
 
-    .glass-card {
-      background: linear-gradient(
-        to bottom right,
-        rgba(255,253,248,0.92),
-        rgba(255,253,248,0.78)
-      );
-      backdrop-filter: blur(14px);
-    }
-
-    .dark .glass-card {
-      background: linear-gradient(
-        to bottom right,
-        rgba(17,24,39,0.80),
-        rgba(3,7,18,0.66)
-      );
-    }
 
     .year-anchor {
       scroll-margin-top: 2rem;
@@ -59,58 +43,51 @@
   </script>
 </head>
 
-<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
-  <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-    <nav class="mt-4 mb-2">
-      <a
-        href="/"
-        class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
-      >
-        <span aria-hidden="true">←</span> Back to main page
-      </a>
-    </nav>
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900 site-page">
+  <div id="site-nav"></div>
+  <main class="page-shell">
 
-    <header class="mt-8 sm:mt-10 border-b border-gray-200 pb-8 sm:pb-10">
+    <header class="page-header">
       <div class="max-w-3xl">
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Talks</h1>
+        <h1 class="page-title">Talks</h1>
       </div>
     </header>
 
-    <section class="mt-12 space-y-12">
+    <section class="talks-sections">
 
       <!-- 2026 -->
       <section class="year-anchor">
         <div class="flex items-center gap-4">
           <div class="flex-1">
-            <h2 class="text-2xl font-semibold tracking-tight">2026</h2>
-            <div class="mt-2 h-px bg-gradient-to-r from-[#1f5d73]/40 via-[#eee7da] to-transparent dark:from-blue-800 dark:via-blue-950 dark:to-transparent"></div>
+            <h2 class="section-title">2026</h2>
+            <div class="section-rule"></div>
           </div>
         </div>
 
         <div class="mt-6 grid gap-4">
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
                Discrete Analysis Seminar, HUN-REN Alfréd Rényi Institute of Mathematics
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               K-point configurations in the integer lattice
             </h3>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               Number Theory Seminar, HUN-REN Alfréd Rényi Institute of Mathematics
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Extensions of the Furstenberg-Sárközy theorem via the arithmetic level-d inequality
             </h3>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               Number Theory Seminar, HUN-REN Alfréd Rényi Institute of Mathematics
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Sárközy’s theorem in function fields
             </h3>
           </article>
@@ -121,53 +98,53 @@
       <section class="year-anchor">
         <div class="flex items-center gap-4">
           <div class="flex-1">
-            <h2 class="text-2xl font-semibold tracking-tight">2025</h2>
-            <div class="mt-2 h-px bg-gradient-to-r from-[#1f5d73]/40 via-[#eee7da] to-transparent dark:from-blue-800 dark:via-blue-950 dark:to-transparent"></div>
+            <h2 class="section-title">2025</h2>
+            <div class="section-rule"></div>
           </div>
         </div>
 
         <div class="mt-6 grid gap-4">
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               Number theory seminar, University of Georgia
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Sárközy’s theorem in function fields
             </h3>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               Number Theory Seminar, University of Mississippi
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Sárközy’s theorem in function fields
             </h3>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               AMS Fall Southeastern Sectional Meeting, Tulane University
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Sárközy’s theorem in function fields
             </h3>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               INTEGERS 2025 Conference, University of Georgia
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Polynomial configurations in the primes
             </h3>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               Millsaps College Kinnaird Summer Research Program
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Polynomial configurations in the primes
             </h3>
           </article>
@@ -178,17 +155,17 @@
       <section class="year-anchor">
         <div class="flex items-center gap-4">
           <div class="flex-1">
-            <h2 class="text-2xl font-semibold tracking-tight">2024</h2>
-            <div class="mt-2 h-px bg-gradient-to-r from-[#1f5d73]/40 via-[#eee7da] to-transparent dark:from-blue-800 dark:via-blue-950 dark:to-transparent"></div>
+            <h2 class="section-title">2024</h2>
+            <div class="section-rule"></div>
           </div>
         </div>
 
         <div class="mt-6 grid gap-4">
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               UGA Graduate Student Seminar
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               The sum-product problem for small sets
             </h3>
           </article>
@@ -199,36 +176,36 @@
       <section class="year-anchor">
         <div class="flex items-center gap-4">
           <div class="flex-1">
-            <h2 class="text-2xl font-semibold tracking-tight">2023</h2>
-            <div class="mt-2 h-px bg-gradient-to-r from-[#1f5d73]/40 via-[#eee7da] to-transparent dark:from-blue-800 dark:via-blue-950 dark:to-transparent"></div>
+            <h2 class="section-title">2023</h2>
+            <div class="section-rule"></div>
           </div>
         </div>
 
         <div class="mt-6 grid gap-4">
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               AMS Spring Southeastern Sectional Meeting, Georgia Tech
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Schur's theorem in integer lattices
             </h3>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
-            <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          <article class="surface-card talk-card">
+            <p class="talk-venue">
               INTEGERS 2023 Conference, University of Georgia
             </p>
-            <h3 class="mt-2 text-xl font-semibold leading-snug">
+            <h3 class="card-title mt-2">
               Schur's theorem in integer lattices
             </h3>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
+          <article class="surface-card talk-card">
             <div>
-              <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+              <p class="talk-venue">
                 MAA Louisiana–Mississippi Sectional Meeting, University of Mississippi
               </p>
-              <h3 class="mt-2 text-xl font-semibold leading-snug">
+              <h3 class="card-title mt-2">
                 Notes and computations on congruence covering systems
               </h3>
             </div>
@@ -237,12 +214,12 @@
             </p>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
+          <article class="surface-card talk-card">
             <div>
-              <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+              <p class="talk-venue">
                 Millsaps College TriBeta Symposium
               </p>
-              <h3 class="mt-2 text-xl font-semibold leading-snug">
+              <h3 class="card-title mt-2">
                 Notes and computations on congruence covering systems
               </h3>
             </div>
@@ -251,12 +228,12 @@
             </p>
           </article>
 
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
+          <article class="surface-card talk-card">
             <div>
-              <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+              <p class="talk-venue">
                 Millsaps College Honors Research Conference
               </p>
-              <h3 class="mt-2 text-xl font-semibold leading-snug">
+              <h3 class="card-title mt-2">
                 New and old results in Ramsey theory and additive combinatorics
               </h3>
             </div>
@@ -271,18 +248,18 @@
       <section class="year-anchor">
         <div class="flex items-center gap-4">
           <div class="flex-1">
-            <h2 class="text-2xl font-semibold tracking-tight">2022</h2>
-            <div class="mt-2 h-px bg-gradient-to-r from-[#1f5d73]/40 via-[#eee7da] to-transparent dark:from-blue-800 dark:via-blue-950 dark:to-transparent"></div>
+            <h2 class="section-title">2022</h2>
+            <div class="section-rule"></div>
           </div>
         </div>
 
         <div class="mt-6 grid gap-4">
-          <article class="glass-card rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
+          <article class="surface-card talk-card">
             <div>
-              <p class="text-sm font-medium uppercase tracking-wide text-blue-700 dark:text-blue-300">
+              <p class="talk-venue">
                 MAA Louisiana–Mississippi Sectional Meeting, Northwestern State University of Louisiana
               </p>
-              <h3 class="mt-2 text-xl font-semibold leading-snug">
+              <h3 class="card-title mt-2">
                 Schur's theorem in integer lattices
               </h3>
             </div>
@@ -296,12 +273,13 @@
     </section>
   </main>
 
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+  <footer class="site-footer border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
     © <span id="year"></span> Andrew Lott
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="/scripts/nav.js?v=20260901-2"></script>
 </body>
 </html>
