@@ -3,30 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PAGE TITLE • Andrew Lott</title>
-  <link rel="icon" href="images/profile-photo.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class'};</script>
-  <link rel="stylesheet" href="styles/site.css?v=20260901-1" />
-</head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
-  <main class="max-w-screen-lg mx-auto px-4 pb-24">
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Undergraduate Projects – Andrew Lott</title>
   <link rel="icon" href="images/profile-photo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="styles/site.css?v=20260901-2" />
 </head>
-<body class="bg-white text-gray-900">
-  <div class="p-8 sm:px-2 mx-auto max-w-screen-lg">
-    <a href="index.html" class="text-blue-600 hover:underline text-sm">&larr; Back to Home</a>
-    <h1 class="text-3xl font-bold mt-4 mb-8">Undergraduate Projects</h1>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased site-page">
+  <div id="site-nav"></div>
 
-    <ul class="list-disc list-inside space-y-4 text-lg">
+  <main class="page-shell">
+    <header class="page-header">
+      <h1 class="page-title">Undergraduate Projects</h1>
+    </header>
+
+    <ul class="undergrad-list list-disc list-inside space-y-4">
       <li><a href="https://arxiv.org/abs/2307.06874" class="text-blue-600 hover:underline">The sum-product problem for small sets</a></li>
       <li><a href="https://arxiv.org/abs/2208.09720" class="text-blue-600 hover:underline">Computations and observations on congruence covering systems</a></li>
       <li><a href="https://arxiv.org/abs/2108.08410" class="text-blue-600 hover:underline">The pigeonhole principle and multicolor Ramsey numbers</a></li>
@@ -35,16 +26,15 @@
     </ul>
 
     <div class="w-full max-w-3xl mx-auto my-12">
-      <img src="images/K_16_partitioned_into_three_Clebsch_graphs_vnnqt1.svg" alt="K_16 partitioned into three Clebsch graphs" class="w-full rounded-xl shadow-lg" />
+      <img src="images/K_16_partitioned_into_three_Clebsch_graphs_vnnqt1.svg" alt="K_16 partitioned into three Clebsch graphs" class="project-figure w-full rounded-xl" />
       <p class="text-center text-sm text-gray-600 mt-2">A 3-coloring of K₁₆ with no monochromatic K₃.</p>
     </div>
-  </div>
-</body>
-</html>  </main>
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+  </main>
+
+  <footer class="site-footer border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
     © <span id="year"></span> Andrew Lott
   </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script src="/scripts/nav.js?v=20260901-2"></script>
 </body>
 </html>
-
