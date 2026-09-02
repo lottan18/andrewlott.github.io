@@ -185,7 +185,7 @@ textarea::placeholder {
   position: relative;
   padding: 1.5rem 0 1.35rem;
   color: var(--site-text);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.25;
   font-weight: 600;
   text-decoration: none;
