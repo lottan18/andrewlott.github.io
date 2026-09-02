@@ -7,7 +7,7 @@
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
-  <link rel="stylesheet" href="styles/site.css?v=20260901-1" />
+  <link rel="stylesheet" href="styles/site.css?v=20260901-2" />
   <meta name="description" content="Research, preprints, and earlier projects by Andrew Lott &#8212; additive combinatorics and number theory."/>
 
   <!-- MathJax -->
@@ -21,24 +21,6 @@
 
     a { text-underline-offset: 3px; }
 
-    article {
-      position: relative;
-    }
-
-    article::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      border-radius: 1rem;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 180ms ease;
-      box-shadow: 0 0 0 1px rgba(31, 93, 115, 0.22);
-    }
-
-    article:hover::before {
-      opacity: 1;
-    }
 
     details summary {
       list-style: none;
@@ -151,21 +133,16 @@
     gtag('config', 'G-R8CCWTZD59');
   </script>
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
-  <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-    <!-- Local Nav -->
-    <nav class="mt-4 mb-2 text-sm text-gray-600 dark:text-gray-400">
-      <a href="/" class="inline-flex items-center gap-1 underline decoration-transparent hover:decoration-current">
-        <span aria-hidden="true">&#8592;</span> Back to main page
-      </a>
-    </nav>
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900 site-page">
+  <div id="site-nav"></div>
+  <main class="page-shell">
     <!-- Page Header -->
-    <header class="relative mt-8 sm:mt-10">
+    <header class="page-header">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Research</h1>
+          <h1 class="page-title">Research</h1>
 
-          <p class="mt-3 text-base sm:text-lg text-gray-700 dark:text-gray-300">
+          <p class="body-copy mt-4">
             My research interests lie at the intersection of ergodic theory and additive combinatorics. I am particularly interested in exponential sum estimates, forbidden difference problems, higher order Fourier analysis, the transference principle, pointwise ergodic theorems, Ramsey theory, sieve methods, and function fields. 
           </p>
 
@@ -177,15 +154,15 @@
 
     <section class="mt-10" aria-labelledby="preprints-heading">
       <div class="flex items-center justify-between gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
-        <h2 id="preprints-heading" class="text-2xl font-semibold">Preprints</h2>
+        <h2 id="preprints-heading" class="section-title">Preprints</h2>
       </div>
 
       <div id="preprint-list" class="paper-list mt-6 space-y-4">
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
          data-year="2026" data-authors="Hegde Lott Petridis Ponagandla" data-title="Refined upper bounds on Schur-like numbers">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug min-w-0">
+    <h3 class="card-title min-w-0">
       <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
          href="https://arxiv.org/abs/2608.03661">
         Refined upper bounds on Schur-like numbers
@@ -212,10 +189,10 @@
   </details>
 </article>
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
          data-year="2026" data-authors="Fan Lott" data-title="The van der Corput property for sums of two squares">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug min-w-0">
+    <h3 class="card-title min-w-0">
       <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
          href="https://arxiv.org/abs/2606.29185">
         The van der Corput property for sums of two squares
@@ -243,10 +220,10 @@
     </div>
   </details>
 </article>
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
          data-year="2026" data-authors="Le Lott" data-title="Bourgain's L2 pointwise ergodic theorem over function fields">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug min-w-0">
+    <h3 class="card-title min-w-0">
       <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
          href="https://arxiv.org/abs/2605.28997">
         <span class="titleglue">Bourgain's $L^2$</span> pointwise ergodic theorem over function fields
@@ -301,10 +278,10 @@
   </details>
 </article>
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
          data-year="2026" data-authors="Adajar Agrawal Choudhuri Chuah Fan Hegde Lott Nandakumar Ponagandla" data-title="Extensions of the Furstenberg-Sarkozy theorem via the arithmetic level-d inequality">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug min-w-0">
+    <h3 class="card-title min-w-0">
       <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
          href="https://arxiv.org/abs/2605.16216">
         Extensions of the Furstenberg-S&#225;rk&#246;zy theorem via the arithmetic <span class="titleglue">level-$d$</span> inequality
@@ -335,14 +312,14 @@
 
     <section class="mt-12" aria-labelledby="publications-heading">
       <div class="flex items-center justify-between gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
-        <h2 id="publications-heading" class="text-2xl font-semibold">Publications</h2>
+        <h2 id="publications-heading" class="section-title">Publications</h2>
       </div>
 
       <div id="publication-list" class="paper-list mt-6 space-y-4">
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
          data-year="2026" data-authors="Fan Lott" data-title="S&#225;rk&#246;zy's theorem in F_q[t] via the van der Corput property">
   <div class="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
-    <h3 class="text-lg sm:text-xl font-semibold leading-snug min-w-0">
+    <h3 class="card-title min-w-0">
       <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
          href="https://arxiv.org/abs/2510.27581">
         S&#225;rk&#246;zy's theorem in <span class="titleglue">$\mathbb{F}_q[t]$</span> via the van der Corput property
@@ -370,10 +347,10 @@
   </details>
 </article>
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
                  data-year="2026" data-authors="Magyar Petridis Pintz Lott" data-title="Polynomial configurations in dense subsets of the prime lattice">
           <div class="flex flex-wrap items-start justify-between gap-3">
-            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+            <h3 class="card-title">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
                  href="https://arxiv.org/abs/2504.14424">
                 Polynomial configurations in dense subsets of the prime lattice
@@ -397,10 +374,10 @@
           </details>
         </article>
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
                  data-year="2026" data-authors="Ponagandla Lott" data-title="Polynomial progressions in the generalized twin primes">
           <div class="flex flex-wrap items-start justify-between gap-3">
-            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+            <h3 class="card-title">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
                  href="https://arxiv.org/abs/2505.17375">
                 Polynomial progressions in the generalized twin primes
@@ -437,14 +414,14 @@
 
     <section class="mt-12" aria-labelledby="earlier-publications-heading">
       <div class="flex items-center justify-between gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
-        <h2 id="earlier-publications-heading" class="text-2xl font-semibold">Undergraduate publications</h2>
+        <h2 id="earlier-publications-heading" class="section-title">Undergraduate publications</h2>
       </div>
 
       <div id="earlier-publications-list" class="paper-list mt-6 space-y-4">
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
                  data-year="2026" data-authors="Dean Havard Hawkins Heard Rice Lott" data-title="Notes and computations on forbidden differences">
           <div class="flex flex-wrap items-start justify-between gap-3">
-            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+            <h3 class="card-title">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
                  href="https://arxiv.org/abs/2508.03650">
                 Notes and computations on forbidden differences
@@ -468,10 +445,10 @@
           </div>
         </article>
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
                  data-year="2025" data-authors="Clevenger Havard Heard Lott Rice Wilson" data-title="The sum-product problem for small sets">
           <div class="flex flex-wrap items-start justify-between gap-3">
-            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+            <h3 class="card-title">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
                  href="https://arxiv.org/abs/2307.06874">
                 The sum-product problem for small sets
@@ -495,9 +472,9 @@
           </div>
         </article>
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
+<article class="paper-card surface-card group" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
           <div class="flex flex-wrap items-start justify-between gap-3">
-            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+            <h3 class="card-title">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
                  href="https://arxiv.org/abs/2108.08410">
                 The pigeonhole principle and multicolor Ramsey numbers
@@ -521,10 +498,10 @@
           </div>
         </article>
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
                  data-year="2024" data-authors="Agrawal Bhatia Gupta Lamb Lott Rice Ward" data-title="Computations and observations on congruence covering systems">
           <div class="flex flex-wrap items-start justify-between gap-3">
-            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+            <h3 class="card-title">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
                  href="https://arxiv.org/abs/2208.09720">
                 Computations and observations on congruence covering systems
@@ -548,10 +525,10 @@
           </div>
         </article>
 
-<article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+<article class="paper-card surface-card group"
                  data-year="2022" data-authors="Balaji Lott Rice" data-title="Schur&#8217;s theorem in integer lattices">
           <div class="flex flex-wrap items-start justify-between gap-3">
-            <h3 class="text-lg sm:text-xl font-semibold leading-snug">
+            <h3 class="card-title">
               <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener"
                  href="https://arxiv.org/abs/2112.03127">
                 Schur&#8217;s theorem in integer lattices
@@ -578,12 +555,13 @@
     </section>
   </main>
 
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+  <footer class="site-footer border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
     &#169; <span id="year"></span> Andrew Lott
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="/scripts/nav.js?v=20260901-2"></script>
 </body>
 </html>
