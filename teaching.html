@@ -7,7 +7,7 @@
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
-  <link rel="stylesheet" href="styles/site.css?v=20260901-1" />
+  <link rel="stylesheet" href="styles/site.css?v=20260901-2" />
   <style>
     /* Enable a full-card clickable area without disturbing layout */
     .card-link { position: absolute; inset: 0; border-radius: 1rem; } /* 2xl ≈ 1rem in Tailwind */
@@ -23,29 +23,26 @@
   gtag('config', 'G-R8CCWTZD59');
 </script>
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
-  <main class="max-w-screen-lg mx-auto px-4 pb-28">
-    <!-- Back to main -->
-    <nav class="mt-4 mb-2">
-      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900"><span aria-hidden="true">←</span> Back to main page</a>
-    </nav>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased site-page">
+  <div id="site-nav"></div>
+  <main class="page-shell">
 
     <!-- Page header -->
-    <header class="mt-8 md:mt-12 mb-6">
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Teaching</h1>
+    <header class="page-header">
+      <h1 class="page-title">Teaching</h1>
     </header>
 
     <!-- Instructor of Record -->
     <section aria-labelledby="instructor" class="mt-10">
       <div class="flex items-center gap-3">
-        <h2 id="instructor" class="text-2xl md:text-3xl font-semibold">Instructor of Record</h2>
+        <h2 id="instructor" class="section-title">Instructor of Record</h2>
       </div>
 
       <div class="mt-6 grid gap-4 sm:gap-6 sm:grid-cols-2">
         <!-- Precalculus (MATH 1113) card -->
-        <article class="relative rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+        <article class="surface-card relative">
           <div class="flex items-baseline justify-between">
-            <h3 class="text-lg font-semibold">Precalculus <span class="text-gray-500">(MATH 1113)</span></h3>
+            <h3 class="card-title">Precalculus <span class="text-gray-500">(MATH 1113)</span></h3>
             <span class="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">Instructor</span>
           </div>
           <div class="mt-3 flex flex-wrap gap-2">
@@ -56,9 +53,9 @@
         </article>
 
         <!-- Calculus I (MATH 2250) card -->
-        <article class="relative rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+        <article class="surface-card relative">
           <div class="flex items-baseline justify-between">
-            <h3 class="text-lg font-semibold">Calculus I <span class="text-gray-500">(MATH 2250)</span></h3>
+            <h3 class="card-title">Calculus I <span class="text-gray-500">(MATH 2250)</span></h3>
             <span class="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">Instructor</span>
           </div>
           <div class="mt-3 flex flex-wrap gap-2">
@@ -72,14 +69,14 @@
     <!-- Teaching Support -->
     <section aria-labelledby="support" class="mt-12">
       <div class="flex items-center gap-3">
-        <h2 id="support" class="text-2xl md:text-3xl font-semibold">Grader</h2>
+        <h2 id="support" class="section-title">Grader</h2>
       </div>
 
       <div class="mt-6 grid gap-4 sm:gap-6 sm:grid-cols-2">
         <!-- MATH 3100 card -->
-        <article class="relative rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+        <article class="surface-card relative">
           <div class="flex items-baseline justify-between">
-            <h3 class="text-lg font-semibold">Introduction to Real Analysis <span class="text-gray-500">(MATH 3100)</span></h3>
+            <h3 class="card-title">Introduction to Real Analysis <span class="text-gray-500">(MATH 3100)</span></h3>
             <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
           </div>
           <div class="mt-3 flex flex-wrap gap-2">
@@ -89,9 +86,9 @@
         </article>
 
         <!-- MATH/CSCI 4690/6690 card -->
-        <article class="relative rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+        <article class="surface-card relative">
           <div class="flex items-baseline justify-between">
-            <h3 class="text-lg font-semibold">Graph Theory <span class="text-gray-500">(MATH 4690/6690)</span></h3>
+            <h3 class="card-title">Graph Theory <span class="text-gray-500">(MATH 4690/6690)</span></h3>
             <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
           </div>
           <div class="mt-3 flex flex-wrap gap-2">
@@ -101,9 +98,9 @@
         </article>
 
         <!-- MATH 3500H card -->
-        <article class="relative rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+        <article class="surface-card relative">
           <div class="flex items-baseline justify-between">
-            <h3 class="text-lg font-semibold">Honors Multivariable Calculus <span class="text-gray-500">(MATH 3500H)</span></h3>
+            <h3 class="card-title">Honors Multivariable Calculus <span class="text-gray-500">(MATH 3500H)</span></h3>
             <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
           </div>
           <div class="mt-3 flex flex-wrap gap-2">
@@ -113,9 +110,9 @@
         </article>
 
         <!-- MATH 8100/8105 card -->
-        <article class="relative rounded-2xl border border-gray-200 dark:border-gray-800 p-5 bg-white/60 dark:bg-gray-950/40 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm transition">
+        <article class="surface-card relative">
           <div class="flex items-baseline justify-between">
-            <h3 class="text-lg font-semibold">Measure Theory <span class="text-gray-500">(MATH 8100)</span></h3>
+            <h3 class="card-title">Measure Theory <span class="text-gray-500">(MATH 8100)</span></h3>
             <span class="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-50 dark:bg-sky-950/30 px-2.5 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300">Grader</span>
           </div>
           <div class="mt-3 flex flex-wrap gap-2">
@@ -127,8 +124,9 @@
       </div>
     </section>
   </main>
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">© <span id="year"></span> Andrew Lott</footer>
+  <footer class="site-footer border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">© <span id="year"></span> Andrew Lott</footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="/scripts/nav.js?v=20260901-2"></script>
 </body>
 </html>
 
