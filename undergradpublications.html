@@ -7,23 +7,13 @@
   <link rel="icon" href="images/besticon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
-  <link rel="stylesheet" href="styles/site.css?v=20260901-1" />
+  <link rel="stylesheet" href="styles/site.css?v=20260901-2" />
   <meta name="description" content="Undergraduate projects and publications by Andrew Lott."/>
   <!-- MathJax -->
   <script>
     window.MathJax = { tex: { inlineMath: [["$","$"],["\\(","\\)"]] }, svg: { fontCache:'global' } };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<style>
-  /* Match spacing/behavior from Projects page */
-  .abstract { line-height: 1.65; }
-  .abstract * { white-space: normal !important; }
-  .abstract br { display: none !important; }
-  .abstract mjx-container { display: inline !important; vertical-align: baseline !important; }
-  .abstract mjx-container[display="true"],
-  .abstract mjx-container[display="false"] { display: inline !important; }
-  .abstract mjx-container > svg { display: inline !important; }
-</style>
 <style>
     /* Match the working Projects page spacing/MathJax behavior */
     .abstract { line-height: 1.65; }
@@ -39,18 +29,15 @@
     #pubs mjx-container[display="false"] { display:inline !important; vertical-align: baseline !important; }
   </style>
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900">
-  <main class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-    <!-- Local Nav -->
-    <nav class="mt-4 mb-2">
-      <a href="/" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-900"><span aria-hidden="true">←</span> Back to main page</a>
-    </nav>
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 antialiased selection:bg-blue-200/60 selection:text-blue-900 site-page">
+  <div id="site-nav"></div>
+  <main class="page-shell">
 
     <!-- Page Header -->
-    <header class="relative mt-6 sm:mt-8">
+    <header class="page-header project-header">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Undergraduate Projects</h1>
+          <h1 class="page-title">Undergraduate Projects</h1>
           
         </div>
         <span class="hidden sm:inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-300">
@@ -74,9 +61,9 @@
     <!-- List -->
     <section id="pubs" class="mt-8 space-y-4">
       <!-- 2508.03650 -->
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-authors="Dean Havard Hawkins Heard Rice Lott" data-title="Notes and computations on forbidden differences">
+      <article class="paper-card surface-card group" data-year="2025" data-authors="Dean Havard Hawkins Heard Rice Lott" data-title="Notes and computations on forbidden differences">
         <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+          <h2 class="card-title">
             <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2508.03650">
               Notes and computations on forbidden differences
             </a>
@@ -110,9 +97,9 @@
       </article>
 
       <!-- 2307.06874 -->
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2025" data-authors="Clevenger Havard Heard Lott Rice Wilson" data-title="The sum-product problem for small sets">
+      <article class="paper-card surface-card group" data-year="2025" data-authors="Clevenger Havard Heard Lott Rice Wilson" data-title="The sum-product problem for small sets">
         <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+          <h2 class="card-title">
             <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2307.06874">
               The sum-product problem for small sets
             </a>
@@ -148,9 +135,9 @@
       </article>
 
       <!-- 2208.09720 -->
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2024" data-authors="Agrawal Bhatia Gupta Lamb Lott Rice Ward" data-title="Computations and observations on congruence covering systems">
+      <article class="paper-card surface-card group" data-year="2024" data-authors="Agrawal Bhatia Gupta Lamb Lott Rice Ward" data-title="Computations and observations on congruence covering systems">
         <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+          <h2 class="card-title">
             <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2208.09720">
               Computations and observations on congruence covering systems
             </a>
@@ -188,9 +175,9 @@
       </article>
 
       <!-- 2108.08410 -->
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
+      <article class="paper-card surface-card group" data-year="2022" data-authors="Balaji Lamb Lott Patel Rice Singh Ward" data-title="The pigeonhole principle and multicolor Ramsey numbers">
         <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+          <h2 class="card-title">
             <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2108.08410">
               The pigeonhole principle and multicolor Ramsey numbers
             </a>
@@ -226,9 +213,9 @@
       </article>
 
       <!-- 2112.03127 -->
-      <article class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow" data-year="2022" data-authors="Balaji Lott Rice" data-title="Schur’s theorem in integer lattices">
+      <article class="paper-card surface-card group" data-year="2022" data-authors="Balaji Lott Rice" data-title="Schur’s theorem in integer lattices">
         <div class="flex flex-wrap items-start justify-between gap-3">
-          <h2 class="text-lg sm:text-xl font-semibold leading-snug">
+          <h2 class="card-title">
             <a class="underline decoration-transparent hover:decoration-blue-400 text-blue-700 dark:text-blue-300" target="_blank" rel="noopener" href="https://arxiv.org/abs/2112.03127">
               Schur’s theorem in integer lattices
             </a>
@@ -271,7 +258,7 @@
     </div>
   </main>
 
-  <footer class="border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
+  <footer class="site-footer border-t border-gray-200 dark:border-gray-800 text-center py-8 text-sm text-gray-500 dark:text-gray-400">
     © <span id="year"></span> Andrew Lott
   </footer>
 
@@ -334,6 +321,7 @@
     // init
     applyFilter();
   </script>
+  <script src="/scripts/nav.js?v=20260901-2"></script>
 </body>
 </html>
 
